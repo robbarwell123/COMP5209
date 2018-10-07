@@ -3,6 +3,22 @@ BODY {
 	padding: 0;
 }
 
+.LeftAlign {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+
+.RightAlign {
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+#FilterButton {
+	position:relative;
+}
+
 #TOPBAR {
 	margin: 0px;
 	padding: 0px;
@@ -30,7 +46,6 @@ LI.main_nav A {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 LI.main_nav A:hover {
     background-color: #111;
 }
@@ -73,21 +88,65 @@ LI.main_nav A:hover {
 	padding: 0px;
 	width: 30%;
 	height: 50%;
-	background: blue;
+	background: white;
 	z-index: 100;
-	transition: all 2s;
+	transition: all 0.5s;
 }
 
 #GLOBAL_CONTENT {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
-	height: 95%;
+	height: 100%;
+	overflow: hidden;
+	transition: all 1s;
+	float: left;
+	background: purple;
 }
 
 #GLOBAL_OPS {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
-	height: 5%;
+	height: 24px;
+	clear: both;
+	background: purple;
+}
+
+
+.SIDE_NAV {
+	float: left;
+    width: 0px; 
+    position: absolute;
+    z-index: 200;
+    top: 24px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 10px;
+    transition: 0.5s;	
+}
+
+.SIDE_NAV a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.SIDE_NAV a:hover {
+    color: #f1f1f1;
+}
+
+.SIDE_NAV .SIDE_NAV_CLOSE {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 18px;
+}
+
+#GlobalFilterButton {
+	transition: 1s;
 }

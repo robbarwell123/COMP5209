@@ -17,10 +17,20 @@
 		<DIV id='MAIN'>
 			<DIV id='GLOBAL'>
 				<DIV id='GLOBAL_OPTS'>
-					<IMG src="img/icon_maximize.png" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv(2)">
+					<DIV class="LeftAlign" id='FilterButton'>
+						<IMG src="img/icon_filter.png" id='GlobalFilterButton' width="24" height="24" onClick="DisplayFilter(2)" style="visibility: hidden">
+						<DIV id="GLOBAL_FILTER" class="SIDE_NAV">
+						  <a href="javascript:void(0)" class="SIDE_NAV_CLOSE" onclick="DisplayFilter(1)">X</a>
+						  <a href="#">Filter1</a>
+						  <a href="#">Filter2</a>
+						  <a href="#">Filter3</a>
+						  <a href="#">Filter4</a>
+						</DIV>
+					</DIV>
+					<DIV class="RightAlign"><IMG src="img/icon_maximize.png" id='GlobalMinMaxButton' width="24" height="24" onClick="MinMaxGlobalDiv(2)"></DIV>
 				</DIV>
 				<DIV id='GLOBAL_CONTENT'>
-					<SCRIPT src="js/GlobalBoxver1.js"></SCRIPT>
+					<SCRIPT src="js/GlobalBoxver3.js"></SCRIPT>
 				</DIV>
 			</DIV>
 			<DIV id='STATS'>Stats</DIV>

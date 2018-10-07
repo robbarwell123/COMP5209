@@ -3,8 +3,9 @@
 
 	class User
 	{
-		public $name;
-		public $value;
+		public $sEmail;
+		public $sLastname;
+		public $iUserID;
 		public $children;
 	}
 	
@@ -22,8 +23,9 @@
 			{
 #				echo "ID: ".$myRow["iUserID"]." Name: ".$myRow["sUser"]."<BR>";
 				$oUser = new User();
-				$oUser->value=$myRow["iUserID"];
-				$oUser->name=$myRow["sUser"];
+				$oUser->iUserID=$myRow["iUserID"];
+				$oUser->sEmail=$myRow["sUser"];
+				$oUser->sLastname=$myRow["sLastname"];
 				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement);
 				array_push($arrChildren,$oUser);
 			}
@@ -51,8 +53,9 @@
 	$myPrep->bind_param("i",$iLevel);
 		
 	$oUser=new User();
-	$oUser->name="Example Company";
-	$oUser->value=-1;
+	$oUser->sEmail="Example Company";
+	$oUser->iUserID=-1;
+	$oUser->sLastname="Example Company";
 	$oUser->children=fBuildNode(0,$myPrep);
 	echo json_encode($oUser);
 
