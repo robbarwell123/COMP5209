@@ -1,0 +1,75 @@
+BODY {
+	margin: 0;
+	padding: 0;
+}
+
+#TOPBAR {
+	margin: 0px;
+	padding: 0px;
+	height: 46px;
+}
+
+UL.main_nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+LI.main_nav {
+    float: left;
+}
+
+LI.main_nav A {
+    display: block;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+LI.main_nav A:hover {
+    background-color: #111;
+}
+
+#MAIN {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	position:absolute;
+	top:46px;
+	bottom: 0px;	
+}
+
+#CONTENT {
+	margin: 0px;
+	padding: 0px;
+	width: 70%;
+	overflow-y: scroll;
+	position:absolute;
+	top:0px;
+	bottom: 0px;
+}
+
+#STATS {
+	margin: 0px;
+	padding: 0px;
+	width: 30%;
+	height: 50%;
+	background: green;
+	float: right;
+	clear: right;
+}
+
+#GLOBAL {
+	margin: 0px;
+	padding: 0px;
+	width: 30%;
+	height: 50%;
+	background: blue;
+	float: right;
+	clear: right;
+}
