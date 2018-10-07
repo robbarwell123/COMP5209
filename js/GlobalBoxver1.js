@@ -1,7 +1,7 @@
-var iWidth=document.getElementById("GLOBAL").offsetWidth;
-var iHeight=document.getElementById("GLOBAL").offsetHeight;
+var iWidth=document.getElementById("GLOBAL_CONTENT").offsetWidth;
+var iHeight=document.getElementById("GLOBAL_CONTENT").offsetHeight-document.getElementById("GLOBAL_OPTS").offsetHeight;
 
-var svgCanvas = d3.select("#GLOBAL").append("svg")
+var svgCanvas = d3.select("#GLOBAL_CONTENT").append("svg")
 	.attr("width", iWidth)
 	.attr("height", iHeight)
   .append("g")

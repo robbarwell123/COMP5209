@@ -3,6 +3,7 @@
 		<TITLE>Org Navigation</TITLE>
 		<LINK href='css/orgnav.css' rel='stylesheet'>
 		<SCRIPT src="https://d3js.org/d3.v3.min.js" charset="utf-8"></SCRIPT>
+		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
 	</HEAD>
 	<BODY>
 		<DIV id='TOPBAR'>
@@ -14,11 +15,16 @@
 			</UL>
 		</DIV>
 		<DIV id='MAIN'>
-			<DIV id='CONTENT'>Main</DIV>
-			<DIV id='STATS'>Stats</DIV>
 			<DIV id='GLOBAL'>
+				<DIV id='GLOBAL_OPTS'>
+					<IMG src="img/icon_maximize.png" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv(2)">
+				</DIV>
+				<DIV id='GLOBAL_CONTENT'>
 					<SCRIPT src="js/GlobalBoxver1.js"></SCRIPT>
-			<DIV>
+				</DIV>
+			</DIV>
+			<DIV id='STATS'>Stats</DIV>
+			<DIV id='CONTENT'>Main</DIV>
 		</DIV>
 	</BODY>
 </HTML>
