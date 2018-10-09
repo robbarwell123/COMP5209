@@ -13,13 +13,10 @@ function MinMaxGlobalDiv(iState)
 		document.getElementById("GlobalMinMaxButton").setAttribute("onClick", "MinMaxGlobalDiv(2)");
 	}else if(iState==2)
 	{
-//		document.getElementById("GLOBAL").style.width="99%";
-//		document.getElementById("GLOBAL").style.height="99%";
 		document.getElementById("GLOBAL").style.width="calc(100% - 10px)";
 		document.getElementById("GLOBAL").style.height="calc(100% - 10px)";
 
 		document.getElementById("GLOBAL_CONTENT").style.width="100%";
-//		document.getElementById("GLOBAL_CONTENT").style.height="95%";
 		document.getElementById("GLOBAL_CONTENT").style.height="calc(100%-24px)";
 		
 		document.getElementById("GlobalFilterButton").style.visibility="visible";

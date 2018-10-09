@@ -2,7 +2,8 @@
 	<HEAD>
 		<TITLE>Org Navigation</TITLE>
 		<LINK href='css/orgnav.css' rel='stylesheet'>
-		<SCRIPT src="https://d3js.org/d3.v3.min.js" charset="utf-8"></SCRIPT>
+		<LINK href='css/OrgChart.css' rel='stylesheet'>
+		<SCRIPT src="https://d3js.org/d3.v5.min.js" charset="utf-8"></SCRIPT>
 		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
 	</HEAD>
 	<BODY>
@@ -30,11 +31,12 @@
 					<DIV class="RightAlign"><IMG src="img/icon_maximize.png" id='GlobalMinMaxButton' width="24" height="24" onClick="MinMaxGlobalDiv(2)"></DIV>
 				</DIV>
 				<DIV id='GLOBAL_CONTENT'>
-					<SCRIPT src="js/GlobalBoxver3.js"></SCRIPT>
+					<SCRIPT src="js/DrawOrgChart.js"></SCRIPT>
 				</DIV>
 			</DIV>
 			<DIV id='STATS'>Stats</DIV>
-			<DIV id='CONTENT'>Main</DIV>
+			<DIV id='CONTENT'>
+			</DIV>
 		</DIV>
 	</BODY>
 </HTML>
