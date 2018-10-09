@@ -4,6 +4,7 @@
 		<LINK href='css/orgnav.css' rel='stylesheet'>
 		<LINK href='css/OrgChart.css' rel='stylesheet'>
 		<SCRIPT src="https://d3js.org/d3.v5.min.js" charset="utf-8"></SCRIPT>
+		<SCRIPT src="https://code.jquery.com/jquery-3.3.1.min.js"></SCRIPT>
 		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
 	</HEAD>
 	<BODY>
