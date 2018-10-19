@@ -1,68 +1,44 @@
-<?php
-	$sServer="localhost";
-	$sUser="email";
-	$sPassword="email";
-	$sDB="email";
-
-	$iUserID=$_GET["iUserID"];
-	
+<?php	
 	class User
 	{
 		public $iUserID;
 		public $sUser;
+		public $sLastname;
 		public $iEmailCount;
 	}
 		
-	$myConnection=new mysqli($sServer, $sUser, $sPassword, $sDB);
-	
-	if($myConnection->connect_error)
-	{
-		die("Connection Failed: ".$myConnection->connect_error);
-	}
-
-	$myPrep=$myConnection->prepare("SELECT
-			*
-			FROM
-				TBL_EMAIL_BY_USER
-			WHERE
-				iUserID IN (
-					SELECT
-						iUserID
-						FROM
-							orgchart
-						WHERE
-							iManager=
-							(
-								SELECT
-									iManager
-									FROM
-										orgchart
-									WHERE
-										iUserID=?
-							)
-		)");
-
-	$myPrep->bind_param("i",$iUserID);
-
-	$myPrep->execute();
+	$config=include('Config.php');
+	$iUserID=$_GET["iUserID"];	
 		
-	$myResults=$myPrep->get_result();
-	$arrPeers=array();
+	$myConnection=new mysqli($config['sDBServer'], $config['sDBUser'], $config['sDBPassword'], $config['sDBName']);
+	
+	if(!$myConnection->connect_error)
+	{
+		$myPrep=$myConnection->prepare("CALL GetUserPeers(?)");
 
-	if($myResults->num_rows > 0)
-	{
-		while($myRow=$myResults->fetch_assoc())
+		$myPrep->bind_param("i",$iUserID);
+
+		$myPrep->execute();
+			
+		$myResults=$myPrep->get_result();
+		$arrPeers=array();
+
+		if($myResults->num_rows > 0)
 		{
-			echo "ID: ".$myRow["iUserID"]." Name: ".$myRow["sUser"]." Emails: ".$myRow["iEmailCount"]."<BR>";
-			$oUser = new User();
-			$oUser->iUserID=$myRow["iUserID"];
-			$oUser->sUser=$myRow["sUser"];
-			$oUser->iEmailCount=$myRow["iEmailCount"];
-			array_push($arrPeers,$oUser);
+			while($myRow=$myResults->fetch_assoc())
+			{
+//				echo "ID: ".$myRow["iUserID"]." Name: ".$myRow["sUser"]." Emails: ".$myRow["iEmailCount"]."<BR>";
+				$oUser = new User();
+				$oUser->iUserID=$myRow["iUserID"];
+				$oUser->sUser=$myRow["sUser"];
+				$oUser->sLastname=$myRow["sLastname"];
+				$oUser->iEmailCount=$myRow["iEmailCount"];
+				array_push($arrPeers,$oUser);
+			}
+		}else
+		{
+			$arrPeers=null;
 		}
-	}else
-	{
-		$arrPeers=null;
 	}
 
 	echo json_encode($arrPeers);

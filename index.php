@@ -35,8 +35,11 @@
 					<SCRIPT src="js/DrawOrgChart.js"></SCRIPT>
 				</DIV>
 			</DIV>
-			<DIV id='STATS'>Stats</DIV>
+			<DIV id='STATS'>
+				<SCRIPT src="js/DrawUserPeers.js"></SCRIPT>
+			</DIV>
 			<DIV id='CONTENT'>
+				<SCRIPT src="js/DrawUserLinks.js"></SCRIPT>
 			</DIV>
 		</DIV>
 	</BODY>

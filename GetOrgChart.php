@@ -49,7 +49,7 @@
 		die("Connection Failed: ".$myConnection->connect_error);
 	}
 
-	$myPrep=$myConnection->prepare("SELECT * FROM orgchart WHERE iManager=?");
+	$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iManager=?");
 	$myPrep->bind_param("i",$iLevel);
 		
 	$oUser=new User();
