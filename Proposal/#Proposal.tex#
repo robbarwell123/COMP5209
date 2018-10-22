@@ -1,0 +1,119 @@
+\documentclass{soups}
+
+\usepackage[backend=biber]{biblatex} %for bibliography
+\addbibresource{Bibliography.bib} %specify location of .bib (bibtex) file
+\usepackage{url} %for using urls in bibliography entries
+\usepackage{graphicx} %for figures
+
+\pdfpagewidth=8.5truein
+\pdfpageheight=11truein
+
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage{times}
+\usepackage{balance}
+\renewcommand{\topfraction}{0.99} % be more aggressive about text around floats
+\renewcommand{\floatpagefraction}{0.99}
+\pagestyle{plain} % page numbers
+
+
+\title{Visualizing the Impact of Organizational Change}
+\subtitle{Project proposal}
+
+\numberofauthors{2}
+
+\author{
+\alignauthor
+Rob Barwell\\ %\titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{Carleton University}\\
+       \affaddr{Ottawa, Canada}\\
+       \email{rob@barwell.ca}
+% 2nd. author
+\alignauthor
+Eric Spero\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+       \affaddr{Carleton University}\\
+       \affaddr{Ottawa, Canada }\\
+       \email{eric.spero@carleton.ca}
+}
+
+\begin{document}
+
+\nobalance
+
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\maketitle
+
+\section{Description}
+
+We aim to design and develop a novel visualization to support managerial decision-making by helping managers understand the effects of personnel change on an organization.
+
+\section{Reading Review}
+
+The rise of the \lq gig economy\rq{}\cite{de2015rise,friedman2014workers} has forced society through a massive transition in the past two decades with people transitioning between jobs with greater frequency.  Historically, a person would obtain a job from high school or university and stay with a specific company until they retire.  This resulted in organizations that had minimal change, which could be easily managed. Modern organizations are forced to adapt with the shift to the gig economy and other non-traditional employment models.  
+
+An organization is the culmination of the behaviour of individuals. Individuals in an organization are engaged in \emph{interlocking contingencies}\cite{glenn2006complexity}: individual are tightly interconnected, where the behaviour of one both depends on, and has subsequent consequences for the behaviour of others\cite{glenn2006complexity}. This highly interactive property of organizations means that removing an individual from an organization will produce effects that are difficult to understand. Disruption to this network of interlocking contingencies can be detrimental to an organization's ability to function, so disruption should be kept to a minimum. The challenge of minimizing organizational disruption as a result of personnel change depends critically on understanding the effects of that change. This challenge--and the need for tools that support it--is even greater in the gig economy. 
+
+We aim to address this problem through \emph{information visualization}. Visualizations support thought by reducing the gap between the data, and the users' \emph{mental model} of the data\cite{yi2007toward}. A mental model is an internal representation of how something in the world works\cite{staggersmodel,norman2014some}. Wherever there is distance between the presentation of the data and our understanding of the data, mental work must be done so that understanding is possible. This type of mental work does not bring us closer to solving domain goals, but rather is a sort of unfortunate precursor for the really important work. This type of workload is referred to as \emph{extraneous workload} \cite{paas2003cognitive}. Fortunately, the physical environment can be used to store information, which allows us to \lq off-load\rq{} mental work onto the environment\cite{wilson2002six}. Visualizations are essentially one way of effectively leveraging this property of the environment to aid thought. 
+
+Visualizing organization change has many challenges. Some of these challenges are: how to represent a large organizational structure; how to provide focus on specific organizational change, without losing context of the organization; and how to allow the user to navigate the space.  A novel visualization can help in many areas with this problem.
+
+The two primary visualizations for relationships are a directed graph or an alternative visualization such as a tree map.  Using a tree-map would allow the visualization to depict the proportional representation of node attributes such as size\cite{shneiderman1992tree}.  In contrast, a directed graph is more focused on the relationships.  Organizational change requires an understanding of both relationships between positions and output of a specific position such as how many people they supervise.  Representing nodes (people) within a visualization requires specific thought on how they are represented.  One way to represent multiple attributes of a node is using glyphs\cite[chapter 5]{ware2012information}.  Graph and glyphs can be used together to understanding both relationships between positions and specific information about a position.  Another critical factor for visualizing relationships is the layout of an organizational structure.  This requires a robust layout algorithm to ensure nodes and edges can be easily differentiated\cite{herman2000graph}.  
+
+The focus+context problem is well known in information visualization.  Ware presents many options for helping the user focus on specific information.  These include form, color, motion, and spatial position, with the strongest effects being color, orientation, size, contrast, and motion\cite[chapter 5]{ware2012information}.  An organizational chart will require the correct use of these options to not overwhelm the user.  The focus+context problem can also be addressed through clustering.  The advantage of clustering is allowing the user to focus on a given change by reducing the number of visible elements\cite{herman2000graph}.  Clustering an organizational chart into departments allows the user to easily focus on relationships between groups and not get lost in the details.  This concept can be expanded further to include dynamic filtering to remove data points which are not relevant to the user.  When employing filters, they should be tightly coupled and dynamic which allows rapid, incremental and reversible changes to query parameters\cite{ahlberg1994visual}.
+
+The addition of motion to a visualization has become commonplace and expected by most users.  This aids the user in easily navigating the data to obtain the information they are seeking.  An example of motion would be zoom and pan.  Zooming can be further divided into geometric zooming and semantic zooming.  Geometric zooming simply provides a blow up of the graph content, where semantic zooming changes the content of an area to include more detail\cite{herman2000graph}.  Zoom and pan would be a preferred method compared to other options such as fisheye distortion, since users are more familiar with it.  Semantic zooming complements clustering by grouping data points into departments and allowing the user to zoom in and see details if desired.  Motion in 2D is easy for the user to understand, however presents challenges with occlusion in 3D.  3D visualizations were introduced with the hope that the extra dimension would provide additional space to display larger structures\cite{herman2000graph}.  Given the complexities associated with occlusions in 3D, a 2D approach would be preferable for organizational charts.  A novel 2D representation was presented by Becker and Cleveland called brushing scatterplots where each dimension was broken down in its own axis and plotted together on one graph\cite{becker1987brushing}.  The user could then navigate the scatter plot and have changes / selections within one box represented on the other boxes.  This concept would help when including multiple views within the same visualization by allowing the user to select a data point in one visualization and the focus changing in another visualization.
+
+
+
+
+
+Visual formalisms yet to discuss: Provide Overview, Adjust, Detect Pattern, Match Mental Model\cite{yi2007toward}. Add social network analysis.
+
+
+
+
+
+
+\section{Detailed Description}
+
+\subsection{Domain}
+
+Organizational change is a complex problem and part of the organizational behavior domain.  Organizational behavior is concerned with the study of human behavior in an organizational setting.  When change is introduced into an organization it can have unintended consequences if it is not properly managed.  This change needs to be carefully understood and managed to ensure the successful integration of change into the organization.
+
+An organization is a complex network of highly interactive entities. When one of these entities is changed in some way (removed, etc.), the effect this will have on the whole system is difficult to predict/understand. The more we understand about the effects of these changes, the better position we are in to make the kinds of changes that benefit the organization, maximizing its functioning.
+
+\subsection{Tasks where visualization will help}
+
+Understanding organizational change is a large problem.  This project will focus specifically on the stories that become present through a visualization and not how the underlaying data is optimized or valued.
+
+Visualization will specifically address how the user understands the results of an organizational change.
+
+\begin{enumerate}
+\item What relationships are affected and how can that impact the flow of information in the process;
+\item Which positions would be candidates to take on additional workload during the transition or on a more permanent basis;
+\item What is the value of an employee to the organization; and
+\item Other stories as they appear.
+\end{enumerate}
+
+\subsection{Design approach}
+
+This project will focus on an iterative design process using the following steps:
+
+\begin{enumerate}
+\item Select and refine source data;
+\item Create 3 visualizations to address the organizational change problem;
+\item Run a focus group to gather feedback;
+\item Refine the visualizations to 2 options;
+\item Run a focus group to gather feedback; and
+\item Create final visualization incorporating all the feedback.
+\end{enumerate}
+
+
+\printbibliography
+
+\end{document}
