@@ -72,7 +72,7 @@ The addition of motion to a visualization has become commonplace and expected by
 
 
 
-Visual formalisms yet to discuss: Provide Overview, Adjust, Detect Pattern, Match Mental Model\cite{yi2007toward}.
+Visual formalisms yet to discuss: Provide Overview, Adjust, Detect Pattern, Match Mental Model\cite{yi2007toward}. Add social network analysis.
 
 
 
@@ -101,63 +101,18 @@ Visualization will specifically address how the user understands the results of 
 \end{enumerate}
 
 \subsection{Design approach}
-The task of helping a user make decisions regarding organizational structure and change is complex.  A well thought out visualization is key to aiding a user with their decision-making process.  This includes presenting the user with both an egocentric and sociocentric view of the change.  Our visualization will support this by providing three concurrent views that allow the user to navigate organizational change and support the tasks identified in the previous section.  To ensure we select the best visualization for the tasks we have selected an agile development methodology as follows:
+
+This project will focus on an iterative design process using the following steps:
+
 \begin{enumerate}
-\item Select and augment base data;
-\item Create a skeleton visualization for feedback;
-\item Obtain informal feedback from users;
-\item Refine and complete the visualization trying to accommodate feedback from the users;
-\item Obtain informal feedback from users on the final draft;
-\item Create the final visualization.
+\item Select and refine source data;
+\item Create 3 visualizations to address the organizational change problem;
+\item Run a focus group to gather feedback;
+\item Refine the visualizations to 2 options;
+\item Run a focus group to gather feedback; and
+\item Create final visualization incorporating all the feedback.
 \end{enumerate}
 
-By following an agile development methodology, it will provide us with a challenge function to ensure we are meeting the two goals of a visualization which are: communicating information to users and discovery of new knowledge from the visualization. 
-
-The visualization will have 4 distinct panels for the user to interact with.  They are number in figure 1 and named:
-\begin{enumerate}
-\item Menu;
-\item Global Navigation;
-\item Information Flow; and
-\item Supply.
-\end{enumerate}
-
-The menu section is generic and allows the user to do configuration associated with the application.  This includes specifying the data set, exporting results, and providing context about which perspective the user is viewing the data from.  This section is supplemental to the visualization.
-
-The global navigation section is key for the user to search and find the data they are looking for.  Organizational structures present certain challenges to visualization as Herman points highlights the “size of the graph to view is a key issue in graph visualization”\cite{herman2000graph}.  To aid the user with this problem our organizational chart will include a pan and zoom function which allows the user to geometrically zoom and pan the layout.  The layout will be further simplified by collapsing nodes and clustering data points together to reduce the number of nodes on the screen at once.  The global navigation view is primarily used for filtering and navigation.  The panel will have the ability to expand and collapse as the user focuses on other tasks and explores the data results.
-
-To support exploratory browsing\cite{ahlberg1994visual} additional filter criteria will be available to the user when the global navigation panel is expanded to full size.  Shneiderman best described filters as rapid, incremental and reversible changes to query patterns\cite{ahlberg1994visual}.  Our visualization will allow the user to filter based on number of emails and name.  These filters will instantly be seen on the visualization with the opacity change for each node.  Nodes that meet criteria will be displayed at full capacity and those which do not meet criteria will be displayed at reduced opacity.  This will allow the user to maintain full context while searching.
-
-When a user hovers over a node it will display links between people in the organization which have relationships through email.  Since this is a separate category of links from the traditional organizational chart relationship it will be presented in a different color as Ware emphasizes that color is “excellent for labeling and categorization”\cite{ware2012information}.
-
-The visualization will contain many salient\cite{ware2012information} ques for the user to determine what is the currently selected person and the history of how the user navigated the data.  This includes using a separate color to show the currently selected node on the global navigation and supply panels.  Additionally, links within the global navigation panel will appear in different color to denote how the user has been exploring the data.  To further enhance the user experience the menu bar will include forward and backward buttons to enable quicker exploration of the data.
-
-Each panel allows the user to interact with the visualization in a variety of ways.  The main focus of the global navigation panel is allowing the user to “drill down and find more data about anything that seems important”\cite{ware2012information}.  When the user selects a node in the global navigation panel it will reorient the information flow and supply panel to the egocentric perspective of the person node selected on the global navigation view.
-
-A tree map was chosen to depict the users flow of information on the information flow panel.  This allows the data to use a space filling approach as described by Shneiderman in 1992\cite{shneiderman1992tree}.  This proportional approach allows the visualization to scale with a large organization where a person could interact with 100+ people to accomplish their job.  However, people in an organization typically interact with a smaller subset more frequently.  This will be visually salient\cite{ware2012information} on the tree map with the most important relationships appearing as the largest rectangles.  Color will also be used to emphasize\cite{ware2012information} which department the people are from in the tree map to help provide an additional sociocentric perspective of which department would have the most challenges if the person was no longer with the organization.  Tool tips will provide additional on demand details\cite{anafigueiras}.  This will include full email, department, and could contain any other information the user is interested in.
-
-After the user has refined the visualization to the person they are interested in and explored / understands how information flows between the person and the rest of the organization they can start to make decisions around what to do during a transition or longer period.  This is supported in the visualization through the supply panel.  In a typical organization the supply for these periods would most likely come from the persons own group.  The bar chart was chosen to represent this as a quick way to compare the relative workload of everyone in the group.  Color is used again to denote the currently selected person.  The user also has the option to navigate to the perspective of another person by clicking on their bar in the chart.
-
-The goal of our visualization is best described by Yi, Kang, Stasko, and Jacko: “harnessing human’s remarkable visual perception capabilities to help identify trends, patterns, and unusual occurrences in datasets”\cite{yi2007toward}.  In our specific context this is supporting the user’s decision-making process about organizational change.  We are confident our design meets this objective by using all the relevant elements discussed in class.
-
-\subsection{Development Technology}
-MySQL, PHP and D3 will be used to implement our visualization.  These technologies were chosen based on their popularity for visualization development.
-
-MySQL will be used to store and access data for the visualization.  A database was required due to the volume of data and requirement to access the data in subsets based on user interaction with the visualization.  The Carnegie Mellon Enron email dataset\cite{cmuenron} will be used as the base data for the visualization.  This dataset will require pre-processing as it contains the full emails of 148 users.  This requires Python and Perl to extract the required information and transform it for ingest into MySQL.  The data will further be augmented with additional attributes that are generated for illustrative purposes to support the visualization.  Additional data processing will be limited since the class is focused on visualization of data and not data modeling.  Additionally, the value model chosen will be limited to number of emails sent and not a more elaborate model requiring additional data sets and data manipulation. 
-
-PHP is required to translate the data from a relational database model into JSON.  JSON is the primary input format used by the D3 JavaScript library.  The D3 visualization library was chosen for many reasons.  It is a robust library offering many different visualization options along with rich documentation for implementing it.  It was originally released in 2011 and has become a stable library.
-
-Eric has a moderate understanding of D3 and increasing his knowledge of MySQL and PHP.  Rob has used MySQL, Perl, Python and PHP extensively in the past and increasing his knowledge of D3 rapidly.
-
-\subsection{Project Plan}
-\begin{enumerate}
-\item 26 Oct 2018 - Submission of Project Proposal
-\item 4 Nov 2018 - Complete Preliminary Visualization
-\item 11 Nov 2018 - Complete Review of Visualization
-\item 18 Nov 2018 - Complete Refinements Based on Visualization Review
-\item 25 Nov 2018 - Complete 2nd Review of Visualization
-\item 30 Nov 2018 - Complete Refinements and Presentation
-\item 14 Dec 2018 - Submit Final Paper
-\end{enumerate}
 
 \printbibliography
 
