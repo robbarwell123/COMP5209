@@ -51,6 +51,47 @@
       \field{pages}{313\bibrangedash 317}
       \range{pages}{5}
     \endentry
+    \entry{bastian2009gephi}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=f9fab3924b8ea32748aeedb59e2b3b58}{%
+           family={Bastian},
+           familyi={B\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8c2f33265854ee844e14d715f00e7dd5}{%
+           family={Heymann},
+           familyi={H\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1d8d87da63f7c5df6ac60ebe226f1ce0}{%
+           family={Jacomy},
+           familyi={J\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {San Jose, California}%
+      }
+      \strng{namehash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \strng{fullhash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \strng{bibnamehash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \strng{authorbibnamehash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \strng{authornamehash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \strng{authorfullhash}{59a9520f86a0ff5fe2eeb7f44d90b57f}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Icwsm}
+      \field{number}{2009}
+      \field{title}{Gephi: an open source software for exploring and manipulating networks.}
+      \field{volume}{8}
+      \field{year}{2009}
+      \field{pages}{361\bibrangedash 362}
+      \range{pages}{2}
+    \endentry
     \entry{becker1987brushing}{article}{}
       \name{author}{2}{}{%
         {{hash=d5da270ab3e5b72a570ad70ea50ee719}{%
@@ -157,6 +198,59 @@
       \field{pages}{140\bibrangedash 147}
       \range{pages}{8}
     \endentry
+    \entry{frantz2005treemaps}{article}{}
+      \name{author}{2}{}{%
+        {{hash=35acaeccbc537fd7ebe7a4e6d1d9ed37}{%
+           family={Frantz},
+           familyi={F\bibinitperiod},
+           given={Terrill},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4f8c10be73e0b94b29dee4ccbc5dd3e7}{%
+           family={Carley},
+           familyi={C\bibinitperiod},
+           given={Kathleen},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \strng{fullhash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \strng{bibnamehash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \strng{authorbibnamehash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \strng{authornamehash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \strng{authorfullhash}{ed0e0bc4f2b1b239fa5d0283f5fd4bad}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Treemaps as a tool for social network analysis}
+      \field{year}{2005}
+    \endentry
+    \entry{freeman2012social}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=7e3733b255a835ba5125d8512cbe4424}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={Linton\bibnamedelima C},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7e3733b255a835ba5125d8512cbe4424}
+      \strng{fullhash}{7e3733b255a835ba5125d8512cbe4424}
+      \strng{bibnamehash}{7e3733b255a835ba5125d8512cbe4424}
+      \strng{authorbibnamehash}{7e3733b255a835ba5125d8512cbe4424}
+      \strng{authornamehash}{7e3733b255a835ba5125d8512cbe4424}
+      \strng{authorfullhash}{7e3733b255a835ba5125d8512cbe4424}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computational Complexity}
+      \field{title}{Social network visualization, Methods of}
+      \field{year}{2012}
+      \field{pages}{2981\bibrangedash 2998}
+      \range{pages}{18}
+    \endentry
     \entry{friedman2014workers}{article}{}
       \name{author}{1}{}{%
         {{hash=2cafc1df40b1bbd4a498ad25f3a6eecc}{%
@@ -216,6 +310,40 @@
       \field{year}{2006}
       \field{pages}{89\bibrangedash 106}
       \range{pages}{18}
+    \endentry
+    \entry{hansen2010analyzing}{book}{}
+      \name{author}{3}{}{%
+        {{hash=ba1bcc4416c7a6f9eb094c53adaddeba}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Derek\bibnamedelima L},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=39afccc0f55ae7821df79ffd677c90b0}{%
+           family={Shneiderman},
+           familyi={S\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=50fd60644f60dd7f0577a391c6eed1d0}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Marc\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{051becd5291cb6e805f68898b222434b}
+      \strng{fullhash}{051becd5291cb6e805f68898b222434b}
+      \strng{bibnamehash}{051becd5291cb6e805f68898b222434b}
+      \strng{authorbibnamehash}{051becd5291cb6e805f68898b222434b}
+      \strng{authornamehash}{051becd5291cb6e805f68898b222434b}
+      \strng{authorfullhash}{051becd5291cb6e805f68898b222434b}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analyzing social media networks with NodeXL: Insights from a connected world}
+      \field{year}{2010}
     \endentry
     \entry{herman2000graph}{article}{}
       \name{author}{3}{}{%
@@ -321,6 +449,68 @@
       \field{year}{2003}
       \field{pages}{1\bibrangedash 4}
       \range{pages}{4}
+    \endentry
+    \entry{sathiyanarayanan2015visualizing}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c94f276736e30deaebcfaadcaa655c0f}{%
+           family={Sathiyanarayanan},
+           familyi={S\bibinitperiod},
+           given={Mithileysh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c6913db785935cae112b13e3df36f965}{%
+           family={Burlutskiy},
+           familyi={B\bibinitperiod},
+           given={Nikolay},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \strng{fullhash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \strng{bibnamehash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \strng{authorbibnamehash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \strng{authornamehash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \strng{authorfullhash}{ef741cc04710ea616d5b53b6a167c6c1}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{title}{Visualizing social networks using a treemap overlaid with a graph}
+      \field{volume}{58}
+      \field{year}{2015}
+      \field{pages}{113\bibrangedash 120}
+      \range{pages}{8}
+    \endentry
+    \entry{scott1988social}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e46b1f3c7bf03629ea0aefe16a966b33}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {British Sociological Association Publications Limited}%
+      }
+      \strng{namehash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \strng{fullhash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \strng{bibnamehash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \strng{authorbibnamehash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \strng{authornamehash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \strng{authorfullhash}{e46b1f3c7bf03629ea0aefe16a966b33}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sociology}
+      \field{number}{1}
+      \field{title}{Social network analysis}
+      \field{volume}{22}
+      \field{year}{1988}
+      \field{pages}{109\bibrangedash 127}
+      \range{pages}{19}
     \endentry
     \entry{shneiderman1992tree}{article}{}
       \name{author}{1}{}{%
