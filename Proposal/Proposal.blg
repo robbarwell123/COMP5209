@@ -1,18 +1,17 @@
-[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
-[0] Config.pm:357> INFO - Logfile is 'Proposal.blg'
-[44] biber:303> INFO - === Sun Oct 21, 2018, 17:44:31
-[63] Biber.pm:360> INFO - Reading 'Proposal.bcf'
-[173] Biber.pm:836> INFO - Found 13 citekeys in bib section 0
-[194] Biber.pm:3671> INFO - Processing section 0
-[212] Biber.pm:3841> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
-[214] bibtex.pm:1424> INFO - Decoding LaTeX character macros into UTF-8
-[219] bibtex.pm:1281> INFO - Found BibTeX data source 'Bibliography.bib'
-[254] Utils.pm:164> WARN - ISBN '0020-7373' in entry 'staggersmodel' is invalid - run biber with '--validate_datamodel' for details.
-[297] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[297] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[297] Biber.pm:3500> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
-[297] Biber.pm:3506> INFO - No sort tailoring available for locale 'en-US'
-[315] bbl.pm:608> INFO - Writing 'Proposal.bbl' with encoding 'ascii'
-[319] Utils.pm:164> WARN - The entry 'herman2000graph' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[321] bbl.pm:712> INFO - Output to Proposal.bbl
-[321] Biber.pm:110> INFO - WARNINGS: 2
+[0] Config.pm:302> INFO - This is Biber 2.11
+[1] Config.pm:305> INFO - Logfile is 'Proposal.blg'
+[100] biber-MSWIN32:313> INFO - === 
+[203] Biber.pm:371> INFO - Reading 'Proposal.bcf'
+[379] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
+[403] Biber.pm:3976> INFO - Processing section 0
+[444] Biber.pm:4136> INFO - Looking for bibtex format file 'Bibliography.bib' for section 0
+[450] bibtex.pm:1500> INFO - LaTeX decoding ...
+[502] bibtex.pm:1316> INFO - Found BibTeX data source 'Bibliography.bib'
+[637] Utils.pm:193> WARN - ISBN '0020-7373' in entry 'staggersmodel' is invalid - run biber with '--validate_datamodel' for details.
+[799] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[799] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[799] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[799] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[881] bbl.pm:617> INFO - Writing 'Proposal.bbl' with encoding 'UTF-8'
+[896] bbl.pm:720> INFO - Output to Proposal.bbl
+[904] Biber.pm:110> INFO - WARNINGS: 1
