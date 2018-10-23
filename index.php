@@ -10,10 +10,12 @@
 	<BODY>
 		<DIV id='TOPBAR'>
 			<UL class='main_nav'>
-				<LI class="main_nav"><A href="default.asp">Home</A></LI>
-				<LI class="main_nav"><A href="">Option 1</A></LI>
-				<LI class="main_nav"><A href="">Option 2</A></LI>
-				<LI class="main_nav"><A href="">Option 3</A></LI>
+				<LI class="main_nav"><A href="default.asp">Menu</A></LI>
+			</UL>
+			<UL class='history_nav'>
+				<LI class="history_nav"><A href="default.asp">></A></LI>
+				<LI class="history_nav"><A><SELECT name="history"><OPTION>shapiro</OPTION></SELECT></A></LI>
+				<LI class="history_nav"><A href="default.asp"><</A></LI>
 			</UL>
 		</DIV>
 		<DIV id='MAIN'>
@@ -39,6 +41,7 @@
 				<SCRIPT src="js/DrawUserPeers.js"></SCRIPT>
 			</DIV>
 			<DIV id='CONTENT'>
+				<DIV id='PERS_HEADER'>Selected Person: shapiro</DIV>
 				<SCRIPT src="js/DrawUserLinks.js"></SCRIPT>
 			</DIV>
 		</DIV>

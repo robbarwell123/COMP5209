@@ -40,7 +40,7 @@ function DrawUserLinksChart()
 					.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
 					.attr("height", iBarHeight)
 					.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); })
-					.attr("fill", 'blue');
+					.attr("fill", function(myNode) {if(myNode.iUserID==4){return 'red'}else{return 'blue'}} );
 
 			iYOffset=-iBarHeight/4;
 					

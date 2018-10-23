@@ -29,7 +29,6 @@ UL.main_nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
 }
 
@@ -49,6 +48,32 @@ LI.main_nav A {
 LI.main_nav A:hover {
     background-color: #111;
 }
+
+UL.history_nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+LI.history_nav {
+    float: right;
+}
+
+LI.history_nav A {
+    display: block;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+LI.history_nav A:hover {
+    background-color: #111;
+}
+
 
 #MAIN {
 	margin: 0px;
@@ -147,4 +172,10 @@ LI.main_nav A:hover {
 
 #GlobalFilterButton {
 	transition: 1s;
+}
+
+#PERS_HEADER {
+	text-align: center;
+	font-weight: bold;
+	font-size: 2em;
 }
