@@ -105,7 +105,7 @@ The task of helping a user make decisions regarding organizational structure and
 
 By following an agile development methodology, it will provide us with a challenge function to ensure we are meeting the two goals of a visualization which are: communicating information to users and discovery of new knowledge from the visualization. 
 
-The visualization will have 4 distinct panels for the user to interact with, each allowing the user to interact with the visualization in a different way. They are:
+The visualization will have four distinct panels, each allowing the user to interact with the visualization in a different way. Figure \ref{fig:allpanels} shows a screenshot of the interface with the four panels labelled. They are:
 \begin{enumerate}
 \item Menu
 \item Global Navigation
@@ -113,21 +113,36 @@ The visualization will have 4 distinct panels for the user to interact with, eac
 \item Supply
 \end{enumerate}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{pics/whole_app_numbers.jpg}
+  \caption[All panels]{Four panels: 1. Menu; 2. Global navigation; 3. Information flow; 4. Supply}
+  \label{fig:allpanels}
+\end{figure}
+
 \subsubsection{Menu panel}
 
 The \emph{menu panel} is a generic menu, and allows the user to do configure the application such as specifying the data set, exporting results, and providing context about which perspective the user is viewing the data from. This section is supplemental to the visualization. The menu bar will include forward and backward buttons to enable quick and reversible exploration of the data.
 
 \subsubsection{Global navigation panel}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{pics/expanded_app.jpg}
+  \caption{Global navigation panel, expanded}
+  \label{fig:global}
+\end{figure}
+
+
 The \emph{global navigation panel} presents a tree graph linking people together in an organizational hierarchy. When the user selects a node in the global navigation panel it will reorient the information flow and supply panel to the egocentric perspective of the person node selected on the global navigation view. This panel allows users to “drill down and find more data about anything that seems important”\cite{ware2012information}.
 
-Organizational structures are typically quite large, so we must afford the ability to keep the size of the visualization manageable---a classic problem in tree graphs\cite{herman2000graph}.  To aid the user with this problem, users will be able to pan and zoom the organizational chart to hone in on areas of particular interest. We will also cluster data together, and nodes in the tree will be collapsible and expandable. The panel will be expandable and collapsible on demand.
+Organizational structures are typically quite large, so we must afford the ability to keep the size of the visualization manageable---a classic problem in tree graphs\cite{herman2000graph}.  To aid the user with this problem, users will be able to pan and zoom the organizational chart to hone in on areas of particular interest. Figure \ref{fig:global} shows We will also cluster data together, and nodes in the tree will be collapsible and expandable. The panel will also be expandable and collapsible on demand.
 
-Further support for the problems associated with displaying large amounts of data will be provided in the form of filter criteria. Shneiderman best described filters as rapid, incremental and reversible changes to query patterns\cite{ahlberg1994visual}. Our visualization will allow the user to filter based on two criteria: number of emails and name. The results of the filter will be applied instantly, where nodes not matching the filtering criteria will be de-emphasized by a reduction in opacity. We chose to de-emphasize nodes instead of removing them entirely to preserve context. 
+Further support for the problems associated with displaying large amounts of data will be provided in the form of filter criteria.  Our visualization will allow the user to filter based on two criteria: number of emails and name. The results of the filter will be applied instantly, where nodes not matching the filtering criteria will be de-emphasized by a reduction in opacity. We chose to de-emphasize nodes instead of removing them entirely to preserve context. Consistent with Shneiderman's rules for filters, our filters will be rapid, incremental and reversible changes to query patterns\cite{ahlberg1994visual}.
 
 When a user hovers over a node in the organization chart it will display links between people in the organization who have formed relationships through email. The relationship uncovered by analysis of email communication is of a different type than the relationship expressed in an org-chart. Colour is “excellent for labeling and categorization”\cite{ware2012information}, so we communicate to the user that the two relationships are different by colouring the links differently in each case.
 
-We use the colour to saliently cue\cite{ware2012information} information in the global navigation panel in at least two other ways: We mark the currently selected node/person by presenting it in a different colour from non-selected nodes, and we show the user's historical path through the data by colouring the travelled-to links in the global navigation panel.
+We use the colour to saliently cue\cite{ware2012information} information in the global navigation panel in at least two other ways: by colouring the selected node differently from the non-selected nodes, and by using colour to trace the user's path through the nodes in the global navigation panel. 
 
 \subsubsection{Information flow panel}
 
