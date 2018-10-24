@@ -44,30 +44,37 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Proposal.bcf</file>
+      <file>Proposal.aux</file>
+      <file>Proposal-blx.bib</file>
     </provides>
     <requires type="dynamic">
       <file>Proposal.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
+      <file>ACM-Reference-Format.dbx</file>
       <file>blx-compat.def</file>
+      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>numeric.bbx</file>
+      <file>trad-standard.bbx</file>
+      <file>trad-plain.bbx</file>
+      <file>ACM-Reference-Format.bbx</file>
       <file>numeric.cbx</file>
+      <file>ACM-Reference-Format.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>biber</generic>
+    <generic>bibtex</generic>
     <cmdline>
-      <binary>biber</binary>
+      <binary>bibtex</binary>
+      <option>-min-crossrefs 2</option>
       <infile>Proposal</infile>
     </cmdline>
     <input>
-      <file>Proposal.bcf</file>
+      <file>Proposal.aux</file>
     </input>
     <output>
       <file>Proposal.bbl</file>
@@ -76,10 +83,14 @@
       <file>Proposal.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Proposal.bcf</file>
+      <file>Proposal.aux</file>
+      <file>Proposal-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>Bibliography.bib</file>
+    </requires>
+    <requires type="static">
+      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

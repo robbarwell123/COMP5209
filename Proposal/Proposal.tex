@@ -1,52 +1,41 @@
-\documentclass{soups}
+\documentclass[12pt,letterpaper]{article}
 
-\usepackage[backend=biber]{biblatex} %for bibliography
+\usepackage[margin=1.9cm]{geometry}%rounded up from 1.87, just to be safe...
+
+\usepackage[backend=bibtex,style=ACM-Reference-Format]{biblatex} %for bibliography
 \addbibresource{Bibliography.bib} %specify location of .bib (bibtex) file
+
 \usepackage{url} %for using urls in bibliography entries
 \usepackage{graphicx} %for figures
-
-\pdfpagewidth=8.5truein
-\pdfpageheight=11truein
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
 
 \usepackage{enumitem}
-
+\usepackage{parskip}
 \usepackage{pdfpages}
 \usepackage{url}
-\usepackage{tikz}
-\usetikzlibrary{shapes, arrows}
 \usepackage{times}
-\usepackage{balance}
-\renewcommand{\topfraction}{0.99} % be more aggressive about text around floats
-\renewcommand{\floatpagefraction}{0.99}
-\pagestyle{plain} % page numbers
-
 
 \title{Visualizing the Impact of Organizational Change}
-\subtitle{Project proposal}
 
-\numberofauthors{2}
 
 \author{
-\alignauthor
-Rob Barwell\\ %\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Carleton University}\\
-       \affaddr{Ottawa, Canada}\\
-       \email{rob@barwell.ca}
-% 2nd. author
-\alignauthor
+  Rob Barwell\\ %\titlenote{Dr.~Trovato insisted his name be first.}\\
+  \small \vspace{-.15cm}Carleton University\\
+  \small Ottawa, Canada\\
+  \small \texttt{rob@barwell.ca}
+       \and
 Eric Spero\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
-       \affaddr{Carleton University}\\
-       \affaddr{Ottawa, Canada }\\
-       \email{eric.spero@carleton.ca}
+       \small \vspace{-.15cm}Carleton University\\
+       \small Ottawa, Canada\\
+       \small \texttt{eric.spero@carleton.ca}
 }
 
 \begin{document}
 
-\nobalance
 
-\makeatletter
-\def\@copyrightspace{\relax}
-\makeatother
+\rhead{Rob Barwell\\Eric Spero}
 
 \maketitle
 
@@ -62,15 +51,19 @@ An organization is a social network\cite{scott1988social} of individuals engaged
 
 We aim to address this problem through \emph{information visualization}. Visualizations support thought by reducing the gap between the data, and the users' \emph{mental model} of the data\cite{yi2007toward}. A mental model is an internal representation of how something in the world works\cite{staggersmodel,norman2014some}. Wherever there is distance between the presentation of the data and our understanding of the data, mental work must be done so that understanding is possible. This type of mental work does not bring us closer to solving domain goals, but rather is a sort of unfortunate precursor for the really important work, and therefore should be avoided wherever possible\cite{paas2003cognitive}. Fortunately, the physical environment can be used to store information, which allows us to \lq off-load\rq{} mental work onto the environment\cite{wilson2002six}. Visualizations are essentially one way of effectively leveraging this property of the environment to aid thought.
 
-Visualizing organization change has many challenges. Some of these challenges are: how to represent a large organizational structure; how to provide focus on specific organizational change, without losing context of the organization; and how to allow the user to navigate the space.  A novel visualization can help in many areas with this problem.
+Visualizing organization change has many challenges. Some of these challenges are: how to represent a large organizational structure; how to provide focus on micro-level organizational changes without losing context of the organization; and how to allow the user to navigate the large information space. As with all graphs, a robust layout algorithm must be selected to ensure nodes and edges can be easily differentiated\cite{herman2000graph}.
 
-Visualization has been used to help analyze social networks since at least the 1930s\cite{freeman2012social}. Social networks are commonly depicted by point-and-line graphs such as directed graphs\cite{freeman2012social} (e.g. \cite{bastian2009gephi,hansen2010analyzing}). Another method of visualizing social networks is with tree-maps\cite{shneiderman1992tree, ,sathiyanarayanan2015visualizing,frantz2005treemaps}.  Using a tree-map emphasizes the proportional representation of node attributes such as size\cite{shneiderman1992tree}, whereas a directed graph emphasizes the relationships.  Organizational change requires an understanding of both relationships between positions and output of a specific position such as how many people they supervise.  Representing nodes (people) within a visualization requires specific thought on how they are represented.  One way to represent multiple attributes of a node is using glyphs\cite[chapter 5]{ware2012information}.  Graph and glyphs can be used together to understanding both relationships between positions and specific information about a position.  Another critical factor for visualizing relationships is the layout of an organizational structure.  This requires a robust layout algorithm to ensure nodes and edges can be easily differentiated\cite{herman2000graph}.  
+Visualizations have been employed to help analyze social networks since the 1930s\cite{freeman2012social}. Social networks are commonly depicted by point-and-line graphs such as directed graphs\cite{freeman2012social} (e.g. \cite{bastian2009gephi,hansen2010analyzing}), and also with tree-maps\cite{shneiderman1992tree, ,sathiyanarayanan2015visualizing,frantz2005treemaps}.  Using a tree-map emphasizes the proportional representation of node attributes such as size\cite{shneiderman1992tree}, whereas a directed graph emphasizes the relationships between nodes.  Understanding the effects of organizational change requires an understanding of both relationships between individuals, and the productive output a specific individual, such as how many people they supervise. In the terminology of the domain of social network analysis\cite{chung2005exploring}, a visualization solution to the problem of understanding organizational change will require both \emph{egocentric} and \emph{sociocentric} representations of social networks. An egocentric social network is a network centered around a single individual, whereas a sociocentric network focuses on the larger social system that embeds individuals.
 
-The focus+context problem is well known in information visualization.  Ware\cite{ware2012information} presents many options for helping the user focus on specific information.  These include form, colour, motion, and spatial position, with the strongest effects being colour, orientation, size, contrast, and motion\cite[chapter 5]{ware2012information}.  An organizational chart will require the correct use of these options to not overwhelm the user.  The focus+context problem can also be addressed through clustering.  The advantage of clustering is allowing the user to focus on a given change by reducing the number of visible elements\cite{herman2000graph}.  Clustering an organizational chart into departments allows the user to easily focus on relationships between groups and not get lost in the details.  This concept can be expanded further to include dynamic filtering to remove data points which are not relevant to the user.  When employing filters, they should be tightly coupled and dynamic which allows rapid, incremental and reversible changes to query parameters\cite{ahlberg1994visual}.
+Individuals in an organization has multiple attributes which must be considered by the user. One way to represent multiple attributes of a node is using glyphs\cite[chapter 5]{ware2012information}.  Graph and glyphs can be used together so the visualization represents both relationships between positions, and the productive output of a position.
 
-The addition of motion to a visualization has become commonplace and expected by most users.  This aids the user in easily navigating the data to obtain the information they are seeking.  An example of motion would be zoom and pan.  Zooming can be further divided into geometric zooming and semantic zooming.  Geometric zooming simply provides a blow up of the graph content, where semantic zooming changes the content of an area to include more detail\cite{herman2000graph}.  Zoom and pan would be a preferred method compared to other options such as fisheye distortion, since users are more familiar with it.  Semantic zooming complements clustering by grouping data points into departments and allowing the user to zoom in and see details if desired.  Motion in 2D is easy for the user to understand, however presents challenges with occlusion in 3D.  3D visualizations were introduced with the hope that the extra dimension would provide additional space to display larger structures\cite{herman2000graph}.  Given the complexities associated with occlusions in 3D, a 2D approach would be preferable for organizational charts.  A novel 2D representation was presented by Becker and Cleveland called brushing scatterplots where each dimension was broken down in its own axis and plotted together on one graph\cite{becker1987brushing}.  The user could then navigate the scatter plot and have changes / selections within one box represented on the other boxes.  This concept would help when including multiple views within the same visualization by allowing the user to select a data point in one visualization and the focus changing in another visualization.
+The \lq focus+context\rq{} problem is well known in information visualization.  Ware\cite{ware2012information} presents many options for helping the user focus on specific information.  These include form, colour, motion, and spatial position, with the strongest effects being colour, orientation, size, contrast, and motion\cite[chapter 5]{ware2012information}.  An organizational chart will require the correct use of these options to not overwhelm the user.  The focus+context problem can also be addressed through clustering.  The advantage of clustering is allowing the user to focus on a given change by reducing the number of visible elements\cite{herman2000graph}.  Clustering an organizational chart into departments allows the user to easily focus on relationships between groups and not get lost in the details.  This concept can be expanded further to include dynamic filtering to remove data points which are not relevant to the user.  When employing filters, they should be tightly coupled and dynamic which allows rapid, incremental and reversible changes to query parameters\cite{ahlberg1994visual}.
 
-Visual formalisms yet to discuss: Provide Overview, Adjust, Detect Pattern, Match Mental Model\cite{yi2007toward}.
+The addition of motion to a visualization for navigational purposes is a common strategy for making the visualization of large amounts of data manageable. Zoom and pan is one particularly successful strategy. Zooming can be further divided into geometric zooming and semantic zooming.  Geometric zooming simply provides a blow up of the graph content, where semantic zooming changes the content of an area to include more detail\cite{herman2000graph}. Zoom and pan would be a preferred method compared to other options such as fisheye distortion, since users are more familiar with it. Semantic zooming complements clustering by grouping data points into departments and allowing the user to zoom in and see details if desired.
+
+Most visualizations are in 2D. 3D visualizations were introduced with the hope that the extra dimension would provide additional space to display larger structures\cite{herman2000graph}. However, 3D visualizations introduce an occlusion problem, where nodes can become \lq hidden\rq{} behind other nodes, which harms the aesthetics and usability of the visualization\cite{herman2000graph}. Given this disadvantage, a 2D approach would be preferable for visualizing social networks in an organizations.
+
+The use of multiple views in the user interface has been used to give the user multiple simultaneous vantage points of a dataset. In Becker and Cleveland's \emph{brushing scatterplots}\cite{becker1987brushing}, for example, each dimension was broken down in its own axis and plotted together on one graph.  The user could then navigate the scatter plot and have changes/selections within one box represented on the other boxes.  This concept would help when including multiple views within the same visualization by allowing the user to select a data point in one visualization and the focus changing in another visualization.
 
 \section{Detailed Description}
 
@@ -83,13 +76,13 @@ An organization is a complex network of individuals engaged in interlocking cont
 Managers require many tools to help better understand change within their organization.  This requires looking at the problem from multiple perspectives prior to enacting any change to ensure it does not have unintended consequences.  Prior to presenting a visualization to the user the system would pre-process data and add additional information such as a value model.  The pre-processing tasks are beyond the scope of this project and we will focus only on tasks where visualization can help.
 
 \begin{description}
-\item [Process analysis] Organizations are built upon many inter-relating processes.  Within these processes relationships between people are key.  These relationships enable large processes to be accomplished by splitting them into smaller tasks which are manageable by a single person.  However, when a person is removed from the process it could cause the process to break.  This would require the manager to find a solution to continue the process.  The employees attached to a given process is typically tracked through documentation, but in practice this documentation is often lacking and out of date, in part due to the high turnover rate.  A novel visualization such as the one we propose could help identify the inter-connecting relationships from a given person within an organization to determine which processes might fail if they were removed.
+\item [Process analysis] Organizations are built upon many inter-relating processes.  Within these processes relationships between people are key.  These relationships enable large processes to be accomplished by splitting them into smaller tasks which are manageable by a single person.  However, when a person is removed from the process it could cause the process to break.  This would require the manager to find a solution to continue the process.  The employees attached to a given process are typically tracked through documentation, but in practice this documentation is often lacking and out of date, in part due to the high turnover rate.  A novel visualization such as the one we propose could help identify the inter-connecting relationships from a given person within an organization to determine which processes might fail if they were removed.
   
 \item [Allocation of human resources] After identifying the inter-connecting relationships from a given person in the organization, a manager can look at options to fill the gaps that remain.  Typically, this includes re-distributing the workload over the remaining individuals within a section of the organization.  Therefore, the visualization would need to include a method to show options for people to fill the gaps that were identified when the person was removed from the organization.
   
-\item[Value provided to organization] The previous two tasks focus on the role a single individual has on a process---i.e. from an egocentric viewpoint. This viewpoint is helpful in determining what gaps need to be filled when a particular individual is removed from a process. However, such a viewpoint is not well-suited for communicating the value an individual has to the organization. In cases like this, a more holistic (or sociocentric) visualization could be helpful to managers as well. 
+\item[Assessing value to organization] The previous two tasks focus on the role a single individual has on a process---i.e. from an egocentric viewpoint. This viewpoint is helpful in determining what gaps need to be filled when a particular individual is removed from a process. However, such a viewpoint is not well-suited for communicating the value an individual has to the organization. In cases like this, a more holistic (or sociocentric) visualization could be helpful to managers as well. 
   
-\item [Miscellaneous/Future Work]Our group discussed other tasks that would be helped by visualizations, however we decided to focus on the three listed above.  Future papers could cover additional stories such as redundancy identification by identifying people who have similar overlaps in relationships and interactions.  Additional research could be done in defining value models for employees to organizations and how to visually present the worth of an employee to help with retention options.  We also expect during our development to identify new use cases for our visualization.  
+\item [Miscellaneous / potential future work]Our group discussed other tasks that would be helped by visualizations, however we decided to focus on the three listed above.  Future papers could cover additional stories such as redundancy identification by identifying people who have similar overlaps in relationships and interactions.  Additional research could be done in defining value models for employees to organizations and how to visually present the worth of an employee to help with retention options.  We also expect during our development to identify new use cases for our visualization.  
 \end{description}
 
 \subsection{Design approach}
@@ -124,44 +117,48 @@ The visualization will have four distinct panels, each allowing the user to inte
 
 \subsubsection{Menu panel}
 
-The \emph{menu panel} is a generic menu, and allows the user to do configure the application such as specifying the data set, exporting results, and providing context about which perspective the user is viewing the data from. This section is supplemental to the visualization. The menu bar will include forward and backward buttons to enable quick and reversible exploration of the data.
+The \emph{menu panel} is a generic menu, and allows the user to configure the application such as specifying the data set, exporting results, and providing context about which perspective the user is viewing the data from. This section is supplemental to the visualization.  
+
+The right section of the menu bar will be dedicated to providing the user with a capability to quickly reverse their navigation path.  This ability is key to enabling the user’s seamless exploration of the data set.  The user will navigate the dataset by selecting a person in the organization to change the perspective of the visualization to.  This change in perspective will add the current person to a dropdown list in the menu bar.  This list will contain the last 25 people the user has selected.  The forward and backward buttons beside the list will allow the user to quickly navigate to previous steps in the users’ discovery process.  The user will also have the option to select a person from the drop down, which will quickly re-orient the visualization perspective to the person selected from the drop down by the user.
 
 \subsubsection{Global navigation panel}
 
+
+
+
+The \emph{global navigation panel} presents a tree graph linking people together in an organizational hierarchy. When the user selects a node in the global navigation panel it will reorient the information flow and supply panel to the egocentric perspective of the person node selected on the global navigation view. This panel allows users to “drill down and find more data about anything that seems important”\cite{ware2012information}.
 \begin{figure}
   \centering
   \includegraphics[width=\columnwidth]{pics/expanded_app.jpg}
   \caption{Global navigation panel, expanded}
   \label{fig:global}
 \end{figure}
+Organizational structures are typically quite large, so we must keep the size of the visualization manageable---a classic problem in tree graphs\cite{herman2000graph}.  To aid the user with this problem, users will be able to pan and zoom the organizational chart to hone in on areas of particular interest as shown in Figure \ref{fig:global}.  Additionally, we will cluster data together, and nodes in the tree will be collapsible and expandable. Only the first three levels of the organization chart will be displayed when it is initially rendered.  Nodes will remain in the expanded or collapsed state unless the user explicitly changes it.  Collapsed nodes in the global navigation panel communicate limited information to the user.  To provide additional information each node will be proportionally scaled based on the sum of all emails generated by the node and its children.  This will provide additional information such as the relative comparison between the value of one organizational unit versus another.  The global navigation panel will also be expandable and collapsible on demand.  This allows the user to quickly switch tasks between navigating and discovering people and analyzing and evaluating the results without losing valuable screen real estate to either process.
 
+Further support for the problems associated with displaying large amounts of data will be provided in the form of filter criteria.  Our visualization will allow the user to filter based on two criteria: number of emails and name. A more fulsome real world data set would contain all the attributes associated with a node which are stored in the central address book of an email system.  The results of the filter will be applied instantly, where nodes not matching the filtering criteria will be de-emphasized by a reduction in opacity. We chose to de-emphasize nodes instead of removing them entirely to preserve context. Consistent with Shneiderman's rules for filters, our filters will be rapid, incremental and reversible changes to query patterns\cite{ahlberg1994visual}.
 
-The \emph{global navigation panel} presents a tree graph linking people together in an organizational hierarchy. When the user selects a node in the global navigation panel it will reorient the information flow and supply panel to the egocentric perspective of the person node selected on the global navigation view. This panel allows users to “drill down and find more data about anything that seems important”\cite{ware2012information}.
+When a user hovers over a node in the organization chart it will display links between people in the organization who have formed relationships through email. The relationships uncovered by analysis of email communication is of a different type than the relationships expressed in an organizational chart. Colour is “excellent for labeling and categorization”\cite{ware2012information}, so we communicate to the user that the two relationships are different by colouring the links differently in each case.
 
-Organizational structures are typically quite large, so we must afford the ability to keep the size of the visualization manageable---a classic problem in tree graphs\cite{herman2000graph}.  To aid the user with this problem, users will be able to pan and zoom the organizational chart to hone in on areas of particular interest. Figure \ref{fig:global} shows We will also cluster data together, and nodes in the tree will be collapsible and expandable. The panel will also be expandable and collapsible on demand.
-
-Further support for the problems associated with displaying large amounts of data will be provided in the form of filter criteria.  Our visualization will allow the user to filter based on two criteria: number of emails and name. The results of the filter will be applied instantly, where nodes not matching the filtering criteria will be de-emphasized by a reduction in opacity. We chose to de-emphasize nodes instead of removing them entirely to preserve context. Consistent with Shneiderman's rules for filters, our filters will be rapid, incremental and reversible changes to query patterns\cite{ahlberg1994visual}.
-
-When a user hovers over a node in the organization chart it will display links between people in the organization who have formed relationships through email. The relationship uncovered by analysis of email communication is of a different type than the relationship expressed in an org-chart. Colour is “excellent for labeling and categorization”\cite{ware2012information}, so we communicate to the user that the two relationships are different by colouring the links differently in each case.
-
-We use the colour to saliently cue\cite{ware2012information} information in the global navigation panel in at least two other ways: by colouring the selected node differently from the non-selected nodes, and by using colour to trace the user's path through the nodes in the global navigation panel. 
+We use colour to saliently cue\cite{ware2012information} information in the global navigation panel in at least two other ways: by colouring the selected node differently from the non-selected nodes, and by using colour to trace the user's path through the nodes in the global navigation panel. 
 
 \subsubsection{Information flow panel}
 
-The \emph{information flow panel} contains a treemap of individuals with whom the selected person has a relationship. We chose a tree map to depict the relationships between employees for two reasons. First, its proportional nature allows the visualization to scale from a very small organization, to a very large organization where a person could interact with 100+ people on a regular basis. Second, it communicates the strength of relationship in a salient manner through the size of the rectangles.
+The \emph{information flow panel} contains a treemap of individuals with whom the selected person has a relationship. We chose a tree map to depict the relationships between employees for two reasons. First, its proportional nature allows the visualization to scale from a very small organization, to a very large organization where a person could interact with 100+ people on a regular basis. Second, it communicates the strength of relationship in a salient manner through the size of the rectangles.  The treemap will also be interactive and allow the user to drill down into each department they interact with to refocus the visualization on a subset of the relationships.  This will highlight to the user people with smaller relationships that may be obscured on the higher level treemap.
 
-We will use colour to group together individuals from the same department to help users easily understand which departments would be most affected if that person was no longer with the organization.  Additional details on demand\cite{anafigueiras} such as email address and department name will be provided through tool tips.  will provide additional details on demand. 
+We will use colour to group together individuals from the same department to help users easily understand which departments would be most affected if that person was no longer with the organization.  Additional details on people\cite{anafigueiras} such as email address and department name will be provided through tool tips. 
+
+An alternative use of color for the treemap was discussed within our group to depict hierarchy instead of department.  This would highlight those relationships which the organization considers more important vs which department the person interacts with.  Both these pieces of information are important to a manager when they are going through their decision making process.  This alternative view could be implemented using a drop down to allow the user to switch between views, or we could pick whichever is more salient through development and trials.
 
 \subsubsection{Supply panel}
 
-After the user has refined the visualization to the person they are interested in and explored / understands how information flows between the person and the rest of the organization, they can begin the managerial decision-making process. The \emph{supply panel} presents all the users in the selected user's group. We present the people in the selected user's group because replacements for a given employee will typically come from the same department of that employee. Each user is presented as a bar in a bar chart, where the height of the bar is determined by the total number of emails sent by that user (which is an indication of their relative workload). Again, we use colour to denote the selected person.  By clicking on the bar chart, the user navigates to that user, and the other panels update accordingly.
+After the user has refined the visualization to the person they are interested in and explored / understands how information flows between the person and the rest of the organization, they can begin the managerial decision-making process. The \emph{supply panel} presents all the users in the selected user's group. We present the people in the selected user's group because replacements for a given employee will typically come from the same department of that employee. Each user is presented as a bar in a bar chart, where the height of the bar is determined by the total number of emails sent by that user (which is an indication of their relative workload). Since a large number of people might be in a given department the bar chart will center on the selected person with the ability to scroll up and down to see everyone.  Again, we use colour to denote the selected person.  By clicking on the bar chart, the user navigates to that user, and the other panels update accordingly.
 
 The goal of our visualization is best described by Yi, Kang, Stasko, and Jacko: “harnessing human’s remarkable visual perception capabilities to help identify trends, patterns, and unusual occurrences in datasets”\cite{yi2007toward}.  In our specific context this is supporting the user’s decision-making process about organizational change.  We are confident our design meets this objective by using all the relevant elements discussed in class.
 
 \subsection{Development Technology}
 Our visualization could be implemented using any number of technologies, however we have chosen a JavaScript based stack.  This choice allows the visualization to be cross platform and take advantage of client-side computer resources such as a GPU.  A server will be required to transform the stored data into a form that is digestible by front end libraries.
 
-Our final visualization will require the use of MySQL, PHP, D3, Perl, and Python.
+Our final visualization will require the use of: MySQL, PHP, D3, Perl, and Python.
 
 Pre-processing of project data is required prior to ingest and storage in a database.  The Carnegie Mellon Enron email dataset\cite{cmuenron} contains the email boxes of 148 users.  This real-world data set will be the basis for our project to demonstrate the power of our visualization.  During the pre-processing phase Python and Perl are required for parsing the raw email format and extracting the SMTP header information we require for our project.  The SMTP header information will be augmented with additional attributes that are required to illustrate the various features of our visualization.  The processed data will be stored in a MySQL database.  A database was required due to the volume of data and a requirement to access the data in subsets based on user interaction with the visualization.  Additional data preprocessing will be limited since the class is focused on visualization of data and not data modeling.  The value model chosen will be limited to number of emails sent and not a more elaborate model requiring additional data sets and data manipulation.   
 
@@ -182,6 +179,9 @@ Eric has a moderate understanding of D3 and increasing his knowledge of MySQL an
 \item [14 Dec 2018] Submit Final Paper
 \end{description}
 
+Two main work tasks have been completed.  The data has been pre-processed to ensure we had all the required elements for our visualization.  And a skeleton of the visualization has been implemented to verify the D3 library would meet our requirements.  This will serve as a basis for the continued development of our visualization.
+
+During the development of the project proposal Eric focused on preparing the written document and Rob focused on the technological prototype.  Overall it was a collaborative effort between the team with each member reviewing and contributing to all the work.  For example the skeleton visualization has been through a couple iterations based on feedback and refinements by Eric.  Conversely Rob has reviewed and contributed to sections of the project proposal such as design and development technologies.
 
 \printbibliography
 
