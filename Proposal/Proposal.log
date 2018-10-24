@@ -1,12 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.16)  24 OCT 2018 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  24 OCT 2018 16:19
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input Proposal.tex
-(./Proposal.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**Proposal.tex
+(./Proposal.tex
+LaTeX2e <2018-04-01> patch level 5
+(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+(c:/texlive/2018/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -21,21 +22,21 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count88
@@ -51,21 +52,21 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -73,35 +74,39 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count91
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count92
 
-(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+(c:/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
 \integerpart=\count93
 \decimalpart=\count94
@@ -162,7 +167,7 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -260,13 +265,13 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load BibTeX backend compatibility...
 Package biblatex Info: ... file 'blx-bibtex.def' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/blx-bibtex.def
 File: blx-bibtex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 
 
@@ -276,7 +281,7 @@ Package biblatex Warning: Using fall-back BibTeX(8) backend:
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+ (c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 \c@textcitecount=\count274
 \c@textcitetotal=\count275
@@ -295,17 +300,17 @@ File: ACM-Reference-Format.bbx 2017-09-27 v0.1 biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'trad-plain'...
 Package biblatex Info: ... file 'trad-plain.bbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex-trad/trad-plain.bbx
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex-trad/trad-plain.bbx
 File: trad-plain.bbx 2018/02/17 v0.4a biblatex-trad plain bibliography style
 Package biblatex Info: Trying to load bibliography style 'trad-standard'...
 Package biblatex Info: ... file 'trad-standard.bbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex-trad/trad-standard.bbx
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex-trad/trad-standard.bbx
 File: trad-standard.bbx 2018/02/17 v0.4a biblatex-trad base bibliography style
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count281
 \c@bbx:relatedtotal=\count282
@@ -318,7 +323,7 @@ File: ACM-Reference-Format.cbx 2017-09-27 v0.1
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -335,30 +340,30 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+(c:/texlive/2018/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip65
@@ -371,7 +376,7 @@ s
 \f@nch@O@olf=\skip72
 \f@nch@O@orf=\skip73
 )
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+(c:/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip74
 \enit@outerparindent=\dimen113
@@ -379,13 +384,13 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box26
 \enitdp@description=\count283
 )
-(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+(c:/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2018-08-24 v2.0a non-zero parskip adjustments
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(c:/texlive/2018/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
 
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+(c:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count284
 \calc@Bcount=\count285
@@ -398,16 +403,16 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count286
 \calc@Cskip=\skip77
 )
-(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(c:/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -424,7 +429,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \AM@pagewidth=\dimen116
 \AM@pageheight=\dimen117
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+(c:/texlive/2018/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box27
@@ -433,19 +438,18 @@ File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count287
 \AM@templatesizebox=\box28
 )
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+(c:/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 \@quotelevel=\count288
 \@quotereset=\count289
-
-(./Proposal.aux)
+ (./Proposal.aux)
 \openout1 = `Proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -461,7 +465,7 @@ LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -512,7 +516,7 @@ Package biblatex Info: ... file 'Proposal.bbl' found.
 Package biblatex Info: Reference section=0 on input line 40.
 Package biblatex Info: Reference segment=0 on input line 40.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count290
 \scratchdimen=\dimen118
@@ -525,13 +529,13 @@ Package biblatex Info: Reference segment=0 on input line 40.
 \MPnumerator=\count294
 \makeMPintoPDFobject=\count295
 \everyMPtoPDFconversion=\toks20
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -541,16 +545,16 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box30
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
@@ -561,14 +565,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 45.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.03389pt.
@@ -654,19 +658,18 @@ Package logreq Info: Writing requests to 'Proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10595 strings out of 494584
- 183159 string characters out of 6177773
+ 10598 strings out of 494585
+ 182766 string characters out of 6177924
  450950 words of memory out of 5000000
- 14088 multiletter control sequences out of 15000+600000
+ 14090 multiletter control sequences out of 15000+600000
  21728 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,11n,45p,1363b,1313s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on Proposal.pdf (9 pages, 179650 bytes).
+ 44i,11n,45p,1356b,1313s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Proposal.pdf (9 pages, 179813 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
