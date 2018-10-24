@@ -68,6 +68,8 @@ Most visualizations are in 2D. 3D visualizations were introduced with the hope t
 
 The use of multiple views in the user interface has been used to give the user multiple simultaneous vantage points of a dataset. In Becker and Cleveland's \emph{brushing scatterplots}\cite{becker1987brushing}, for example, each dimension was broken down in its own axis and plotted together on one graph.  The user could then navigate the scatter plot and have changes/selections within one box represented on the other boxes.  This concept would help when including multiple views within the same visualization by allowing the user to select a data point in one visualization and the focus changing in another visualization.
 
+The goal of our visualization, is best described by Yi, Kang, Stasko, and Jacko: ``harnessing human’s remarkable visual perception capabilities to help identify trends, patterns, and unusual occurrences in datasets''\cite{yi2007toward}.  In our specific context this is supporting the user’s decision-making process about organizational change. 
+
 \section{Detailed Description}
 
 \subsection{Domain}
@@ -155,8 +157,6 @@ An alternative use of color for the treemap was discussed within our group to de
 \subsubsection{Supply panel}
 
 After the user has refined the visualization to the person they are interested in and explored / understands how information flows between the person and the rest of the organization, they can begin the managerial decision-making process. The \emph{supply panel} presents all the users in the selected user's group. We present the people in the selected user's group because replacements for a given employee will typically come from the same department of that employee. Each user is presented as a bar in a bar chart, where the height of the bar is determined by the total number of emails sent by that user (which is an indication of their relative workload). Since a large number of people might be in a given department the bar chart will center on the selected person with the ability to scroll up and down to see everyone.  Again, we use colour to denote the selected person.  By clicking on the bar chart, the user navigates to that user, and the other panels update accordingly.
-
-The goal of our visualization is best described by Yi, Kang, Stasko, and Jacko: “harnessing human’s remarkable visual perception capabilities to help identify trends, patterns, and unusual occurrences in datasets”\cite{yi2007toward}.  In our specific context this is supporting the user’s decision-making process about organizational change.  We are confident our design meets this objective by using all the relevant elements discussed in class.
 
 \subsection{Development Technology}
 Our visualization could be implemented using any number of technologies, however we have chosen a JavaScript based stack.  This choice allows the visualization to be cross platform and take advantage of client-side computer resources such as a GPU.  A server will be required to transform the stored data into a form that is digestible by front end libraries.
