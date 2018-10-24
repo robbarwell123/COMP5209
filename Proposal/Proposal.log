@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.16)  24 OCT 2018 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.10.16)  24 OCT 2018 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,19 +448,19 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./Proposal.aux)
 \openout1 = `Proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -509,8 +509,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Proposal.bbl' found.
 (./Proposal.bbl)
-Package biblatex Info: Reference section=0 on input line 35.
-Package biblatex Info: Reference segment=0 on input line 35.
+Package biblatex Info: Reference section=0 on input line 38.
+Package biblatex Info: Reference segment=0 on input line 38.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -556,16 +556,16 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 40.
+(Font)              <14.4> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 40.
+(Font)              <7> on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
@@ -577,9 +577,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -591,12 +591,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 <pics/whole_app_numbers.jpg, id=16, 766.36313pt x 391.4625pt>
 File: pics/whole_app_numbers.jpg Graphic file (type jpg)
 <use pics/whole_app_numbers.jpg>
-Package pdftex.def Info: pics/whole_app_numbers.jpg  used on input line 113.
+Package pdftex.def Info: pics/whole_app_numbers.jpg  used on input line 116.
 (pdftex.def)             Requested size: 506.17488pt x 258.55717pt.
 <pics/expanded_app.jpg, id=17, 1204.5pt x 676.77844pt>
 File: pics/expanded_app.jpg Graphic file (type jpg)
 <use pics/expanded_app.jpg>
-Package pdftex.def Info: pics/expanded_app.jpg  used on input line 132.
+Package pdftex.def Info: pics/expanded_app.jpg  used on input line 135.
 (pdftex.def)             Requested size: 506.17488pt x 284.41023pt.
 
 
@@ -635,11 +635,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 186.
+(Font)              <12> on input line 189.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 186.
+(Font)              <8> on input line 189.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 186.
+(Font)              <6> on input line 189.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -653,22 +653,22 @@ Package logreq Info: Writing requests to 'Proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10598 strings out of 494584
- 183188 string characters out of 6177773
- 451938 words of memory out of 5000000
- 14089 multiletter control sequences out of 15000+600000
- 23370 words of font info for 49 fonts, out of 8000000 for 9000
+ 10595 strings out of 494584
+ 183159 string characters out of 6177773
+ 451935 words of memory out of 5000000
+ 14088 multiletter control sequences out of 15000+600000
+ 21728 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,11n,45p,1363b,1313s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Proposal.pdf (9 pages, 191414 bytes).
+/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on Proposal.pdf (9 pages, 179692 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
