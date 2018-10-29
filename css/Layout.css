@@ -1,0 +1,73 @@
+:root {
+	--iMargin: 5px;
+	--iPadding: 5px;
+	--iBorder: 2px;
+	--clrPanel: #D3D3D3;
+	--clrNavButton: #333;	
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+.GridContainer {
+	display: grid;
+	grid-template-areas: "GridNavBar GridNavBar" "GridGlobal GridLinks" "GridStats GridLinks";
+	grid-template-rows: auto 1fr 1fr;
+	grid-template-columns: 30% 70%;
+	width: 100%;
+	height: 100%;
+}
+
+.GridNavBar {
+	grid-area: GridNavBar;
+}
+
+.GridGlobal {
+	grid-area: GridGlobal;
+}
+
+.GridStats {
+	grid-area: GridStats;
+}
+
+.GridLinks {
+	grid-area: GridLinks;
+}
+
+.Panel {
+	margin: var(--iMargin);
+	padding: var(--iPadding);
+	background: white;
+	border-radius: 10px;
+	border: var(--iBorder) solid var(--clrPanel);
+}
+
+#idNavBar {
+	margin: 0px;
+	padding: 0px;
+	background: var(--clrNavButton);
+}
+
+
+#idStats {
+	display: block;
+	float: left;
+	position: absolute;
+}
+
+#idGlobal {
+	display: block;
+	float: left;
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+
+#idLinks {
+	display: block;
+	float: left;
+	position: absolute;
+}

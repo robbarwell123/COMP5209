@@ -52,12 +52,7 @@
 	$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iManager=?");
 	$myPrep->bind_param("i",$iLevel);
 		
-	$oUser=new User();
-	$oUser->sEmail="Example Company";
-	$oUser->iUserID=-1;
-	$oUser->sLastname="Example Company";
-	$oUser->children=fBuildNode(0,$myPrep);
-	echo json_encode($oUser);
+	echo json_encode(fBuildNode(0,$myPrep)[0]);
 
 	$myPrep->close();
 	$myConnection->close();

@@ -1,4 +1,4 @@
-function DrawUserLinksChart()
+function DrawUserPeersChart()
 {
 	var iWidth=900;
 	var iHeight=500;
@@ -93,5 +93,3 @@ function DrawUserLinksChart()
 
 	return Render;
 }
-
-var myUserLinks = DrawUserLinksChart().data("GetUserPeers.php?iUserID=").nodeid(4).width(document.getElementById('STATS').offsetWidth).height(document.getElementById('STATS').offsetHeight).canvas("#STATS").draw();

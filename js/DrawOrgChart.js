@@ -95,5 +95,3 @@ function fNodeClick(oData)
 	console.log("GetUserEdges.php?iUserID="+oData.data.iUserID);
 	$("#CONTENT").load("GetUserEdges.php?iUserID="+oData.data.iUserID);
 }
-
-var myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#GLOBAL_CONTENT").draw();

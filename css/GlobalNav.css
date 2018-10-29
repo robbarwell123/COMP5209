@@ -1,0 +1,53 @@
+.OrgChartLinks {
+	fill: none;
+	stroke: #CCC;
+	stroke-width: 2px;	
+}
+
+.LeftAlign {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+
+.RightAlign {
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+.GlobalFilter {
+	float: left;
+    width: 0px; 
+    position: absolute;
+    z-index: 200;
+    top: 24px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 10px;
+    transition: 0.5s;	
+}
+
+.GlobalFilter a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.GlobalFilter a:hover {
+    color: #f1f1f1;
+}
+
+.GlobalFilter .GlobalFilterClosed {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 18px;
+}
+
+#GlobalFilterButton {
+	transition: 1s;

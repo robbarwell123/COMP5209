@@ -96,5 +96,3 @@ function DrawUserLinksChart()
 
 	return Render;
 }
-
-var myUserLinks = DrawUserLinksChart().data("GetUserLinks.php?iUserID=").nodeid(4).width(document.getElementById('CONTENT').offsetWidth-20).height(document.getElementById('CONTENT').offsetHeight-10).canvas("#CONTENT").draw();
