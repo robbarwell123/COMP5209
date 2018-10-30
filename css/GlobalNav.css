@@ -1,7 +1,23 @@
+:root {
+	--clrNode: #D3D3D3;
+}
+
 .OrgChartLinks {
 	fill: none;
-	stroke: #CCC;
+	stroke: var(--clrNode);
 	stroke-width: 2px;	
+}
+
+.OrgChartNode circle{
+	fill: white;
+	stroke: var(--clrNode);
+	stroke-width: 3px;
+}
+
+.OrgChartNodeSelected circle{
+	fill: red;
+	stroke: var(--clrNode);
+	stroke-width: 3px;
 }
 
 .LeftAlign {

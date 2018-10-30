@@ -34,7 +34,7 @@
 				<DIV id="idGlobal" class="Panel">
 					<DIV id='idGlobalNav'>
 						<DIV class="LeftAlign">
-							<IMG src="img/filter.svg" id='idGlobalFilterButton' width="16" height="16" onClick="DisplayFilter(2)" style="visibility: hidden">
+							<IMG src="img/filter.svg" id='idGlobalFilterButton' width="16" height="16" onClick="DisplayFilter()" style="visibility: hidden">
 							<DIV id="idGlobalFilter" class="GlobalFilter">
 							  <a href="javascript:void(0)" class="GlobalFilterClosed" onclick="DisplayFilter(1)">X</a>
 							  <a href="#">Filter1</a>
@@ -43,7 +43,7 @@
 							  <a href="#">Filter4</a>
 							</DIV>
 						</DIV>
-						<DIV class="RightAlign"><IMG src="img/expand.svg" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv(2)"></DIV>
+						<DIV class="RightAlign"><IMG src="img/expand.svg" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv()"></DIV>
 					</DIV>
 					<DIV id="idGlobalContent">
 					</DIV>

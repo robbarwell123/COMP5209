@@ -1,7 +1,7 @@
 function DrawOrgChart()
 {
 	var iWidth=2000;
-	var iHeight=2000;
+	var iHeight=1000;
 	var sJSONLoc="";
 	var sContentLoc="";
 	var sID="idMyOrgChart";
@@ -37,13 +37,15 @@ function DrawOrgChart()
 				.data(myRoot.descendants()).enter()
 				.append("g")
 					.attr("class", "OrgChartNode")
+					.attr("id", function(myNodes){ return "ORG_NODE_"+myNodes.data.iUserID; })
 					.attr("transform", function(myNodes){ return "translate(" + myNodes.x + "," + myNodes.y + ")"; })
-					.on("click",fNodeClick);
+					.on("click",fGlobalNodeClick);
 					
 			myNodes.append("circle")
 				.attr("r", 5)
-				.attr("fill", "steelblue")
+				.attr("id", function(myNodes){ return myNodes.data.iUserID; })
 			myNodes.append("text")
+				.attr("id", function(myNodes){ return myNodes.data.iUserID; })
 				.text(function(myNodes){ return myNodes.data.sLastname; });
 
 
@@ -88,10 +90,4 @@ function DrawOrgChart()
 	};
 	
 	return Render;
-}
-
-function fNodeClick(oData)
-{
-	console.log("GetUserEdges.php?iUserID="+oData.data.iUserID);
-	$("#CONTENT").load("GetUserEdges.php?iUserID="+oData.data.iUserID);
 }
