@@ -30,6 +30,4 @@ function fStartup()
 
 	var divGlobal=window.getComputedStyle(document.getElementById("idGlobalContent"), null);
 	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();		
-
-	fRefocusNode(iCurrNode);
 }

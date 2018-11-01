@@ -6,10 +6,12 @@
 		public $sEmail;
 		public $sLastname;
 		public $iUserID;
+		public $iLevel;
+		public $iMySize;
 		public $children;
 	}
 	
-	function fBuildNode($iNodeID, $myPrepStatement)
+	function fBuildNode($iNodeID, $myPrepStatement, $iCurrLevel)
 	{
 		$GLOBALS['iLevel']=$iNodeID;
 		$myPrepStatement->execute();
@@ -26,7 +28,9 @@
 				$oUser->iUserID=$myRow["iUserID"];
 				$oUser->sEmail=$myRow["sUser"];
 				$oUser->sLastname=$myRow["sLastname"];
-				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement);
+				$oUser->iLevel=$iCurrLevel;
+				$oUser->iMySize=$myRow["iEmailCount"];
+				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement,$iCurrLevel+1);
 				array_push($arrChildren,$oUser);
 			}
 		}else
@@ -52,7 +56,7 @@
 	$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iManager=?");
 	$myPrep->bind_param("i",$iLevel);
 		
-	echo json_encode(fBuildNode(0,$myPrep)[0]);
+	echo json_encode(fBuildNode(0,$myPrep,1)[0]);
 
 	$myPrep->close();
 	$myConnection->close();

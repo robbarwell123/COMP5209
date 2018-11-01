@@ -14,8 +14,12 @@
 	stroke-width: 3px;
 }
 
+.OrgChartNode text{
+	font: 12px sans-serif;
+}
+
 .OrgChartNodeSelected circle{
-	fill: red;
+	fill: #FBB4AE;
 	stroke: var(--clrNode);
 	stroke-width: 3px;
 }

@@ -41,7 +41,7 @@ function DrawUserPeersChart()
 						.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
 						.attr("height", iBarHeight)
 						.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); })
-						.attr("fill", function(myNode) {if(myNode.iUserID==iNodeID){return 'red'}else{return 'blue'}} );
+						.attr("fill", function(myNode) {if(myNode.iUserID==iNodeID){return '#FBB4AE'}else{return '#B3CDE3'}} );
 
 				iYOffset=-iBarHeight/4;
 						

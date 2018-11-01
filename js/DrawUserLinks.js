@@ -19,8 +19,7 @@ function DrawUserLinksChart()
 			.attr("width", iWidth)
 			.attr("height", iHeight)
 			.attr("id",sID)
-			.append("g")
-				.attr("transform", "translate(10, 10)");
+			.append("g");
 
 		var myTreemap = d3.treemap()
 			.tile(d3.treemapResquarify)

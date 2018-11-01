@@ -4,20 +4,30 @@ var bFilterOpen=false;
 var iCurrNode=1;
 var myOrgChart;
 
-function fGlobalNodeClick(oData)
+function fGlobalNodeClick(oNode)
 {
 	if(bGlobalOpen)
 	{
 		MinMaxGlobalDiv();
 	}
-	fRefocusNode(oData.data.iUserID);
+	if(oNode.children)
+	{
+		oNode._children=oNode.children;
+		oNode.children=null;
+	}else
+	{
+		oNode.children=oNode._children;
+		oNode._children=null;
+	}
+	fUpdateTree(oNode);
+	fRefocusNode(oNode.data.iUserID);
 }
 
 function fRefocusNode(iNode)
 {
-	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNode");
+//	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNode");
 	iCurrNode=iNode;
-	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNodeSelected");
+//	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNodeSelected");
 
 	d3.select("#idMyUserLinksChart").remove();
 	var divContent=window.getComputedStyle(document.getElementById("idLinks"), null);
@@ -28,6 +38,20 @@ function fRefocusNode(iNode)
 	var divStats=window.getComputedStyle(document.getElementById("idStats"), null);
 	var myUserPeers = DrawUserPeersChart().data("GetUserPeers.php?iUserID=").nodeid(iCurrNode).width(parseFloat(divStats.getPropertyValue("width"))).height(parseFloat(divStats.getPropertyValue("height"))).canvas("#idStats").draw();
 
+//	oCurrNode=d3.select("#ORG_NODE_"+iCurrNode).datum();
+//console.log(oCurrNode.x+":"+oCurrNode.y);
+	
+	var myZoom =d3.zoom();
+		
+/*
+      t = d3.zoomTransform(oCurrNode);
+      x = -oCurrNode.y;
+      y = -oCurrNode.x;
+      x = x * t.k + 400 / 2;
+      y = y * t.k + 400 / 2;
+*/
+//      d3.select("#idMyOrgChart").transition()
+ //       .call( myZoom.transform, d3.zoomIdentity.translate(-400,-400).scale(1) );
 }
 
 function MinMaxGlobalDiv()
