@@ -25,8 +25,7 @@ function DrawOrgChart()
 			.attr("height", iHeight)
 			.attr("id",sID)
 			.call(fOrgZoomHandler);
-//			.append("g");		
-		
+
 		gOrgChart=d3Canvas.append("g");
 		
 		d3OrgChart = d3.tree().size([iWidth,iHeight]);	
@@ -35,6 +34,8 @@ function DrawOrgChart()
 			myRoot=d3.hierarchy(data);
 			myRoot.x0=0;
 			myRoot.y0=iWidth/2;
+			
+			oCurrNode=myRoot;
 
 			myRoot.sum(function(myNode){return 1;});
 			myRoot.children.forEach(fUpdateNode);

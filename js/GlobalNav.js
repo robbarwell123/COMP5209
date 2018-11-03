@@ -2,10 +2,14 @@ var bGlobalOpen=false;
 var bFilterOpen=false;
 
 var iCurrNode=1;
+var oCurrNode;
 var myOrgChart;
+
+var panelUserLinks;
 
 function fGlobalNodeClick(oNode)
 {
+	oCurrNode=oNode;
 	if(bGlobalOpen)
 	{
 		MinMaxGlobalDiv();
@@ -40,10 +44,8 @@ function fRefocusNode(iNode)
 		.attr("r", 7);
 
 
-	d3.select("#idMyUserLinksChart").remove();
-	var divContent=window.getComputedStyle(document.getElementById("idLinks"), null);
-	var myUserLinks = DrawUserLinksChart().data("GetUserLinks.php?iUserID=").nodeid(iCurrNode).width(parseFloat(divContent.getPropertyValue("width"))).height(parseFloat(divContent.getPropertyValue("height"))).canvas("#idLinks").draw();
-
+	panelUserLinks = panelUserLinks!=null ? panelUserLinks.remove() : null;
+	panelUserLinks = DrawUserLinksChart().data("GetUserLinks.php?iUserID=").nodeid(iCurrNode).size().canvas("#idLinks").newTreemap();
 
 	d3.select("#idMyUserPeersChart").remove();
 	var divStats=window.getComputedStyle(document.getElementById("idStats"), null);

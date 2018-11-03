@@ -5,16 +5,19 @@
 		<LINK rel="stylesheet" type="text/css" href="css/Layout.css">
 		<LINK rel="stylesheet" type="text/css" href="css/Nav.css">
 		<LINK rel="stylesheet" type="text/css" href="css/GlobalNav.css">
+		<LINK rel="stylesheet" type="text/css" href="css/UserLinks.css">
 
 		<SCRIPT src="https://d3js.org/d3.v5.min.js" charset="utf-8"></SCRIPT>
 		<SCRIPT src="https://code.jquery.com/jquery-3.3.1.min.js"></SCRIPT>
 
 		<SCRIPT src="js/DrawOrgChart.js"></SCRIPT>
+		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
+
 		<SCRIPT src="js/DrawUserPeers.js"></SCRIPT>
+
 		<SCRIPT src="js/DrawUserLinks.js"></SCRIPT>
 
 		<SCRIPT src="js/Layout.js"></SCRIPT>
-		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
 	</HEAD>
 	<BODY>
 		<DIV class="GridContainer">
@@ -56,6 +59,7 @@
 			</DIV>
 			<DIV id="idGridLinks" class="GridLinks">
 				<DIV id="idLinks" class="Panel">
+				<DIV id="idLinksHeader">Loading ...</DIV>
 				</DIV>
 			</DIV>
 		</DIV>

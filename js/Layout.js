@@ -10,6 +10,8 @@ function fResize()
 
 	document.getElementById('idLinks').style.height=document.getElementById('idGridLinks').clientHeight-iPadding;
 	document.getElementById('idLinks').style.width=document.getElementById('idGridLinks').clientWidth-iPadding;
+	panelUserLinks = panelUserLinks!=null ? panelUserLinks.size().update() : null;
+	
 	document.getElementById('idStats').style.height=document.getElementById('idGridStats').clientHeight-iPadding;
 	document.getElementById('idStats').style.width=document.getElementById('idGridStats').clientWidth-iPadding;
 
