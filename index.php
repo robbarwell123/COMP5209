@@ -38,12 +38,14 @@
 					<DIV id='idGlobalNav'>
 						<DIV class="LeftAlign">
 							<IMG src="img/filter.svg" id='idGlobalFilterButton' width="16" height="16" onClick="DisplayFilter()" style="visibility: hidden">
-							<DIV id="idGlobalFilter" class="GlobalFilter">
-							  <a href="javascript:void(0)" class="GlobalFilterClosed" onclick="DisplayFilter(1)">X</a>
-							  <a href="#">Filter1</a>
-							  <a href="#">Filter2</a>
-							  <a href="#">Filter3</a>
-							  <a href="#">Filter4</a>
+							<DIV id="idGlobalFilter" class="GlobalFilter Panel" style="visibility: hidden">
+								<DIV class="LeftAlign"><STRONG>Filters</STRONG></DIV>
+								<DIV class="RightAlign"><IMG src="img/close.svg" width="16" height="16" onClick="DisplayFilter(1)"></DIV>
+
+								<DIV id="idGlobalFilters">
+									Emails (<SPAN id="idEmailFilterTitle">0</SPAN>)<BR>
+									<INPUT type="range" min="0" max="10000" value="100" class="slider" id="idEmailFilter" onChange="doFilter()">
+								</DIV>
 							</DIV>
 							<IMG src="img/center.svg" id='idCenterButton' width="16" height="16" onClick="fCenterSelectedNode()">
 						</DIV>

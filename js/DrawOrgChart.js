@@ -28,7 +28,8 @@ function DrawOrgChart()
 
 		gOrgChart=d3Canvas.append("g");
 		
-		d3OrgChart = d3.tree().size([iWidth,iHeight]);	
+		d3OrgChart = d3.tree()
+			.size([iWidth,iHeight]);	
 			
 		d3.json(sJSONLoc).then(function(data) {
 			myRoot=d3.hierarchy(data);

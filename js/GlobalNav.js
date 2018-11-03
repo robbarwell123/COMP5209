@@ -38,10 +38,9 @@ function fRefocusNode(iNode)
 	var oSelectedNode=d3.selectAll(".OrgChartNode")
 		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
 
-	oSelectedNode.append("g")
-		.append("circle")
+	oSelectedNode.append("circle")
 		.attr("class","SelectedNode")
-		.attr("r", 7);
+		.attr("r", 11);
 
 
 	panelUserLinks = panelUserLinks!=null ? panelUserLinks.remove() : null;
@@ -99,14 +98,31 @@ function DisplayFilter()
 {
 	if(bFilterOpen)
 	{
-		document.getElementById("idGlobalFilter").style.width="0px";	
+		document.getElementById("idGlobalFilter").style.visibility="hidden";	
 		
 		document.getElementById("idGlobalFilterButton").setAttribute("onClick", "DisplayFilter(2)");
 	}else if(!bFilterOpen)
 	{
-		document.getElementById("idGlobalFilter").style.width="200px";	
+		document.getElementById("idGlobalFilter").style.visibility="visible";	
   
 		document.getElementById("idGlobalFilterButton").setAttribute("onClick", "DisplayFilter(1)");
 	}	
 	bFilterOpen=!bFilterOpen;
+}
+
+function doFilter()
+{	
+	var iEmailFilterVal=document.getElementById("idEmailFilter").value;
+
+	document.getElementById("idEmailFilterTitle").innerHTML=iEmailFilterVal;
+
+	d3.selectAll(".FilterMatchNode").remove();
+	
+	var oSelectedNode=d3.selectAll(".OrgChartNode")
+	.filter(function(myNode){return myNode.data.iMySize>=iEmailFilterVal});
+
+	oSelectedNode.append("g")
+		.append("circle")
+		.attr("class","FilterMatchNode")
+		.attr("r", 8);
 }

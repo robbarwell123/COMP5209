@@ -37,4 +37,8 @@ function fStartup()
 	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
 	
 	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();		
+		
+	//TO REMOVE!!!
+//	MinMaxGlobalDiv();
+//	DisplayFilter();
 }

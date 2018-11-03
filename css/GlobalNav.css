@@ -1,7 +1,8 @@
 :root {
 	--clrNode: #D3D3D3;
-	--clrSelectedNode: #FF0000;
+	--clrSelectedNode: #FBB4AE;
 	--clrNodeChildren: #42F486;
+	--clrFilteredNode: #CC00FF;
 }
 
 .OrgChartLinks {
@@ -16,14 +17,20 @@
 	stroke-width: 3px;
 }
 
-.OrgChartNode text{
-	font: 12px sans-serif;
-}
-
 .OrgChartNode .SelectedNode{
 	fill: none;
-	stroke: red;
+	stroke: var(--clrSelectedNode);
 	stroke-width: 3px;
+}
+
+.OrgChartNode .FilterMatchNode{
+	fill: none;
+	stroke: var(--clrFilteredNode);
+	stroke-width: 3px;
+}
+
+.OrgChartNode text{
+	font: 12px sans-serif;
 }
 
 .LeftAlign {
@@ -40,36 +47,17 @@
 
 .GlobalFilter {
 	float: left;
-    width: 0px; 
     position: absolute;
     z-index: 200;
-    top: 24px;
-    left: 0;
-    background-color: #111;
+    background-color: white;
     overflow-x: hidden;
-    padding-top: 10px;
-    transition: 0.5s;	
+	font: 12px sans-serif;
 }
 
-.GlobalFilter a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.GlobalFilter a:hover {
-    color: #f1f1f1;
-}
-
-.GlobalFilter .GlobalFilterClosed {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 18px;
+#idGlobalFilters {
+	padding: 20px 0 0 0;
 }
 
 #GlobalFilterButton {
 	transition: 1s;
+}
