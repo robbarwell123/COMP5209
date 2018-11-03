@@ -1,5 +1,7 @@
 :root {
 	--clrNode: #D3D3D3;
+	--clrSelectedNode: #FF0000;
+	--clrNodeChildren: #42F486;
 }
 
 .OrgChartLinks {
@@ -8,7 +10,7 @@
 	stroke-width: 2px;	
 }
 
-.OrgChartNode circle{
+.OrgChartNode .NormalNode{
 	fill: white;
 	stroke: var(--clrNode);
 	stroke-width: 3px;
@@ -18,9 +20,9 @@
 	font: 12px sans-serif;
 }
 
-.OrgChartNodeSelected circle{
-	fill: #FBB4AE;
-	stroke: var(--clrNode);
+.OrgChartNode .SelectedNode{
+	fill: none;
+	stroke: red;
 	stroke-width: 3px;
 }
 

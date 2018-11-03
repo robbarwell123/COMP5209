@@ -25,9 +25,20 @@ function fGlobalNodeClick(oNode)
 
 function fRefocusNode(iNode)
 {
-//	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNode");
+	var oOldNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
+	
+	oOldNode.selectAll(".SelectedNode").remove();
+
 	iCurrNode=iNode;
-//	d3.select("#ORG_NODE_"+iCurrNode).attr("class","OrgChartNodeSelected");
+	var oSelectedNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
+
+	oSelectedNode.append("g")
+		.append("circle")
+		.attr("class","SelectedNode")
+		.attr("r", 7);
+
 
 	d3.select("#idMyUserLinksChart").remove();
 	var divContent=window.getComputedStyle(document.getElementById("idLinks"), null);
@@ -37,21 +48,21 @@ function fRefocusNode(iNode)
 	d3.select("#idMyUserPeersChart").remove();
 	var divStats=window.getComputedStyle(document.getElementById("idStats"), null);
 	var myUserPeers = DrawUserPeersChart().data("GetUserPeers.php?iUserID=").nodeid(iCurrNode).width(parseFloat(divStats.getPropertyValue("width"))).height(parseFloat(divStats.getPropertyValue("height"))).canvas("#idStats").draw();
-
-//	oCurrNode=d3.select("#ORG_NODE_"+iCurrNode).datum();
-//console.log(oCurrNode.x+":"+oCurrNode.y);
 	
-	var myZoom =d3.zoom();
-		
-/*
-      t = d3.zoomTransform(oCurrNode);
-      x = -oCurrNode.y;
-      y = -oCurrNode.x;
-      x = x * t.k + 400 / 2;
-      y = y * t.k + 400 / 2;
-*/
-//      d3.select("#idMyOrgChart").transition()
- //       .call( myZoom.transform, d3.zoomIdentity.translate(-400,-400).scale(1) );
+	fCenterSelectedNode();
+}
+
+function fCenterSelectedNode()
+{
+	var oCurrNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
+
+	var iY=-oCurrNode.datum().y+(document.getElementById('idGridGlobal').clientHeight/2);
+	var iX=-oCurrNode.datum().x+(document.getElementById('idGridGlobal').clientWidth/2);
+
+	d3Canvas.transition()
+		.duration(iDuration)
+		.call(fOrgZoomHandler.transform, d3.zoomIdentity.translate(iX,iY));
 }
 
 function MinMaxGlobalDiv()

@@ -42,6 +42,7 @@
 							  <a href="#">Filter3</a>
 							  <a href="#">Filter4</a>
 							</DIV>
+							<IMG src="img/center.svg" id='idCenterButton' width="16" height="16" onClick="fCenterSelectedNode()">
 						</DIV>
 						<DIV class="RightAlign"><IMG src="img/expand.svg" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv()"></DIV>
 					</DIV>

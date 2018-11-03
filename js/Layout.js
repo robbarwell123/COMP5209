@@ -1,3 +1,5 @@
+var clrNodeChildren;
+
 window.onload=fStartup;
 window.onresize=fResize;
 
@@ -22,6 +24,7 @@ function fResize()
 		var linksStyle = getComputedStyle(document.getElementById("idGridLinks"));
 		document.getElementById("idGlobal").style.height=parseInt(linksStyle.getPropertyValue('height'))-iPadding;
 	}
+
 }
 
 function fStartup()
@@ -29,5 +32,7 @@ function fStartup()
 	fResize();
 
 	var divGlobal=window.getComputedStyle(document.getElementById("idGlobalContent"), null);
+	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
+	
 	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();		
 }

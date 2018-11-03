@@ -61,9 +61,14 @@ body {
 	display: block;
 	float: left;
 	position: absolute;
-	z-index: 100;
+	z-index: 50;
 	overflow: hidden;
 	transition: all 0.5s;
+}
+
+#idGlobalNav {
+	height: 16px;
+	z-index: 200;
 }
 
 #idLinks {
