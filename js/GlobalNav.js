@@ -1,15 +1,23 @@
 var bGlobalOpen=false;
 var bFilterOpen=false;
 
-var iCurrNode=1;
 var oCurrNode;
 var myOrgChart;
 
 var panelUserLinks;
+var panelUserPeers;
+
+function fUserPeersClick(oNode)
+{
+	var myNode = {
+		data: oNode
+	};
+	fRefocusNode(myNode);
+}
 
 function fGlobalNodeClick(oNode)
 {
-	oCurrNode=oNode;
+	oCurrNode=oNode.data;
 	if(bGlobalOpen)
 	{
 		MinMaxGlobalDiv();
@@ -23,47 +31,39 @@ function fGlobalNodeClick(oNode)
 		oNode.children=oNode._children;
 		oNode._children=null;
 	}
-	fUpdateTree(oNode);
-	fRefocusNode(oNode.data.iUserID);
+	panelOrgChart=panelOrgChart.update(oNode);
+	fRefocusNode(oNode);
+	doFilter();
 }
 
-function fRefocusNode(iNode)
+function fRefocusNode(oNode)
 {
-	var oOldNode=d3.selectAll(".OrgChartNode")
-		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
-	
-	oOldNode.selectAll(".SelectedNode").remove();
-
-	iCurrNode=iNode;
+	d3.selectAll(".SelectedNode").remove();
+		
+	oCurrNode=oNode;
 	var oSelectedNode=d3.selectAll(".OrgChartNode")
-		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
+		.filter(function(myNode){return myNode.data.iUserID==oCurrNode.iUserID});
 
 	oSelectedNode.append("circle")
 		.attr("class","SelectedNode")
 		.attr("r", 11);
 
-
 	panelUserLinks = panelUserLinks!=null ? panelUserLinks.remove() : null;
-	panelUserLinks = DrawUserLinksChart().data("GetUserLinks.php?iUserID=").nodeid(iCurrNode).size().canvas("#idLinks").newTreemap();
+	panelUserLinks = DrawUserLinksChart().data("GetUserLinks.php?iUserID=").nodeid(oCurrNode.data.iUserID).size().canvas("#idLinks").newTreemap();
 
+	panelUserPeers = panelUserPeers!=null ? panelUserPeers.remove() : null;
 	d3.select("#idMyUserPeersChart").remove();
-	var divStats=window.getComputedStyle(document.getElementById("idStats"), null);
-	var myUserPeers = DrawUserPeersChart().data("GetUserPeers.php?iUserID=").nodeid(iCurrNode).width(parseFloat(divStats.getPropertyValue("width"))).height(parseFloat(divStats.getPropertyValue("height"))).canvas("#idStats").draw();
+	panelUserPeers = DrawUserPeersChart().data("GetUserPeers.php?iUserID=").nodeid(oCurrNode.data.iUserID).size().canvas("#idStats").newBarChart();
 	
 	fCenterSelectedNode();
 }
 
 function fCenterSelectedNode()
 {
-	var oCurrNode=d3.selectAll(".OrgChartNode")
-		.filter(function(myNode){return myNode.data.iUserID==iCurrNode});
+	var iY=-oCurrNode.y+(document.getElementById('idGridGlobal').clientHeight/2);
+	var iX=-oCurrNode.x+(document.getElementById('idGridGlobal').clientWidth/2);
 
-	var iY=-oCurrNode.datum().y+(document.getElementById('idGridGlobal').clientHeight/2);
-	var iX=-oCurrNode.datum().x+(document.getElementById('idGridGlobal').clientWidth/2);
-
-	d3Canvas.transition()
-		.duration(iDuration)
-		.call(fOrgZoomHandler.transform, d3.zoomIdentity.translate(iX,iY));
+	panelOrgChart.zoom(iX,iY);
 }
 
 function MinMaxGlobalDiv()
@@ -124,7 +124,7 @@ function doFilter()
       headers: {"Content-type": "application/json; charset=UTF-8"},
       body: JSON.stringify({
         filters: myFilters,
-        covers: myVisibleNodes
+        covers: panelOrgChart.visibleNodes()
       })
     }).then(function(data){
 		d3.selectAll(".FilterMatchNode").remove();

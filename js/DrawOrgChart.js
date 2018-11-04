@@ -1,52 +1,53 @@
-var d3OrgChart;
-var d3Canvas;
-var myRoot;
-var iDuration=750;
-var iId=0;
-var gOrgChart;
-var myVisibleNodes;
-
-var fOrgZoomHandler=d3.zoom().on("zoom", function () {
-	gOrgChart.attr("transform", d3.event.transform)
-	});
-
 function DrawOrgChart()
 {
+	var iNodeSpace=80;
+	var iNodeDepth=100;
+	
 	var iWidth=2000;
 	var iHeight=1000;
 	var sJSONLoc="";
 	var sContentLoc="";
 	var sID="idMyOrgChart";
 	
+	var myOrgChartCanvas;
+	var myOrgChartGraphics;
+	var myOrgChart;
+	
+	var myOrgChartRoot;
+	var myVisibleNodes;
+	
+	var myOrgZoom=d3.zoom()
+		.on("zoom",fOrgZoomHandler);
+	
 	function Render(){}
 
-	Render.draw = function () {
-		d3Canvas = d3.select(sContentLoc).append("svg")
+	Render.newOrgChart = function () {
+		myOrgChartCanvas = d3.select(sContentLoc).append("svg")
+			.attr("id",sID)
 			.attr("width", iWidth)
 			.attr("height", iHeight)
-			.attr("id",sID)
-			.call(fOrgZoomHandler);
+			.call(myOrgZoom);
 
-		gOrgChart=d3Canvas.append("g");
+		myOrgChartGraphics=myOrgChartCanvas.append("g");
 		
-		d3OrgChart = d3.tree()
-			.size([iWidth/4,iHeight]);
+		myOrgChart = d3.tree();
 			
 		d3.json(sJSONLoc).then(function(data) {
-			myRoot=d3.hierarchy(data);
-			myRoot.x0=0;
-			myRoot.y0=iWidth/2;
+			myOrgChartRoot=d3.hierarchy(data);
+			myOrgChartRoot.x0=0;
+			myOrgChartRoot.y0=iWidth/2;
 			
-			oCurrNode=myRoot;
+			oCurrNode=myOrgChartRoot;
 
-			myRoot.sum(function(myNode){return 1;});
-			myRoot.children.forEach(fUpdateNode);
-			myRoot.sum(function(myNode){return myNode.iMySize;});
+			myOrgChartRoot.sum(function(myNode){return 1;});
+			myOrgChartRoot.children.forEach(fUpdateNode);
+			myOrgChartRoot.sum(function(myNode){return myNode.iMySize;});
 			
-			myRoot.children.forEach(fCollapse);
-			fUpdateTree(myRoot);
-			
-			fRefocusNode(iCurrNode);
+			myOrgChartRoot.children.forEach(fCollapse);
+
+			Render.update(myOrgChartRoot);
+
+			fRefocusNode(oCurrNode);
 		});	
 		
 		return Render;
@@ -70,6 +71,111 @@ function DrawOrgChart()
 			}
 		}
 	}
+
+	Render.update = function(oSourceNode)
+	{
+		iNewWidth=Math.min(myOrgChartRoot.leaves().length*iNodeSpace,iWidth);
+		myOrgChart
+			.size([iNewWidth,iHeight]);
+		
+		currTreeView=myOrgChart(myOrgChartRoot);
+
+		var allNodes=currTreeView.descendants();
+		var allLinks=currTreeView.descendants().slice(1);
+
+		myVisibleNodes=[];
+		allNodes.forEach(function(oNode){
+			oNode.y=oNode.depth*iNodeDepth+10;
+			myVisibleNodes.push(oNode.data.iUserID);
+		});
+
+		var myNodes = myOrgChartGraphics.selectAll(".OrgChartNode")
+			.data(allNodes, function(myNode){return myNode.data.iUserID;});
+
+		var NewNodes = myNodes.enter()
+			.append("g")
+				.attr("class", "OrgChartNode")
+				.attr("transform", function(myNode){return "translate(" + oSourceNode.x0 + "," + oSourceNode.y0 + ")"; })
+				.on("click",fGlobalNodeClick);
+				
+		NewNodes.append("circle")
+			.attr("class","NormalNode")
+			.attr("r", 1e-6)
+			.style("fill", function(d) {
+					 return d._children ? clrNodeChildren : "white";
+			});
+
+		NewNodes.append("text")
+			.attr("y", "16px")
+			.attr("text-anchor","middle")
+			.text(function(myNode){ return myNode.data.sLastname; });
+
+		var UpdateNodes = NewNodes.merge(myNodes);
+		
+		UpdateNodes.transition().duration(iDuration)
+			.attr('transform', function(myNode) {
+				return 'translate('+myNode.x+','+myNode.y+')';
+			});
+		
+		UpdateNodes.select('.NormalNode')
+			.attr('r',5)
+			.style("fill", function(d) {
+				return d._children ? clrNodeChildren : "white";
+			});
+
+		var OldNodes = myNodes.exit()
+			.transition().duration(iDuration)
+			.attr('transform', function(myNode){
+				return 'translate('+oSourceNode.x+','+oSourceNode.y+')';
+			})
+			.remove();
+
+		OldNodes.select('circle.NormalNode')
+			.attr('r',1e-6);
+
+		OldNodes.select('text.OrgChartNode')
+			.attr('fill-opacity',1e-6);
+
+		var myLinks = myOrgChartGraphics.selectAll(".OrgChartLinks")
+			.data(allLinks,function(myNode){return myNode.id});
+		
+		var NewLinks=myLinks.enter()
+			.append("path")
+				.attr("class", "OrgChartLinks")
+				.attr("d", function(myNode) {
+					return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
+				});
+
+		var UpdateLinks=NewLinks.merge(myLinks);
+		
+		UpdateLinks.transition().duration(iDuration)
+			.attr("d", function(myNode) {
+				return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
+			});
+		
+		var OldLinks = myLinks.exit().remove();		
+			
+		allNodes.forEach(function(myNode){
+			myNode.x0=myNode.x;
+			myNode.y0=myNode.y;
+		});		
+
+		return Render;
+	}
+	
+	Render.graphics = function() {
+		return myOrgChartGraphics;
+	};
+
+	Render.visibleNodes = function() {
+		return myVisibleNodes;
+	};
+	
+	Render.zoom = function(iXPos,iYPos) {
+		myOrgChartCanvas.transition()
+			.duration(iDuration)
+			.call(myOrgZoom.transform, d3.zoomIdentity.translate(iXPos,iYPos));
+	};
 	
 	Render.width = function(iValue) {
 		if(!arguments.length) return iWidth;
@@ -104,87 +210,7 @@ function DrawOrgChart()
 	return Render;
 }
 
-function fUpdateTree(oSourceNode)
+function fOrgZoomHandler(myNode)
 {
-	currTreeView=d3OrgChart(myRoot);
-	
-	var allNodes=currTreeView.descendants();
-	var allLinks=currTreeView.descendants().slice(1);
-
-	myVisibleNodes=[];
-	allNodes.forEach(function(oNode){
-		oNode.y=oNode.depth*100+10;
-		myVisibleNodes.push(oNode.data.iUserID);
-	});
-
-	var myNodes = gOrgChart.selectAll(".OrgChartNode")
-		.data(allNodes, function(myNode){return myNode.data.iUserID;});
-
-	var myLinks = gOrgChart.selectAll(".OrgChartLinks")
-		.data(allLinks,function(myNode){return myNode.id});
-	
-	var NewLinks=myLinks.enter()
-		.append("path")
-			.attr("class", "OrgChartLinks")
-			.attr("d", function(myNode) {
-				return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
-			});
-
-	var UpdateLinks=NewLinks.merge(myLinks);
-	
-	UpdateLinks.transition().duration(iDuration)
-		.attr("d", function(myNode) {
-			return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
-		});
-	
-	var OldLinks = myLinks.exit().remove();		
-		
-	var NewNodes = myNodes.enter()
-		.append("g")
-			.attr("class", "OrgChartNode")
-			.attr("transform", function(myNode){ return "translate(" + oSourceNode.x0 + "," + oSourceNode.y0 + ")"; })
-			.on("click",fGlobalNodeClick);
-			
-	NewNodes.append("circle")
-		.attr("class","NormalNode")
-		.attr("r", 1e-6)
-		.style("fill", function(d) {
-                 return d._children ? clrNodeChildren : "white";
-        });
-
-	NewNodes.append("text")
-		.attr("y", "16px")
-		.attr("text-anchor","middle")
-		.text(function(myNode){ return myNode.data.sLastname; });
-
-	var UpdateNodes = NewNodes.merge(myNodes);
-	
-	UpdateNodes.transition().duration(iDuration)
-		.attr('transform', function(myNode) {
-			return 'translate('+myNode.x+','+myNode.y+')';
-		});
-	
-	UpdateNodes.select('.NormalNode')
-		.attr('r',5)
-        .style("fill", function(d) {
-            return d._children ? clrNodeChildren : "white";
-        });
-
-	var OldNodes = myNodes.exit()
-		.transition().duration(iDuration)
-		.attr('transform', function(myNode){
-			return 'translate('+oSourceNode.x+','+oSourceNode.y+')';
-		})
-		.remove();
-
-	OldNodes.select('circle.NormalNode')
-		.attr('r',1e-6);
-
-	OldNodes.select('text.OrgChartNode')
-		.attr('fill-opacity',1e-6);
-
-	allNodes.forEach(function(myNode){
-		myNode.x0=myNode.x;
-		myNode.y0=myNode.y;
-	});				
+	panelOrgChart.graphics().attr("transform", d3.event.transform);
 }

@@ -1,3 +1,7 @@
+var iDuration=750;
+
+var panelOrgChart;
+
 var clrNodeChildren;
 
 window.onload=fStartup;
@@ -14,6 +18,7 @@ function fResize()
 	
 	document.getElementById('idStats').style.height=document.getElementById('idGridStats').clientHeight-iPadding;
 	document.getElementById('idStats').style.width=document.getElementById('idGridStats').clientWidth-iPadding;
+	panelUserPeers = panelUserPeers!=null ? panelUserPeers.size().update() : null;
 
 	if(!bGlobalOpen)
 	{
@@ -36,5 +41,5 @@ function fStartup()
 	var divGlobal=window.getComputedStyle(document.getElementById("idGlobalContent"), null);
 	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
 	
-	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();				
+	panelOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").newOrgChart();				
 }

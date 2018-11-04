@@ -7,55 +7,88 @@ function DrawUserPeersChart()
 	var sID="idMyUserPeersChart";
 	var iNodeID=0;
 
+	var myPeersCanvas;
+	var myPeersGraphics;
+	
+	var dCurrData;
+	var iBarHeight=30;
+	var iBarPad=2;
+	var iYOffset=-iBarHeight;
+	
 	function Render(){}
 
-	Render.draw = function () {
+	Render.newBarChart = function () {
 		sJSONLoc=sJSONLoc+iNodeID;
 				
-		var d3Canvas = d3.select(sContentLoc).append("svg")
+		myPeersCanvas = d3.select(sContentLoc).append("svg")
+			.attr("id",sID);
+		
+		myPeersGraphics=myPeersCanvas.append("g");
+
+		d3.json(sJSONLoc).then(function(data) {
+			dCurrData=data;
+
+			Render.update();		
+		});
+
+		return Render;
+	};
+	
+	Render.update = function()
+	{
+		myPeersCanvas
 			.attr("width", iWidth)
-			.attr("height", iHeight)
-			.attr("id",sID)
-			.append("g")
-				.attr("transform", "translate(10, 10)");
+			.attr("height", iHeight);
 
 		var xAxes = d3.scaleLinear().rangeRound([0, iWidth]);				
 		var yAxes = d3.scaleLinear().rangeRound([0, iHeight]);				
 
-		d3.json(sJSONLoc).then(function(data) {
-			
-			if(data!=null)
-			{				
-				yAxes.domain(data.map(function(myNode) { return myNode.sLastname; }));
-				xAxes.domain([0, d3.max(data, function(myNode) { return myNode.iEmailCount; })]);
+		yAxes.domain(dCurrData.map(function(myNode) { return myNode.sLastname; }));
+		xAxes.domain([0, d3.max(dCurrData, function(myNode) { return myNode.iEmailCount; })]);
 
-				var iBarHeight=30;
-				var iBarPad=2;
-				var iYOffset=-iBarHeight;
-				
-				var myBars=d3Canvas.selectAll(".bar")
-					.data(data)
-					.enter().append("g")
-				
-				myBars.append("rect")
-						.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
-						.attr("height", iBarHeight)
-						.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); })
-						.attr("fill", function(myNode) {if(myNode.iUserID==iNodeID){return '#FBB4AE'}else{return '#B3CDE3'}} );
+		var myBars=myPeersCanvas.selectAll(".PeerStatBars")
+			.data(dCurrData,function(myNode){return myNode.iUserID;})
 
-				iYOffset=-iBarHeight/4;
-						
-				myBars.append("text")
-						.attr("x",5)
-						.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
-						.text(function(d) {	return d.sLastname+" ("+d.iEmailCount+")"})
-						.style("fill", "white")
-			}
+		var myNewBars=myBars.enter().append("g")
+			.attr("class",".PeerStatBars")
+			.on("click",fUserPeersClick);
+		
+		iYOffset=-iBarHeight;
+		myNewBars.append("rect")
+				.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
+				.attr("height", iBarHeight)
+				.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); })
+				.attr("fill", function(myNode) {if(myNode.iUserID==oCurrNode.data.iUserID){return '#FBB4AE'}else{return '#B3CDE3'}} );
+
+		iYTextOffset=-iBarHeight/4;
+				
+		myNewBars.append("text")
+				.attr("x",5)
+				.attr("y", function(myNode) { return iYTextOffset+=iBarHeight+iBarPad; })
+				.text(function(d) {	return d.sLastname+" ("+d.iEmailCount+")"});
+
+		var myUpdateBars=myNewBars.merge(myBars);
+		iYOffset=-iBarHeight;
+		myUpdateBars.selectAll(".PeerStatBars").transition().duration(iDuration)
+			.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); });
+				
+		return Render;
+	}
 	
-	});
+	Render.remove = function()
+	{
+		d3.select("#"+sID).remove();
+		return null;
+	}
+	
+	Render.size = function()
+	{
+		var divStatsStyle=window.getComputedStyle(document.getElementById("idStats"), null);
+		iWidth=parseFloat(divStatsStyle.getPropertyValue("width"));
+		iHeight=parseFloat(divStatsStyle.getPropertyValue("height"));
 
 		return Render;
-	};
+	}
 
 	Render.width = function(iValue) {
 		if(!arguments.length) return iWidth;

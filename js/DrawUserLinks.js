@@ -83,7 +83,6 @@ function DrawUserLinksChart()
 		
 		var UpdateTreeNodes=NewTreeNodes.merge(myTreeCells);
 
-		var OldTreeNodes = myTreeCells.exit().remove();							
 
 		d3.selectAll(".TreeMapNodes").transition().duration(iDuration)
 			.attr("transform", function(myNode) { return "translate(" + myNode.x0 + "," + myNode.y0 + ")"; });
@@ -91,6 +90,8 @@ function DrawUserLinksChart()
 		UpdateTreeNodes.select(".UserLinkNode").transition().duration(iDuration)
 			.attr("width", function(myNode) { return myNode.x1 - myNode.x0; })
 			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; });
+
+		var OldTreeNodes = myTreeCells.exit().remove();							
 		
 		return Render;
 	}
