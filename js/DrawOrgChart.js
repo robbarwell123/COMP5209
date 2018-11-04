@@ -4,6 +4,7 @@ var myRoot;
 var iDuration=750;
 var iId=0;
 var gOrgChart;
+var myVisibleNodes;
 
 var fOrgZoomHandler=d3.zoom().on("zoom", function () {
 	gOrgChart.attr("transform", d3.event.transform)
@@ -29,7 +30,7 @@ function DrawOrgChart()
 		gOrgChart=d3Canvas.append("g");
 		
 		d3OrgChart = d3.tree()
-			.size([iWidth,iHeight]);	
+			.size([iWidth/4,iHeight]);
 			
 		d3.json(sJSONLoc).then(function(data) {
 			myRoot=d3.hierarchy(data);
@@ -110,7 +111,11 @@ function fUpdateTree(oSourceNode)
 	var allNodes=currTreeView.descendants();
 	var allLinks=currTreeView.descendants().slice(1);
 
-	allNodes.forEach(function(oNode){oNode.y=oNode.depth*100+10;});
+	myVisibleNodes=[];
+	allNodes.forEach(function(oNode){
+		oNode.y=oNode.depth*100+10;
+		myVisibleNodes.push(oNode.data.iUserID);
+	});
 
 	var myNodes = gOrgChart.selectAll(".OrgChartNode")
 		.data(allNodes, function(myNode){return myNode.data.iUserID;});

@@ -77,9 +77,9 @@ function MinMaxGlobalDiv()
 		document.getElementById('idGlobal').style.height=document.getElementById('idGridGlobal').clientHeight-iPadding;
 		document.getElementById('idGlobal').style.width=document.getElementById('idGridGlobal').clientWidth-iPadding;
 
-		document.getElementById("idGlobalFilter").style.width="0px";
-
-		document.getElementById("idGlobalFilterButton").setAttribute("onClick", "DisplayFilter(2)");
+		document.getElementById("idGlobalFilter").style.visibility="hidden";	
+		bFilterOpen=false;
+		document.getElementById("idGlobalFilterButton").setAttribute("onClick", "DisplayFilter(1)");
 		document.getElementById("idGlobalFilterButton").style.visibility="hidden";
 		document.getElementById("GlobalMinMaxButton").setAttribute("onClick", "MinMaxGlobalDiv(2)");
 	}else if(!bGlobalOpen)
@@ -111,18 +111,32 @@ function DisplayFilter()
 }
 
 function doFilter()
-{	
+{
 	var iEmailFilterVal=document.getElementById("idEmailFilter").value;
-
 	document.getElementById("idEmailFilterTitle").innerHTML=iEmailFilterVal;
-
-	d3.selectAll(".FilterMatchNode").remove();
 	
-	var oSelectedNode=d3.selectAll(".OrgChartNode")
-	.filter(function(myNode){return myNode.data.iMySize>=iEmailFilterVal});
+	var myFilters = {
+		iEmails: iEmailFilterVal,
+		sUser: "Richard"
+	};
+	d3.json('GetFilterResults.php', {
+      method:"POST",
+      headers: {"Content-type": "application/json; charset=UTF-8"},
+      body: JSON.stringify({
+        filters: myFilters,
+        covers: myVisibleNodes
+      })
+    }).then(function(data){
+		d3.selectAll(".FilterMatchNode").remove();
+		
+		var oSelectedNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){
+			return data.indexOf(myNode.data.iUserID)>-1
+		});
 
-	oSelectedNode.append("g")
-		.append("circle")
-		.attr("class","FilterMatchNode")
-		.attr("r", 8);
+		oSelectedNode.append("g")
+			.append("circle")
+			.attr("class","FilterMatchNode")
+			.attr("r", 8);
+	});
 }

@@ -36,9 +36,5 @@ function fStartup()
 	var divGlobal=window.getComputedStyle(document.getElementById("idGlobalContent"), null);
 	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
 	
-	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();		
-		
-	//TO REMOVE!!!
-//	MinMaxGlobalDiv();
-//	DisplayFilter();
+	myOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").draw();				
 }
