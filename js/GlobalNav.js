@@ -136,9 +136,12 @@ function doFilter()
 			
 			if(data.error==0)
 			{
+				var arrMatch=data.results.split(",");
+				for(var iConvert=0; iConvert<arrMatch.length; iConvert++) { arrMatch[iConvert] = +arrMatch[iConvert]; };
+				
 				var oSelectedNode=d3.selectAll(".OrgChartNode")
 				.filter(function(myNode){
-					return data.results.indexOf(myNode.data.iUserID)>-1
+					return arrMatch.indexOf(myNode.data.iUserID)>-1
 				});
 
 				oSelectedNode.append("g")

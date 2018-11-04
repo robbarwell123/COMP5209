@@ -12,6 +12,7 @@ function DrawOrgChart()
 	var myOrgChartCanvas;
 	var myOrgChartLinksGraphics;
 	var myOrgChartGraphics;
+	var myOrgChartUserLinkGraphics;
 	var myOrgChart;
 	
 	var myOrgChartRoot;
@@ -31,6 +32,7 @@ function DrawOrgChart()
 			.call(myOrgZoom);
 
 		myOrgChartLinksGraphics=myOrgChartCanvas.append("g");
+		myOrgChartUserLinkGraphics=myOrgChartCanvas.append("g");
 		myOrgChartGraphics=myOrgChartCanvas.append("g");
 		
 		myOrgChart = d3.tree();
@@ -148,7 +150,9 @@ function DrawOrgChart()
 			.attr("r", 1e-6)
 			.style("fill", function(d) {
 					 return d._children ? clrNodeChildren : "#FFFFFF";
-			});
+			})
+			.on("mouseleave",fHideConnections)
+			.on("mouseenter",fShowConnections);
 
 		NewNodes.append("text")
 			.attr("y", "16px")
@@ -206,6 +210,10 @@ function DrawOrgChart()
 		return myOrgChartLinksGraphics;
 	};
 
+	Render.graphicsUserLinks = function() {
+		return myOrgChartUserLinkGraphics;
+	};
+
 	Render.visibleNodes = function() {
 		return myVisibleNodes;
 	};
@@ -253,4 +261,5 @@ function fOrgZoomHandler(myNode)
 {
 	panelOrgChart.graphics().attr("transform", d3.event.transform);
 	panelOrgChart.graphicsLinks().attr("transform", d3.event.transform);	
+	panelOrgChart.graphicsUserLinks().attr("transform", d3.event.transform);	
 }

@@ -3,11 +3,18 @@
 	--clrSelectedNode: #FBB4AE;
 	--clrNodeChildren: #42F486;
 	--clrFilteredNode: #CC00FF;
+	--clrUserLinks: #B3CDE3;
 }
 
 .OrgChartLinks {
 	fill: none;
 	stroke: var(--clrNode);
+	stroke-width: 2px;	
+}
+
+.OrgChartUserLinks {
+	fill: none;
+	stroke: var(--clrUserLinks);
 	stroke-width: 2px;	
 }
 

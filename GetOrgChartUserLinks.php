@@ -3,10 +3,9 @@
 
 	$config=include('Config.php');
 	$iFindUserID=0;
-	
+
+	$iUserID=$data->iUserID;
 	$arrVisibleNodes=$data->covers;
-	$iEmailFilterVal=$data->filters->iEmails;
-	$sUserFilterVal="%".$data->filters->sUser."%";
 
 	$arrRtn=array();
 	
@@ -14,9 +13,9 @@
 	
 	if(!$myConnection->connect_error)
 	{
-		$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iEmailCount>=? AND sUser LIKE ?");
+		$myPrep=$myConnection->prepare("CALL GetUserLinks(?)");
 
-		$myPrep->bind_param("is",$iEmailFilterVal,$sUserFilterVal);
+		$myPrep->bind_param("i",$iUserID);
 
 		$myPrep->execute();
 			
@@ -30,10 +29,12 @@
 				array_push($arrMatches,$myRow["iUserID"]);
 			}
 		}
+		$myPrep->close();
 		
 		$arrRtn=array_intersect($arrMatches,$arrVisibleNodes);
 		
 		$arrFindParents=array_diff($arrMatches,$arrVisibleNodes);
+
 		$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iUserID=?");
 		$myPrep->bind_param("i",$iFindUserID);
 		
@@ -51,8 +52,6 @@
 	
 	$oRtn = new stdClass();
 	$oRtn->error=0;
-	$oRtn->other=gettype($arrVisibleNodes);
-	$oRtn->other1=gettype($arrRtn);
 	$oRtn->results=implode(",",$arrRtn);
 	echo json_encode($oRtn);
 
