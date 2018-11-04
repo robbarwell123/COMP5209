@@ -12,6 +12,7 @@
 
 		<SCRIPT src="js/DrawOrgChart.js"></SCRIPT>
 		<SCRIPT src="js/GlobalNav.js"></SCRIPT>
+		<SCRIPT src="js/OrgChart.js"></SCRIPT>
 
 		<SCRIPT src="js/DrawUserPeers.js"></SCRIPT>
 
@@ -44,10 +45,14 @@
 
 								<DIV id="idGlobalFilters">
 									Emails (<SPAN id="idEmailFilterTitle">0</SPAN>)<BR>
-									<INPUT type="range" min="0" max="10000" value="100" class="slider" id="idEmailFilter" onChange="doFilter()">
+									<INPUT type="range" min="0" max="10000" value="100" class="slider" id="idEmailFilter" onChange="doFilter()"><BR>
+									Name<BR>
+									<INPUT type="text" maxlength="30" id="idUserFilter" onkeyup="doFilter()"><BR>
 								</DIV>
 							</DIV>
 							<IMG src="img/center.svg" id='idCenterButton' width="16" height="16" onClick="fCenterSelectedNode()">
+							<IMG src="img/plus.svg" id='idExpandButton' width="16" height="16" onClick="fExpandOrgChart()">
+							<IMG src="img/minus.svg" id='idCollapseButton' width="16" height="16" onClick="fCollapseOrgChart()">
 						</DIV>
 						<DIV class="RightAlign"><IMG src="img/expand.svg" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv()"></DIV>
 					</DIV>

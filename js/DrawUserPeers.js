@@ -50,14 +50,13 @@ function DrawUserPeersChart()
 			.data(dCurrData,function(myNode){return myNode.iUserID;})
 
 		var myNewBars=myBars.enter().append("g")
-			.attr("class",".PeerStatBars")
+			.attr("class","PeerStatBars")
 			.on("click",fUserPeersClick);
-		
+
 		iYOffset=-iBarHeight;
 		myNewBars.append("rect")
 				.attr("y", function(myNode) { return iYOffset+=iBarHeight+iBarPad; })
 				.attr("height", iBarHeight)
-				.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); })
 				.attr("fill", function(myNode) {if(myNode.iUserID==oCurrNode.data.iUserID){return '#FBB4AE'}else{return '#B3CDE3'}} );
 
 		iYTextOffset=-iBarHeight/4;
@@ -69,7 +68,7 @@ function DrawUserPeersChart()
 
 		var myUpdateBars=myNewBars.merge(myBars);
 		iYOffset=-iBarHeight;
-		myUpdateBars.selectAll(".PeerStatBars").transition().duration(iDuration)
+		myUpdateBars.selectAll("rect").transition().duration(iDuration)
 			.attr("width", function(myNode) { return xAxes(myNode.iEmailCount); });
 				
 		return Render;

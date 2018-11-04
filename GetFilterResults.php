@@ -27,7 +27,6 @@
 		{
 			while($myRow=$myResults->fetch_assoc())
 			{
-//				echo "ID: ".$myRow["iUserID"]." Name: ".$myRow["sUser"]." Emails: ".$myRow["iEmailCount"]."<BR>";
 				array_push($arrMatches,$myRow["iUserID"]);
 			}
 		}
@@ -49,8 +48,13 @@
 
 	$myPrep->close();
 	$myConnection->close();	
-		
-	echo json_encode($arrRtn);
+	
+	$oRtn = new stdClass();
+	$oRtn->error=0;
+	$oRtn->other=gettype($arrVisibleNodes);
+	$oRtn->other1=gettype($arrRtn);
+	$oRtn->results=$arrRtn;
+	echo json_encode($oRtn);
 
 	function fFindParent($iNodeID,$myPrepStatement)
 	{

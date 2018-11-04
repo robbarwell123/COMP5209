@@ -42,4 +42,5 @@ function fStartup()
 	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
 	
 	panelOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").newOrgChart();				
+	
 }

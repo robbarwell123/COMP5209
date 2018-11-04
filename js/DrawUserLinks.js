@@ -43,7 +43,6 @@ function DrawUserLinksChart()
 	
 	Render.update = function()
 	{
-
 		myLinksCanvas
 			.attr("width", iWidth)
 			.attr("height", iHeight);
@@ -82,7 +81,6 @@ function DrawUserLinksChart()
 				.text(function(myNode) { return myNode; });		
 		
 		var UpdateTreeNodes=NewTreeNodes.merge(myTreeCells);
-
 
 		d3.selectAll(".TreeMapNodes").transition().duration(iDuration)
 			.attr("transform", function(myNode) { return "translate(" + myNode.x0 + "," + myNode.y0 + ")"; });

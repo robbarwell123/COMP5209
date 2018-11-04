@@ -9,10 +9,11 @@ var panelUserPeers;
 
 function fUserPeersClick(oNode)
 {
-	var myNode = {
-		data: oNode
-	};
-	fRefocusNode(myNode);
+	var oSelectedNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){return myNode.data.iUserID==oNode.iUserID})
+		.datum();
+		
+	fRefocusNode(oSelectedNode);
 }
 
 function fGlobalNodeClick(oNode)
@@ -42,7 +43,7 @@ function fRefocusNode(oNode)
 		
 	oCurrNode=oNode;
 	var oSelectedNode=d3.selectAll(".OrgChartNode")
-		.filter(function(myNode){return myNode.data.iUserID==oCurrNode.iUserID});
+		.filter(function(myNode){return myNode.data.iUserID==oCurrNode.data.iUserID});
 
 	oSelectedNode.append("circle")
 		.attr("class","SelectedNode")
@@ -112,31 +113,39 @@ function DisplayFilter()
 
 function doFilter()
 {
-	var iEmailFilterVal=document.getElementById("idEmailFilter").value;
-	document.getElementById("idEmailFilterTitle").innerHTML=iEmailFilterVal;
+	var sUserFilterVal=document.getElementById("idUserFilter").value;
 	
-	var myFilters = {
-		iEmails: iEmailFilterVal,
-		sUser: "Richard"
-	};
-	d3.json('GetFilterResults.php', {
-      method:"POST",
-      headers: {"Content-type": "application/json; charset=UTF-8"},
-      body: JSON.stringify({
-        filters: myFilters,
-        covers: panelOrgChart.visibleNodes()
-      })
-    }).then(function(data){
-		d3.selectAll(".FilterMatchNode").remove();
+	if(sUserFilterVal=="" || sUserFilterVal.length>2)
+	{
+		var iEmailFilterVal=document.getElementById("idEmailFilter").value;
+		document.getElementById("idEmailFilterTitle").innerHTML=iEmailFilterVal;
 		
-		var oSelectedNode=d3.selectAll(".OrgChartNode")
-		.filter(function(myNode){
-			return data.indexOf(myNode.data.iUserID)>-1
-		});
+		var myFilters = {
+			iEmails: iEmailFilterVal,
+			sUser: sUserFilterVal
+		};
+		d3.json('GetFilterResults.php', {
+		  method:"POST",
+		  headers: {"Content-type": "application/json; charset=UTF-8"},
+		  body: JSON.stringify({
+			filters: myFilters,
+			covers: panelOrgChart.visibleNodes()
+		  })
+		}).then(function(data){
+			d3.selectAll(".FilterMatchNode").remove();
+			
+			if(data.error==0)
+			{
+				var oSelectedNode=d3.selectAll(".OrgChartNode")
+				.filter(function(myNode){
+					return data.results.indexOf(myNode.data.iUserID)>-1
+				});
 
-		oSelectedNode.append("g")
-			.append("circle")
-			.attr("class","FilterMatchNode")
-			.attr("r", 8);
-	});
+				oSelectedNode.append("g")
+					.append("circle")
+					.attr("class","FilterMatchNode")
+					.attr("r", 8);
+			}
+		});		
+	}
 }

@@ -10,6 +10,7 @@ function DrawOrgChart()
 	var sID="idMyOrgChart";
 	
 	var myOrgChartCanvas;
+	var myOrgChartLinksGraphics;
 	var myOrgChartGraphics;
 	var myOrgChart;
 	
@@ -24,10 +25,12 @@ function DrawOrgChart()
 	Render.newOrgChart = function () {
 		myOrgChartCanvas = d3.select(sContentLoc).append("svg")
 			.attr("id",sID)
+			.attr("z-index",100)
 			.attr("width", iWidth)
 			.attr("height", iHeight)
 			.call(myOrgZoom);
 
+		myOrgChartLinksGraphics=myOrgChartCanvas.append("g");
 		myOrgChartGraphics=myOrgChartCanvas.append("g");
 		
 		myOrgChart = d3.tree();
@@ -57,6 +60,21 @@ function DrawOrgChart()
 	{
 		oNode.iNodeSize=oNode.value;			
 	}
+
+	function fExpand(oNode)
+	{
+		if(oNode._children!=null){oNode._children.forEach(fExpand)};
+		if(oNode.children!=null){oNode.children.forEach(fExpand)};
+		
+		oNode.children=oNode._children;
+		oNode._children=null;		
+	}
+
+	Render.expand = function()
+	{
+		myOrgChartRoot.children.forEach(fExpand);
+		return Render;
+	}
 	
 	function fCollapse(oNode)
 	{
@@ -72,6 +90,12 @@ function DrawOrgChart()
 		}
 	}
 
+	Render.collapse = function()
+	{
+		myOrgChartRoot.children.forEach(fCollapse);
+		return Render;
+	}
+	
 	Render.update = function(oSourceNode)
 	{
 		iNewWidth=Math.min(myOrgChartRoot.leaves().length*iNodeSpace,iWidth);
@@ -88,6 +112,27 @@ function DrawOrgChart()
 			oNode.y=oNode.depth*iNodeDepth+10;
 			myVisibleNodes.push(oNode.data.iUserID);
 		});
+		
+		var myLinks = myOrgChartLinksGraphics.selectAll(".OrgChartLinks")
+			.data(allLinks,function(myNode){return myNode.data.iUserID});
+		
+		var NewLinks=myLinks.enter()
+			.append("g")
+				.attr("class", "OrgChartLinks")
+			.append("path")
+				.attr("class", "OrgChartLinksPaths")
+				.attr("d", function(myNode) {
+					return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
+				});
+
+		var UpdateLinks=NewLinks.merge(myLinks);
+
+		UpdateLinks.selectAll(".OrgChartLinksPaths").transition().duration(iDuration)
+			.attr("d", function(myNode) {
+				return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
+			});
+		
+		var OldLinks = myLinks.exit().remove();		
 
 		var myNodes = myOrgChartGraphics.selectAll(".OrgChartNode")
 			.data(allNodes, function(myNode){return myNode.data.iUserID;});
@@ -102,7 +147,7 @@ function DrawOrgChart()
 			.attr("class","NormalNode")
 			.attr("r", 1e-6)
 			.style("fill", function(d) {
-					 return d._children ? clrNodeChildren : "white";
+					 return d._children ? clrNodeChildren : "#FFFFFF";
 			});
 
 		NewNodes.append("text")
@@ -117,7 +162,7 @@ function DrawOrgChart()
 				return 'translate('+myNode.x+','+myNode.y+')';
 			});
 		
-		UpdateNodes.select('.NormalNode')
+		UpdateNodes.selectAll('.NormalNode')
 			.attr('r',5)
 			.style("fill", function(d) {
 				return d._children ? clrNodeChildren : "white";
@@ -135,25 +180,6 @@ function DrawOrgChart()
 
 		OldNodes.select('text.OrgChartNode')
 			.attr('fill-opacity',1e-6);
-
-		var myLinks = myOrgChartGraphics.selectAll(".OrgChartLinks")
-			.data(allLinks,function(myNode){return myNode.id});
-		
-		var NewLinks=myLinks.enter()
-			.append("path")
-				.attr("class", "OrgChartLinks")
-				.attr("d", function(myNode) {
-					return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
-				});
-
-		var UpdateLinks=NewLinks.merge(myLinks);
-		
-		UpdateLinks.transition().duration(iDuration)
-			.attr("d", function(myNode) {
-				return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
-			});
-		
-		var OldLinks = myLinks.exit().remove();		
 			
 		allNodes.forEach(function(myNode){
 			myNode.x0=myNode.x;
@@ -162,9 +188,22 @@ function DrawOrgChart()
 
 		return Render;
 	}
+
+	Render.root = function(){
+		return myOrgChartRoot;
+	};
+	
+	Render.remove = function(){
+		d3.select("#"+sID).remove();
+		return null;
+	};
 	
 	Render.graphics = function() {
 		return myOrgChartGraphics;
+	};
+
+	Render.graphicsLinks = function() {
+		return myOrgChartLinksGraphics;
 	};
 
 	Render.visibleNodes = function() {
@@ -213,4 +252,5 @@ function DrawOrgChart()
 function fOrgZoomHandler(myNode)
 {
 	panelOrgChart.graphics().attr("transform", d3.event.transform);
+	panelOrgChart.graphicsLinks().attr("transform", d3.event.transform);	
 }
