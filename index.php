@@ -19,6 +19,7 @@
 		<SCRIPT src="js/DrawUserLinks.js"></SCRIPT>
 
 		<SCRIPT src="js/Layout.js"></SCRIPT>
+		<SCRIPT src="js/History.js"></SCRIPT>
 	</HEAD>
 	<BODY>
 		<DIV class="GridContainer">
@@ -29,7 +30,7 @@
 					</UL>
 					<UL class="NavHistory">
 						<LI class="NavHistory"><A href="default.asp">></A></LI>
-						<LI class="NavHistory"><A><SELECT name="history"><OPTION>shapiro</OPTION></SELECT></A></LI>
+						<LI class="NavHistory"><A><SELECT id="idHistoryList" onchange="fNavHistory(0)"></SELECT></A></LI>
 						<LI class="NavHistory"><A href="default.asp"><</A></LI>
 					</UL>
 				</DIV>
@@ -70,5 +71,16 @@
 				</DIV>
 			</DIV>
 		</DIV>
+		<SVG>
+			<DEFS>
+				<MARKER id="ArrowMarker"
+					markerUnits="strokeWidth"
+					refX="11" refY="2" 
+					markerWidth="5" markerHeight="5"
+					orient="auto">
+					<PATH class="ArrowMarkerHead" d="M0,0 L0,4 L4,2 z"/>
+				</MARKER>
+			</DEFS>
+		</SVG>
 	</BODY>
 </HTML>

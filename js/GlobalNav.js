@@ -12,7 +12,8 @@ function fUserPeersClick(oNode)
 	var oSelectedNode=d3.selectAll(".OrgChartNode")
 		.filter(function(myNode){return myNode.data.iUserID==oNode.iUserID})
 		.datum();
-		
+
+	fAddToHistory(oSelectedNode);
 	fRefocusNode(oSelectedNode);
 }
 
@@ -33,6 +34,7 @@ function fGlobalNodeClick(oNode)
 		oNode._children=null;
 	}
 	panelOrgChart=panelOrgChart.update(oNode);
+	fAddToHistory(oNode);
 	fRefocusNode(oNode);
 	doFilter();
 }
@@ -55,6 +57,8 @@ function fRefocusNode(oNode)
 	panelUserPeers = panelUserPeers!=null ? panelUserPeers.remove() : null;
 	d3.select("#idMyUserPeersChart").remove();
 	panelUserPeers = DrawUserPeersChart().data("GetUserPeers.php?iUserID=").nodeid(oCurrNode.data.iUserID).size().canvas("#idStats").newBarChart();
+	
+	GetHistoryLinks();
 	
 	fCenterSelectedNode();
 }
@@ -111,11 +115,17 @@ function DisplayFilter()
 	bFilterOpen=!bFilterOpen;
 }
 
+bFilterActive=false;
 function doFilter()
 {
+	if(doFilter.caller.name=="onchange" || doFilter.caller.name=="onkeyup")
+	{
+		bFilterActive=true;
+	}
+	
 	var sUserFilterVal=document.getElementById("idUserFilter").value;
 	
-	if(sUserFilterVal=="" || sUserFilterVal.length>2)
+	if(bFilterActive && (sUserFilterVal=="" || sUserFilterVal.length>2))
 	{
 		var iEmailFilterVal=document.getElementById("idEmailFilter").value;
 		document.getElementById("idEmailFilterTitle").innerHTML=iEmailFilterVal;
@@ -144,7 +154,7 @@ function doFilter()
 					return arrMatch.indexOf(myNode.data.iUserID)>-1
 				});
 
-				oSelectedNode.append("g")
+				oSelectedNode
 					.append("circle")
 					.attr("class","FilterMatchNode")
 					.attr("r", 8);

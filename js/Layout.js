@@ -36,11 +36,11 @@ function fResize()
 
 function fStartup()
 {
+	lstHistory = document.getElementById('idHistoryList');
 	fResize();
 
 	var divGlobal=window.getComputedStyle(document.getElementById("idGlobalContent"), null);
 	clrNodeChildren = divGlobal.getPropertyValue('--clrNodeChildren');
 	
-	panelOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").newOrgChart();				
-	
+	panelOrgChart = DrawOrgChart().data("GetOrgChart.php").canvas("#idGlobalContent").newOrgChart();					
 }

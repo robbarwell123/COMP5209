@@ -13,6 +13,7 @@ function DrawOrgChart()
 	var myOrgChartLinksGraphics;
 	var myOrgChartGraphics;
 	var myOrgChartUserLinkGraphics;
+	var myOrgChartHistoryGraphics;
 	var myOrgChart;
 	
 	var myOrgChartRoot;
@@ -32,6 +33,7 @@ function DrawOrgChart()
 			.call(myOrgZoom);
 
 		myOrgChartLinksGraphics=myOrgChartCanvas.append("g");
+		myOrgChartHistoryGraphics=myOrgChartCanvas.append("g");
 		myOrgChartUserLinkGraphics=myOrgChartCanvas.append("g");
 		myOrgChartGraphics=myOrgChartCanvas.append("g");
 		
@@ -52,6 +54,7 @@ function DrawOrgChart()
 
 			Render.update(myOrgChartRoot);
 
+			fAddToHistory(oCurrNode);
 			fRefocusNode(oCurrNode);
 		});	
 		
@@ -65,11 +68,13 @@ function DrawOrgChart()
 
 	function fExpand(oNode)
 	{
-		if(oNode._children!=null){oNode._children.forEach(fExpand)};
+		if(oNode._children!=null)
+		{
+			oNode.children=oNode._children;
+			oNode._children=null;		
+		};
 		if(oNode.children!=null){oNode.children.forEach(fExpand)};
-		
-		oNode.children=oNode._children;
-		oNode._children=null;		
+	
 	}
 
 	Render.expand = function()
@@ -148,9 +153,6 @@ function DrawOrgChart()
 		NewNodes.append("circle")
 			.attr("class","NormalNode")
 			.attr("r", 1e-6)
-			.style("fill", function(d) {
-					 return d._children ? clrNodeChildren : "#FFFFFF";
-			})
 			.on("mouseleave",fHideConnections)
 			.on("mouseenter",fShowConnections);
 
@@ -168,8 +170,8 @@ function DrawOrgChart()
 		
 		UpdateNodes.selectAll('.NormalNode')
 			.attr('r',5)
-			.style("fill", function(d) {
-				return d._children ? clrNodeChildren : "white";
+			.attr("class",function(myNode) {
+				return myNode._children ? "NormalNode HasChildren" : "NormalNode NoChildren";
 			});
 
 		var OldNodes = myNodes.exit()
@@ -179,12 +181,6 @@ function DrawOrgChart()
 			})
 			.remove();
 
-		OldNodes.select('circle.NormalNode')
-			.attr('r',1e-6);
-
-		OldNodes.select('text.OrgChartNode')
-			.attr('fill-opacity',1e-6);
-			
 		allNodes.forEach(function(myNode){
 			myNode.x0=myNode.x;
 			myNode.y0=myNode.y;
@@ -212,6 +208,10 @@ function DrawOrgChart()
 
 	Render.graphicsUserLinks = function() {
 		return myOrgChartUserLinkGraphics;
+	};
+
+	Render.graphicsHistory = function() {
+		return myOrgChartHistoryGraphics;
 	};
 
 	Render.visibleNodes = function() {
@@ -262,4 +262,5 @@ function fOrgZoomHandler(myNode)
 	panelOrgChart.graphics().attr("transform", d3.event.transform);
 	panelOrgChart.graphicsLinks().attr("transform", d3.event.transform);	
 	panelOrgChart.graphicsUserLinks().attr("transform", d3.event.transform);	
+	panelOrgChart.graphicsHistory().attr("transform", d3.event.transform);	
 }

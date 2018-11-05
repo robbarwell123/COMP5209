@@ -12,20 +12,11 @@ function fCollapseOrgChart()
 	doFilter();
 }
 
-function temp2(oNode)
-{
-	console.log(oNode);
-
-	panelOrgChart.graphicsUserLinks()
-		.append("g")
-			.attr("class", "OrgChartUserLinks")
-		.append("path")
-			.attr("d", "M" + oNode.x + "," + oNode.y + "L0,0");
-
-}
+bShowConnections=false;
 
 function fShowConnections(oNode)
 {
+	bShowConnections=true;
 	d3.json('GetOrgChartUserLinks.php', {
 	  method:"POST",
 	  headers: {"Content-type": "application/json; charset=UTF-8"},
@@ -44,18 +35,22 @@ function fShowConnections(oNode)
 				return arrMatch.indexOf(myNode.data.iUserID)>-1
 			});
 
-			oSelectedNode.each(function(oSelectNode){
-				panelOrgChart.graphicsUserLinks()
-					.append("g")
-						.attr("class", "OrgChartUserLinks")
-					.append("path")
-						.attr("d", "M" + oNode.x + "," + oNode.y + "L"+oSelectNode.x +","+oSelectNode.y);
-			});
+			if(bShowConnections)
+			{
+				oSelectedNode.each(function(oSelectNode){
+					panelOrgChart.graphicsUserLinks()
+						.append("g")
+							.attr("class", "OrgChartUserLinks")
+						.append("path")
+							.attr("d", "M" + oNode.x + "," + oNode.y + "L"+oSelectNode.x +","+oSelectNode.y);
+				});
+			}
 		}
 	});		
 }
 
 function fHideConnections()
 {
+	bShowConnections=false;
 	panelOrgChart.graphicsUserLinks().selectAll(".OrgChartUserLinks").remove();
 }

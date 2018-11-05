@@ -4,6 +4,7 @@
 	--clrNodeChildren: #42F486;
 	--clrFilteredNode: #CC00FF;
 	--clrUserLinks: #B3CDE3;
+	--clrHistoryLinks: #FBB4AE;
 }
 
 .OrgChartLinks {
@@ -18,10 +19,27 @@
 	stroke-width: 2px;	
 }
 
+.HistoryLinks {
+	fill: none;
+	stroke: var(--clrHistoryLinks);
+	stroke-width: 2px;	
+}
+
+.ArrowMarkerHead{
+	fill: var(--clrHistoryLinks)
+}
+
 .OrgChartNode .NormalNode{
-	fill: white;
 	stroke: var(--clrNode);
 	stroke-width: 3px;
+}
+
+.OrgChartNode .NoChildren{
+	fill: white
+}
+
+.OrgChartNode .HasChildren{
+	fill: var(--clrNode)
 }
 
 .OrgChartNode .SelectedNode{
