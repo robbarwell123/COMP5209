@@ -6,6 +6,7 @@ var clrNodeChildren;
 
 window.onload=fStartup;
 window.onresize=fResize;
+document.oncontextmenu = function() {return false;}
 
 function fResize()
 {

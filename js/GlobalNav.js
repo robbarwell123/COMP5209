@@ -16,7 +16,7 @@ function fUserPeersClick(oNode)
 	fAddToHistory(oSelectedNode);
 	fRefocusNode(oSelectedNode);
 }
-
+/*
 function fGlobalNodeClick(oNode)
 {
 	oCurrNode=oNode.data;
@@ -37,6 +37,34 @@ function fGlobalNodeClick(oNode)
 	fAddToHistory(oNode);
 	fRefocusNode(oNode);
 	doFilter();
+}
+*/
+function fGlobalNodeClick(oNode)
+{
+	oCurrNode=oNode.data;
+	if(bGlobalOpen)
+	{
+		MinMaxGlobalDiv();
+	}
+	fAddToHistory(oNode);
+	fRefocusNode(oNode);
+	doFilter();
+}
+
+function fGlobalNodeContextClick(oNode)
+{
+	if(oNode.children)
+	{
+		oNode._children=oNode.children;
+		oNode.children=null;
+	}else
+	{
+		oNode.children=oNode._children;
+		oNode._children=null;
+	}
+	panelOrgChart=panelOrgChart.update(oNode);
+	doFilter();
+	GetHistoryLinks();
 }
 
 function fRefocusNode(oNode)

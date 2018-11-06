@@ -148,7 +148,8 @@ function DrawOrgChart()
 			.append("g")
 				.attr("class", "OrgChartNode")
 				.attr("transform", function(myNode){return "translate(" + oSourceNode.x0 + "," + oSourceNode.y0 + ")"; })
-				.on("click",fGlobalNodeClick);
+				.on("click",fGlobalNodeClick)
+				.on("contextmenu",fGlobalNodeContextClick);
 				
 		NewNodes.append("circle")
 			.attr("class","NormalNode")
