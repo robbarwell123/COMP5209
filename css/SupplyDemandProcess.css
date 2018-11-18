@@ -1,0 +1,31 @@
+:root {
+	--iNodeWidth: 20;
+	--iNodePadding: 20;
+}
+
+.ProcessNode rect {
+	fill: rgb(204, 235, 197);
+}
+
+.ProcessNode text {
+	
+}
+
+.ProcessLink {
+  fill: none;
+  stroke-opacity: .16;
+  transition-property: stroke-opacity;
+  transition-duration: 0.5s;
+}
+
+.ProcessLink.Unique{
+  stroke: red;	
+}
+
+.ProcessLink.FlowThrough{
+  stroke: black;	
+}
+
+.ProcessLink:hover {
+  stroke-opacity: .5;
+}

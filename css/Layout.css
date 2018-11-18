@@ -4,19 +4,26 @@
 	--iBorder: 2px;
 	--clrPanel: #D3D3D3;
 	--clrNavButton: #607D8B;	
+	--clrGenericNode: rgb(204, 235, 197);
+	--clrSelectedNode: #FBB4AE;
 }
 
 body {
 	padding: 0px;
 	margin: 0px;
-	overflow-y: hidden;
+	font-family: sans-serif;
+}
+
+.Logo {
+	font-size: 30px;
+	color: white;
 }
 
 .GridContainer {
 	display: grid;
-	grid-template-areas: "GridNavBar GridNavBar" "GridGlobal GridLinks" "GridStats GridLinks";
+	grid-template-areas: "GridNavBar GridNavBar" "GridDemandOrg GridSupplyOrg" "GridDemandSupplyProcess GridDemandSupplyProcess";
 	grid-template-rows: auto 1fr 1fr;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: 50% 50%;
 	width: 100%;
 	height: 100%;
 }
@@ -25,16 +32,16 @@ body {
 	grid-area: GridNavBar;
 }
 
-.GridGlobal {
-	grid-area: GridGlobal;
+.GridDemandOrg {
+	grid-area: GridDemandOrg;
 }
 
-.GridStats {
-	grid-area: GridStats;
+.GridDemandSupplyProcess {
+	grid-area: GridDemandSupplyProcess;
 }
 
-.GridLinks {
-	grid-area: GridLinks;
+.GridSupplyOrg {
+	grid-area: GridSupplyOrg;
 }
 
 .Panel {
@@ -45,9 +52,24 @@ body {
 	border: var(--iBorder) solid var(--clrPanel);
 }
 
+.GridNavContainer {
+	display: grid;
+	grid-template-areas: "GridLeft GridRight";
+	grid-template-columns: 50% 50%;
+	width: 100%;
+	align-items: center;
+}
+
+.GridLeft {
+	grid-area: GridLeft;
+}
+
+.GridRight {
+	grid-area: GridRight;
+	justify-self: end;
+}
+
 #idNavBar {
-	margin: 0px;
-	padding: 0px;
 	background: var(--clrNavButton);
 }
 
@@ -58,7 +80,7 @@ body {
 	position: absolute;
 }
 
-#idGlobal {
+#idDemandOrg {
 	display: block;
 	float: left;
 	position: absolute;
@@ -67,13 +89,27 @@ body {
 	transition: all 0.5s;
 }
 
-#idGlobalNav {
+#idDemandOrgNav {
 	height: 16px;
 	z-index: 200;
 }
 
-#idLinks {
+#idSupplyOrg {
 	display: block;
 	float: left;
 	position: absolute;
+}
+
+Select.NavDropDown{
+	-webkit-appearance: none;
+	border: none;
+	padding: 5px;
+	color: white;
+	background: var(--clrNavButton);
+}
+
+#idNavBar A, #idNavBar A:visited, #idNavBar A:hover, #idNavBar A:active{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
 }

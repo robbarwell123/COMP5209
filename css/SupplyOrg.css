@@ -1,0 +1,7 @@
+.SupplyOrgNodes rect {
+	fill: var(--clrGenericNode);
+}
+
+.SupplyOrgNodes rect.selected{
+	fill: var(--clrSelectedNode);
+}

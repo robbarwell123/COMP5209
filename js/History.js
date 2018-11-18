@@ -39,7 +39,7 @@ function fOpenParents(oNode)
 
 function GetHistoryLinks()
 {
-	d3.json('GetHistory.php', {
+	d3.json('data/GetHistory.php', {
 	  method:"POST",
 	  headers: {"Content-type": "application/json; charset=UTF-8"},
 	  body: JSON.stringify({
