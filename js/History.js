@@ -2,6 +2,15 @@ var arrHistory=[];
 var arrIHistory=[];
 var lstHistory;
 
+var optHistory=true;
+
+function fHistoryOption()
+{
+	fDisplayMenu();	
+	optHistory=document.getElementById("idHistoryOption").checked;
+	GetHistoryLinks();
+}
+
 function fAddToHistory(oNode)
 {
 	arrHistory.push(oNode);
@@ -44,43 +53,46 @@ function fOpenParents(oNode)
 
 function GetHistoryLinks()
 {
-	d3.json('data/GetHistory.php', {
-	  method:"POST",
-	  headers: {"Content-type": "application/json; charset=UTF-8"},
-	  body: JSON.stringify({
-		history: arrIHistory,
-		covers: panelOrgChart.visibleNodes()
-	  })
-	}).then(function(data){
-		d3.selectAll(".HistoryLinks").remove();
-		
-		if(data.error==0)
-		{
-			var arrMatch=data.results.split(",");
-			for(var iConvert=0; iConvert<arrMatch.length; iConvert++) { arrMatch[iConvert] = +arrMatch[iConvert]; };
-
-			var oSelectedNodes=d3.selectAll(".OrgChartNode")
-			.filter(function(myNode){
-				return arrMatch.indexOf(myNode.data.iUserID)>-1
-			});
+	d3.selectAll(".HistoryLinks").remove();
+	if(optHistory)
+	{
+		d3.json('data/GetHistory.php', {
+		  method:"POST",
+		  headers: {"Content-type": "application/json; charset=UTF-8"},
+		  body: JSON.stringify({
+			history: arrIHistory,
+			covers: panelOrgChart.visibleNodes()
+		  })
+		}).then(function(data){
 			
-			var iCurr;
-			oSelectedNodes.each(function(myNode){
-				while ((iCurr = arrMatch.indexOf(myNode.data.iUserID, iCurr+1)) != -1)
-				{
-					arrMatch[iCurr]=(myNode.x)+","+(myNode.y);
-				}				
-			});
-			
-			for(var iDisplay=1;iDisplay<arrMatch.length;iDisplay++)
+			if(data.error==0)
 			{
-				panelOrgChart.graphicsHistory()
-					.append("g")
-						.attr("class", "HistoryLinks")
-					.append("path")
-						.attr("d", "M" + arrMatch[iDisplay-1] + "L"+arrMatch[iDisplay])
-						.attr("marker-end","url(#ArrowMarker)");
+				var arrMatch=data.results.split(",");
+				for(var iConvert=0; iConvert<arrMatch.length; iConvert++) { arrMatch[iConvert] = +arrMatch[iConvert]; };
+
+				var oSelectedNodes=d3.selectAll(".OrgChartNode")
+				.filter(function(myNode){
+					return arrMatch.indexOf(myNode.data.iUserID)>-1
+				});
+				
+				var iCurr;
+				oSelectedNodes.each(function(myNode){
+					while ((iCurr = arrMatch.indexOf(myNode.data.iUserID, iCurr+1)) != -1)
+					{
+						arrMatch[iCurr]=(myNode.x)+","+(myNode.y);
+					}				
+				});
+				
+				for(var iDisplay=1;iDisplay<arrMatch.length;iDisplay++)
+				{
+					panelOrgChart.graphicsHistory()
+						.append("g")
+							.attr("class", "HistoryLinks")
+						.append("path")
+							.attr("d", "M" + arrMatch[iDisplay-1] + "L"+arrMatch[iDisplay])
+							.attr("marker-end","url(#ArrowMarker)");
+				}
 			}
-		}
-	});		
+		});				
+	}
 }

@@ -3,6 +3,7 @@ var myOrgChart;
 
 var panelSupplyOrg;
 var panelDemandSupplyProcess;
+var panelSupplyDup;
 
 function fUserPeersClick(oNode)
 {
@@ -62,6 +63,9 @@ function fRefocusNode(oNode)
 
 	panelDemandSupplyProcess = panelDemandSupplyProcess!=null ? panelDemandSupplyProcess.remove() : null;
 	panelDemandSupplyProcess = DrawDemandSupplyProcess().nodeid(oCurrNode.data.iUserID).size().canvas("#idDemandSupplyProcessContent").newProcess();					
+
+	panelSupplyDup = panelSupplyDup!=null ? panelSupplyDup.remove() : null;
+	panelSupplyDup = DrawSupplyDup().nodeid(oCurrNode.data.iUserID).size().canvas("#idSupplyDup").newSupplyDup();					
 	
 	GetHistoryLinks();
 	

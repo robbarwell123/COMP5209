@@ -3,6 +3,7 @@
 		'sDBServer'=>'localhost',
 		'sDBUser'=>'email',
 		'sDBPassword'=>'email',
-		'sDBName'=>'email'
+		'sDBName'=>'email',
+		'iOverlapMin'=>40
 	];
 ?>

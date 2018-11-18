@@ -21,6 +21,12 @@
 		<SCRIPT src="js/DrawDemandSupplyProcess.js"></SCRIPT>
 		<SCRIPT src="js/DrawDemandSupplyProcessHelper.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/SupplyDemandProcess.css">		
+		
+		<SCRIPT src="js/DrawSupplyDup.js"></SCRIPT>
+		<SCRIPT src="js/DrawSupplyDupHelper.js"></SCRIPT>
+		<SCRIPT src="js/DrawDemandDup.js"></SCRIPT>
+		<LINK rel="stylesheet" type="text/css" href="css/DemandDup.css">		
+		
 	</HEAD>
 	<BODY>
 		<DIV class="GridContainer">
@@ -30,7 +36,7 @@
 						&nbsp;
 						<IMG src="img/menu.svg" width="20" height="20" onclick="javascript:fDisplayMenu()">
 						<DIV id="idMenu" style="visibility: hidden">
-							To Do!
+							<INPUT type="checkbox" id="idHistoryOption" checked onclick="javascript:fHistoryOption()">&nbsp;History
 						</DIV>
 						&nbsp;
 						<SPAN class="Logo">DSOC</SPAN>

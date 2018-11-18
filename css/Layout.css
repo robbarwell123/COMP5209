@@ -131,7 +131,6 @@ Select.NavDropDown{
 
 #idMenu {
 	width: 200px;
-	height: 200px;
 	margin: 0px;
 	padding: 5px;
 	float: left;
@@ -142,4 +141,15 @@ Select.NavDropDown{
     overflow-x: hidden;
 	font: 12px;
 	transition: all 0.2s;
+}
+
+table {
+	display: block;
+    height: 100%;
+	width: 100%;
+    overflow-y: auto;
+}
+
+#idDemandDup {
+	overflow-y: scroll;
 }

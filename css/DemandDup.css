@@ -1,0 +1,6 @@
+.DemandDupBarsTarget {
+	fill: var(--clrSelectedNode);
+}
+.DemandDupBarsSource {
+	fill: var(--clrGenericNode);
+}

@@ -24,7 +24,8 @@ function fResize()
 
 	document.getElementById('idDemandDup').style.height=iUnitHeight;
 	document.getElementById('idDemandDup').style.width=iUnitWidth;
-
+	panelDemandDup = panelDemandDup!=null ? panelDemandDup.size().update() : null;
+	
 	document.getElementById('idSupplyDup').style.height=iUnitHeight;
 	document.getElementById('idSupplyDup').style.width=iUnitWidth;	
 }
