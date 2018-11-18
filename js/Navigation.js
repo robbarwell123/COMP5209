@@ -1,6 +1,3 @@
-var bGlobalOpen=false;
-var bFilterOpen=false;
-
 var oCurrNode;
 var myOrgChart;
 
@@ -16,38 +13,19 @@ function fUserPeersClick(oNode)
 	fAddToHistory(oSelectedNode);
 	fRefocusNode(oSelectedNode);
 }
-/*
+
 function fGlobalNodeClick(oNode)
 {
-	oCurrNode=oNode.data;
-	if(bGlobalOpen)
+	var oSelectedNode=d3.selectAll(".OrgChartNode")
+		.filter(function(myNode){return myNode.data.iUserID==oNode.data.iUserID});
+	
+	oCurrNode=oSelectedNode.datum();
+	if(bDemandOrgOpen)
 	{
-		MinMaxGlobalDiv();
+		fDemandOrgOpenClose();
 	}
-	if(oNode.children)
-	{
-		oNode._children=oNode.children;
-		oNode.children=null;
-	}else
-	{
-		oNode.children=oNode._children;
-		oNode._children=null;
-	}
-	panelOrgChart=panelOrgChart.update(oNode);
-	fAddToHistory(oNode);
-	fRefocusNode(oNode);
-	doFilter();
-}
-*/
-function fGlobalNodeClick(oNode)
-{
-	oCurrNode=oNode.data;
-	if(bGlobalOpen)
-	{
-		MinMaxGlobalDiv();
-	}
-	fAddToHistory(oNode);
-	fRefocusNode(oNode);
+	fAddToHistory(oCurrNode);
+	fRefocusNode(oCurrNode);
 	doFilter();
 }
 
@@ -83,7 +61,7 @@ function fRefocusNode(oNode)
 	panelSupplyOrg = DrawSupplyOrg().nodeid(oCurrNode.data.iUserID).size().canvas("#idSupplyOrg").newTreemap();
 
 	panelDemandSupplyProcess = panelDemandSupplyProcess!=null ? panelDemandSupplyProcess.remove() : null;
-	panelDemandSupplyProcess = DrawDemandSupplyProcess().nodeid(oCurrNode.data.iUserID).size().canvas("#idDemandSupplyProcess").newProcess();					
+	panelDemandSupplyProcess = DrawDemandSupplyProcess().nodeid(oCurrNode.data.iUserID).size().canvas("#idDemandSupplyProcessContent").newProcess();					
 	
 	GetHistoryLinks();
 	
@@ -96,34 +74,6 @@ function fCenterSelectedNode()
 	var iX=-oCurrNode.x+(document.getElementById('idGridDemandOrg').clientWidth/2);
 
 	panelOrgChart.zoom(iX,iY);
-}
-
-function MinMaxGlobalDiv()
-{
-	var appStyle = getComputedStyle(document.body);
-	var iPadding = (parseInt(appStyle.getPropertyValue('--iMargin'))+parseInt(appStyle.getPropertyValue('--iPadding'))+parseInt(appStyle.getPropertyValue('--iBorder')))*2;
-
-	if(bGlobalOpen)
-	{
-
-		document.getElementById('idDemandOrg').style.height=document.getElementById('idGridDemandOrg').clientHeight-iPadding;
-		document.getElementById('idDemandOrg').style.width=document.getElementById('idGridDemandOrg').clientWidth-iPadding;
-
-		document.getElementById("idDemandOrgFilter").style.visibility="hidden";	
-		bFilterOpen=false;
-		document.getElementById("idDemandOrgFilterButton").setAttribute("onClick", "DisplayFilter(1)");
-		document.getElementById("idDemandOrgFilterButton").style.visibility="hidden";
-		document.getElementById("GlobalMinMaxButton").setAttribute("onClick", "MinMaxGlobalDiv(2)");
-	}else if(!bGlobalOpen)
-	{
-		document.getElementById("idDemandOrg").style.width="calc(100% - "+iPadding+"px)";
-		var linksStyle = getComputedStyle(document.getElementById("idGridSupplyOrg"));
-		document.getElementById("idDemandOrg").style.height=window.innerHeight-document.getElementById('idGridNavBar').clientHeight-iPadding;
-
-		document.getElementById("idDemandOrgFilterButton").style.visibility="visible";
-		document.getElementById("GlobalMinMaxButton").setAttribute("onClick", "MinMaxGlobalDiv(1)");		
-	}
-	bGlobalOpen=!bGlobalOpen;
 }
 
 function DisplayFilter()
@@ -188,4 +138,18 @@ function doFilter()
 			}
 		});		
 	}
+}
+
+var bMenu=false;
+
+function fDisplayMenu()
+{
+	if(bMenu)
+	{
+		document.getElementById("idMenu").style.visibility="hidden";	
+	}else if(!bMenu)
+	{
+		document.getElementById("idMenu").style.visibility="visible";	
+	}	
+	bMenu=!bMenu;
 }

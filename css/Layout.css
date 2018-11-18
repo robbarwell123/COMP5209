@@ -21,11 +21,19 @@ body {
 
 .GridContainer {
 	display: grid;
-	grid-template-areas: "GridNavBar GridNavBar" "GridDemandOrg GridSupplyOrg" "GridDemandSupplyProcess GridDemandSupplyProcess";
-	grid-template-rows: auto 1fr 1fr;
+	grid-template-areas: "GridNavBar GridNavBar" "GridDemandOrg GridSupplyOrg" "GridDemandSupplyProcess GridDemandSupplyProcess" "GridDemandDup GridSupplyDup";
+	grid-template-rows: auto 1fr 1fr 0px;
 	grid-template-columns: 50% 50%;
 	width: 100%;
 	height: 100%;
+}
+
+.GridDemandDup {
+	grid-area: GridDemandDup;
+}
+
+.GridSupplyDup {
+	grid-area: GridSupplyDup;
 }
 
 .GridNavBar {
@@ -89,6 +97,13 @@ body {
 	transition: all 0.5s;
 }
 
+#idDemandSupplyProcess {
+	display: block;
+	float: left;
+	position: absolute;
+	transition: all 0.5s;
+}
+
 #idDemandOrgNav {
 	height: 16px;
 	z-index: 200;
@@ -112,4 +127,19 @@ Select.NavDropDown{
 	color: white;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+#idMenu {
+	width: 200px;
+	height: 200px;
+	margin: 0px;
+	padding: 5px;
+	float: left;
+    position: absolute;
+    z-index: 200;
+    background-color: var(--clrNavButton);
+	color: white;
+    overflow-x: hidden;
+	font: 12px;
+	transition: all 0.2s;
 }

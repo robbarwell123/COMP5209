@@ -4,6 +4,7 @@
 		public $source;
 		public $target;
 		public $value;
+		public $iUserID;
 		public $sClass;
 	}
 		
@@ -39,6 +40,7 @@
 				$oLink = new Links();
 				$oLink->source=$myRow["iFromID"]==$iUserID ? "CURRUSER" : "S".$myRow["iFromID"];
 				$oLink->target=$myRow["iToID"]==$iUserID ? "CURRUSER" : "T".$myRow["iToID"];
+				$oLink->iUserID=$myRow["iToID"]==$iUserID ? $myRow["iFromID"] : $myRow["iToID"];
 				$oLink->value=$myRow["iSize"];
 				array_push($arrLinks,$oLink);
 				array_push($arrSource,$myRow["iFromID"]);

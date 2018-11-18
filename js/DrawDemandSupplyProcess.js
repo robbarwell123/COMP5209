@@ -72,9 +72,10 @@ function DrawDemandSupplyProcess()
 			.append("path")
 				.attr("class", function(myNode){return "ProcessLink "+myNode.sClass;})
 				.attr("d", d3.sankeyLinkHorizontal())
-//				.style("stroke", function(myNode){ return "black"; })
 				.style("stroke-width", function(myNode){return myNode.width;})
-				.sort((a, b) => b.dy - a.dy);
+				.sort((a, b) => b.dy - a.dy)
+				.on("mouseleave",fHideProcessLinks)
+				.on("mouseenter",fShowProcessLinks);
 		
 		myNodes=myProcessGraphics.selectAll(".ProcessNode")
 			.data(myProcessData.nodes, function(myNode){return myNode.id});
@@ -110,7 +111,7 @@ function DrawDemandSupplyProcess()
 	
 	Render.size = function()
 	{
-		var divProcessStyle=window.getComputedStyle(document.getElementById("idDemandSupplyProcess"), null);
+		var divProcessStyle=window.getComputedStyle(document.getElementById("idDemandSupplyProcessContent"), null);
 		iWidth=parseFloat(divProcessStyle.getPropertyValue("width"));
 		iHeight=parseFloat(divProcessStyle.getPropertyValue("height"));
 

@@ -26,6 +26,6 @@
   stroke: black;	
 }
 
-.ProcessLink:hover {
-  stroke-opacity: .5;
+.ProcessLink.Selected{
+  stroke: blue;	
 }

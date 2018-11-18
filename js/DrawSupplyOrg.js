@@ -53,7 +53,7 @@ function DrawSupplyOrg()
 			.sort(function(a, b) { return b.height - a.height || b.value - a.value; });
 
 		myTreemap(myPeerData);
-
+		
 		var myTreeCells = myLinksGraphics.selectAll(".SupplyOrgNodes")
 			.data(myPeerData.leaves(), function(myNode){return myNode.data.iUserID;});
 
@@ -65,7 +65,8 @@ function DrawSupplyOrg()
 		NewTreeNodes.append("rect")
 			.attr("width", function(myNode) {return myNode.x1 - myNode.x0; })
 			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; })
-			.attr("class", function(myNode){return myNode.data.sLastname==oCurrNode.data.sLastname ? "selected" : null;});
+			.attr("class", function(myNode){return myNode.data.sLastname==oCurrNode.data.sLastname ? "selected" : null;})
+			.on("click",fGlobalNodeClick);
 
 		NewTreeNodes.append("text")
 				.selectAll("tspan")
@@ -80,7 +81,7 @@ function DrawSupplyOrg()
 		d3.selectAll(".SupplyOrgNodes").transition().duration(iDuration)
 			.attr("transform", function(myNode) { return "translate(" + myNode.x0 + "," + myNode.y0 + ")"; });
 
-		UpdateTreeNodes.select(".UserLinkNode").transition().duration(iDuration)
+		UpdateTreeNodes.selectAll("rect").transition().duration(iDuration)
 			.attr("width", function(myNode) { return myNode.x1 - myNode.x0; })
 			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; });
 

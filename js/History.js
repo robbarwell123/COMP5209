@@ -10,18 +10,23 @@ function fAddToHistory(oNode)
 	oHistoryEntry.text=oNode.data.sLastname;
 	oHistoryEntry.value=oNode.data.iUserID;
 	lstHistory.add(oHistoryEntry);
+	document.getElementById("idHistoryList").selectedIndex=document.getElementById("idHistoryList").length-1;
 }
 
 function fNavHistory(iOption)
 {
-	if(iOption==0)
+	if(iOption==1)
 	{
-		oNode=arrHistory[lstHistory.selectedIndex];
-		fOpenParents(oNode);
-		panelOrgChart=panelOrgChart.update(oNode);
-		fRefocusNode(oNode);
-		doFilter();
+		document.getElementById("idHistoryList").selectedIndex!=0 ? document.getElementById("idHistoryList").selectedIndex=document.getElementById("idHistoryList").selectedIndex-1 : document.getElementById("idHistoryList").selectedIndex=0;
+	}else if(iOption==2)
+	{
+		document.getElementById("idHistoryList").selectedIndex!=document.getElementById("idHistoryList").length-1 ? document.getElementById("idHistoryList").selectedIndex=document.getElementById("idHistoryList").selectedIndex+1 : document.getElementById("idHistoryList").selectedIndex=document.getElementById("idHistoryList").length-1;
 	}
+	oNode=arrHistory[lstHistory.selectedIndex];
+	fOpenParents(oNode);
+	panelOrgChart=panelOrgChart.update(oNode);
+	fRefocusNode(oNode);
+	doFilter();
 }
 
 function fOpenParents(oNode)

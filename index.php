@@ -19,6 +19,7 @@
 
 		<SCRIPT src="https://unpkg.com/d3-sankey@0"></SCRIPT>
 		<SCRIPT src="js/DrawDemandSupplyProcess.js"></SCRIPT>
+		<SCRIPT src="js/DrawDemandSupplyProcessHelper.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/SupplyDemandProcess.css">		
 	</HEAD>
 	<BODY>
@@ -27,14 +28,17 @@
 				<DIV id="idNavBar" class="GridNavContainer">
 					<DIV class="GridLeft">
 						&nbsp;
-						<IMG src="img/menu.svg" width="20" height="20" onclick="javascript:alert('hi world')">
+						<IMG src="img/menu.svg" width="20" height="20" onclick="javascript:fDisplayMenu()">
+						<DIV id="idMenu" style="visibility: hidden">
+							To Do!
+						</DIV>
 						&nbsp;
 						<SPAN class="Logo">DSOC</SPAN>
 					</DIV>
 					<DIV class="GridRight">
-						<A class="NavLink" href="default.asp"><</A>			
+						<A class="NavLink" href="javascript:fNavHistory(1)"><</A>			
 						<SELECT id="idHistoryList" class="NavDropDown" onchange="fNavHistory(0)"></SELECT>
-						<A class="NavLink" href="default.asp">></A>	
+						<A class="NavLink" href="javascript:fNavHistory(2)">></A>	
 						&nbsp;
 					</DIV>
 				</DIV>
@@ -66,7 +70,7 @@
 								<IMG src="img/minus.svg" id='idCollapseButton' width="16" height="16" onClick="fCollapseOrgChart()">
 							</DIV>
 							<DIV class="GridRight">
-								<IMG src="img/expand.svg" id='GlobalMinMaxButton' width="16" height="16" onClick="MinMaxGlobalDiv()">
+								<IMG src="img/expand.svg" id='btnDemandOrgExpand' width="16" height="16" onClick="fDemandOrgOpenClose()">
 							</DIV>
 						</DIV>
 					</DIV>
@@ -80,7 +84,24 @@
 			</DIV>
 			<DIV id="idGridDemandSupplyProcess" class="GridDemandSupplyProcess">
 				<DIV id="idDemandSupplyProcess" class="Panel">
+					<DIV id="idDemandSupplyProcessNav" class="GridNavContainer">
+						<DIV class="GridLeft">
+						</DIV>
+						<DIV class="GridRight">
+							<IMG src="img/expand.svg" id='btnProcessExpand' width="16" height="16" onClick="fProcessOpenClose()">
+						</DIV>
+					</DIV>
+					<DIV id="idDemandSupplyProcessContent">
+					</DIV>
 				</DIV>
+			</DIV>
+			<DIV id="idGridDemandDup" class="GridDemandDup">
+				<DIV id="idDemandDup" class="Panel">
+				</DIV>				
+			</DIV>
+			<DIV id="idGridSupplyDup" class="GridSupplyDup">
+				<DIV id="idSupplyDup" class="Panel">
+				</DIV>				
 			</DIV>
 		</DIV>
 	</BODY>
