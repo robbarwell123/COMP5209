@@ -36,7 +36,7 @@ function DrawSupplyDup()
 	
 	Render.update = function()
 	{
-		sColumns=["Employee","Overlap"];
+		sColumns=["Employee","Percent&nbsp;Overlap"];
 		
 		var myHeaders=mySupplyDupTable
 			.append("THEAD")
@@ -48,22 +48,29 @@ function DrawSupplyDup()
 			.selectAll("TH")
 			.data(sColumns).enter()
 				.append('th')
-				.text(function (myColumn) { return myColumn; });
+				.html(function (myColumn) { return myColumn; });
+
+				if(myData!=null)
+		{
+			var myRows=myContent.selectAll("TR")
+				.data(myData)
+				.enter()
+				.append("TR")
+				.on("click",fUpdateDemandDup);
+
+			myRows
+				.append("TD")
+				.text(function(myNode){return myNode.sLastname;});
+
+			myRows
+				.append("TD")
+				.text(function(myNode){return myNode.iOverlapPercent;});
+		}else
+		{
+			mySupplyDupTable
+				.text("No Redundancy Found.");
+		}
 		
-		var myRows=myContent.selectAll("TR")
-			.data(myData)
-			.enter()
-			.append("TR")
-			.on("click",fUpdateDemandDup);
-
-		myRows
-			.append("TD")
-			.text(function(myNode){return myNode.sLastname;});
-
-		myRows
-			.append("TD")
-			.text(function(myNode){return myNode.iOverlapPercent;});
-				
 		return Render;
 	}
 	

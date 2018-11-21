@@ -27,7 +27,7 @@
 				$oUser = new User();
 				$oUser->iUserID=$myRow["iUserID"];
 				$oUser->sEmail=$myRow["sUser"];
-				$oUser->sLastname=$myRow["sLastname"];
+				$oUser->sLastname=ucfirst($myRow["sLastname"]);
 				$oUser->iLevel=$iCurrLevel;
 				$oUser->iMySize=$myRow["iEmailCount"];
 				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement,$iCurrLevel+1);

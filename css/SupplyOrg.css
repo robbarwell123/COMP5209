@@ -5,3 +5,7 @@
 .SupplyOrgNodes rect.selected{
 	fill: var(--clrSelectedNode);
 }
+
+.SupplyOrgNodes {
+	cursor: pointer;		
+}

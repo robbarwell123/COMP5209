@@ -150,10 +150,10 @@ function fDisplayMenu()
 {
 	if(bMenu)
 	{
-		document.getElementById("idMenu").style.visibility="hidden";	
+		document.getElementById("idMainMenuContent").style.visibility="hidden";	
 	}else if(!bMenu)
 	{
-		document.getElementById("idMenu").style.visibility="visible";	
+		document.getElementById("idMainMenuContent").style.visibility="visible";	
 	}	
 	bMenu=!bMenu;
 }

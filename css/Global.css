@@ -1,0 +1,12 @@
+:root {
+	--iMargin: 5px;
+	--iPadding: 5px;
+	--iBorder: 2px;
+	--clrOutline: #D3D3D3;
+	--clrNavBar: #607D8B;
+	--clrMenuDropdown: #F9F9F9;
+	--clrGenericNode: rgb(204, 235, 197);
+	--clrSelectedNode: #decbe3;
+	--clrTableRow: #F7F7F7;
+	--clrHover: #CBD5E7;
+}

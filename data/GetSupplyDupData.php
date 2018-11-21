@@ -28,7 +28,7 @@
 			{
 				$oNode = new Nodes();
 				$oNode->iUserID=$myRow["iUserID"];
-				$oNode->sLastname=$myRow["sLastname"];
+				$oNode->sLastname=ucfirst($myRow["sLastname"]);
 				$oNode->iOverlapPercent=$myRow["iOverlapPercent"];
 				array_push($arrNodes,$oNode);
 			}

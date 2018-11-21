@@ -4,3 +4,7 @@
 .DemandDupBarsSource {
 	fill: var(--clrGenericNode);
 }
+
+.DemandDupBarsTitles {
+	font-weight: bold;
+}

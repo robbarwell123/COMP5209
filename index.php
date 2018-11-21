@@ -4,6 +4,7 @@
 
 		<SCRIPT src="https://d3js.org/d3.v5.min.js" charset="utf-8"></SCRIPT>
 		<SCRIPT src="https://code.jquery.com/jquery-3.3.1.min.js"></SCRIPT>
+		<LINK rel="stylesheet" type="text/css" href="css/Global.css">
 
 
 		<SCRIPT src="js/Layout.js"></SCRIPT>
@@ -24,6 +25,7 @@
 		
 		<SCRIPT src="js/DrawSupplyDup.js"></SCRIPT>
 		<SCRIPT src="js/DrawSupplyDupHelper.js"></SCRIPT>
+		<LINK rel="stylesheet" type="text/css" href="css/SupplyDup.css">		
 		<SCRIPT src="js/DrawDemandDup.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/DemandDup.css">		
 		
@@ -34,8 +36,8 @@
 				<DIV id="idNavBar" class="GridNavContainer">
 					<DIV class="GridLeft">
 						&nbsp;
-						<IMG src="img/menu.svg" width="20" height="20" onclick="javascript:fDisplayMenu()">
-						<DIV id="idMenu" style="visibility: hidden">
+						<IMG src="img/menu.svg" width="16" height="16" style="position: relative; top: -4px;" onclick="javascript:fDisplayMenu()">
+						<DIV id="idMainMenuContent" style="visibility: hidden">
 							<INPUT type="checkbox" id="idHistoryOption" checked onclick="javascript:fHistoryOption()">&nbsp;History
 						</DIV>
 						&nbsp;
@@ -46,9 +48,17 @@
 						<SELECT id="idHistoryList" class="NavDropDown" onchange="fNavHistory(0)"></SELECT>
 						<A class="NavLink" href="javascript:fNavHistory(2)">></A>	
 						&nbsp;
+						&nbsp;
 					</DIV>
 				</DIV>
 			</DIV>
+			<DIV class="GridTitleDemand ColumnTitle">
+			Demand
+			</DIV>
+			<DIV class="GridTitleSupply ColumnTitle">
+			Supply
+			</DIV>
+			<DIV class="GridTitleOrg RowTitle">Organizational</DIV>
 			<DIV id="idGridDemandOrg" class="GridDemandOrg">
 				<DIV id="idDemandOrg" class="Panel">
 					<DIV id='idDemandOrgNav'>
@@ -88,6 +98,7 @@
 				<DIV id="idSupplyOrg" class="Panel">
 				</DIV>
 			</DIV>
+			<DIV class="GridTitleProcess RowTitle">Process</DIV>
 			<DIV id="idGridDemandSupplyProcess" class="GridDemandSupplyProcess">
 				<DIV id="idDemandSupplyProcess" class="Panel">
 					<DIV id="idDemandSupplyProcessNav" class="GridNavContainer">
@@ -101,6 +112,7 @@
 					</DIV>
 				</DIV>
 			</DIV>
+			<DIV id="idTitleDup" class="GridTitleDup RowTitle">Redundancy</DIV>
 			<DIV id="idGridDemandDup" class="GridDemandDup">
 				<DIV id="idDemandDup" class="Panel">
 				</DIV>				
@@ -109,6 +121,7 @@
 				<DIV id="idSupplyDup" class="Panel">
 				</DIV>				
 			</DIV>
+			<DIV class="GridBlank"></DIV>
 		</DIV>
 	</BODY>
 </HTML>

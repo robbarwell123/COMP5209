@@ -1,7 +1,7 @@
 function DrawDemandSupplyProcess()
 {
 	var iNodeWidth=0;
-	var iNodePadding=0;
+	var iNodePadding=50;
 	
 	var iWidth=900;
 	var iHeight=500;
@@ -17,6 +17,8 @@ function DrawDemandSupplyProcess()
 	var myProcessData;
 	var mySankey;
 
+	var oCurrUser;
+	
 	var myProcessZoom=d3.zoom()
 		.on("zoom",fProcessZoomHandler);
 	
@@ -25,8 +27,8 @@ function DrawDemandSupplyProcess()
 	Render.newProcess = function () {
 		var divProcessStyle=window.getComputedStyle(document.getElementById("idDemandSupplyProcess"), null);
 
-		iNodeWidth = divProcessStyle.getPropertyValue('--iNodeWidth');
-		iNodePadding = divProcessStyle.getPropertyValue('--iNodePadding');
+		iNodeWidth = parseInt(divProcessStyle.getPropertyValue('--iNodeWidth'));
+		iNodePadding = parseInt(divProcessStyle.getPropertyValue('--iNodePadding'));
 
 		sJSONLoc=sJSONLoc+iNodeID;
 		
@@ -42,13 +44,26 @@ function DrawDemandSupplyProcess()
 			mySankey = d3.sankey()
 				.nodeWidth(iNodeWidth)
 				.nodePadding(iNodePadding)
+				.nodeAlign(d3.sankeyJustify)
 				.nodeId(function(myNode){return myNode.iUserID});
 			
-			Render.update();		
+			Render.update();	
+
+			fCenterSankeyNode();
 		});
 
 		return Render;
 	};
+	
+	function fCenterSankeyNode()
+	{
+		var iY=-oCurrUser.y0+(document.getElementById('idDemandSupplyProcessContent').clientHeight/2);
+		var iX=-oCurrUser.x0+(document.getElementById('idDemandSupplyProcessContent').clientWidth/2);
+		
+		myProcessCanvas.transition()
+			.duration(iDuration)
+			.call(myProcessZoom.transform, d3.zoomIdentity.translate(iX,iY));
+	}
 	
 	Render.update = function()
 	{	
@@ -86,7 +101,7 @@ function DrawDemandSupplyProcess()
 		
 		myNewNodes=myNodes.enter()
 			.append("g")
-				.attr("class","ProcessNode")
+				.attr("class",function(myNode){if(myNode.iUserID=="CURRUSER"){oCurrUser=myNode}; return myNode.iUserID=="CURRUSER" ? "ProcessNode Selected" : "ProcessNode";})
 				.attr("transform",function(myNode){return "translate("+myNode.x0+","+myNode.y0+")";});
 		
 		myNewNodes.append("rect")
@@ -94,7 +109,20 @@ function DrawDemandSupplyProcess()
 			.attr('width', function(myNode){return myNode.x1 - myNode.x0});
 
 		myNewNodes.append("text")
-			.text(function(myNode){return myNode.sLastname;});
+			.text(function(myNode){return myNode.sLastname;})
+			.attr("y", function(myNode){return myNode.iUserID=="CURRUSER" ? -5 : (myNode.y1-myNode.y0)/2})
+			.attr("x", function(myNode){
+				if(myNode.iUserID=="CURRUSER")
+				{
+					return -1*(this.getBBox().width/2);
+				}else if(myNode.iUserID.charAt(0)=="T")
+				{
+					return (iNodeWidth+5);
+				}else
+				{
+					return -1*(this.getBBox().width+5);
+				}
+			});
 		
 		return Render;
 	}

@@ -1,13 +1,3 @@
-:root {
-	--iMargin: 5px;
-	--iPadding: 5px;
-	--iBorder: 2px;
-	--clrPanel: #D3D3D3;
-	--clrNavButton: #607D8B;	
-	--clrGenericNode: rgb(204, 235, 197);
-	--clrSelectedNode: #FBB4AE;
-}
-
 body {
 	padding: 0px;
 	margin: 0px;
@@ -19,13 +9,55 @@ body {
 	color: white;
 }
 
+.ColumnTitle {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+	color: var(--clrOutline);
+}
+
+.RowTitle {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+	color: var(--clrOutline);
+}
+
 .GridContainer {
 	display: grid;
-	grid-template-areas: "GridNavBar GridNavBar" "GridDemandOrg GridSupplyOrg" "GridDemandSupplyProcess GridDemandSupplyProcess" "GridDemandDup GridSupplyDup";
-	grid-template-rows: auto 1fr 1fr 0px;
-	grid-template-columns: 50% 50%;
+	grid-template-areas: "GridNavBar GridNavBar GridNavBar"
+	"GridBlank GridTitleDemand GridTitleSupply"
+	"GridTitleOrg GridDemandOrg GridSupplyOrg"
+	"GridTitleProcess GridDemandSupplyProcess GridDemandSupplyProcess"
+	"GridTitleDup GridDemandDup GridSupplyDup";
+	grid-template-rows: auto auto 1fr 1fr 0px;
+	grid-template-columns: 26px 49% 49%;
 	width: 100%;
 	height: 100%;
+}
+.GridBlank {
+	grid-area: GridBlank;
+}
+
+.GridTitleDemand {
+	grid-area: GridTitleDemand;
+}
+.GridTitleSupply {
+	grid-area: GridTitleSupply;
+}
+
+.GridTitleOrg {
+	grid-area: GridTitleOrg;
+}
+.GridTitleProcess {
+	grid-area: GridTitleProcess;
+}
+.GridTitleDup {
+	grid-area: GridTitleDup;
 }
 
 .GridDemandDup {
@@ -57,7 +89,7 @@ body {
 	padding: var(--iPadding);
 	background: white;
 	border-radius: 10px;
-	border: var(--iBorder) solid var(--clrPanel);
+	border: var(--iBorder) solid var(--clrOutline);
 }
 
 .GridNavContainer {
@@ -78,7 +110,7 @@ body {
 }
 
 #idNavBar {
-	background: var(--clrNavButton);
+	background: var(--clrNavBar);
 }
 
 
@@ -120,7 +152,7 @@ Select.NavDropDown{
 	border: none;
 	padding: 5px;
 	color: white;
-	background: var(--clrNavButton);
+	background: var(--clrNavBar);
 }
 
 #idNavBar A, #idNavBar A:visited, #idNavBar A:hover, #idNavBar A:active{
@@ -129,18 +161,30 @@ Select.NavDropDown{
 	font-weight: bold;
 }
 
-#idMenu {
-	width: 200px;
+#idMainMenu {
+	top: 0;
+	bottom: 0;
+}
+
+#idMainMenu:hover #idMainMenuContent {
+		display: block;
+}
+
+#idMainMenuContent {
+	visibility: hidden;
+	min-width: 200px;
 	margin: 0px;
 	padding: 5px;
 	float: left;
+	top: 34px;
+	left: 6px;
     position: absolute;
     z-index: 200;
-    background-color: var(--clrNavButton);
-	color: white;
     overflow-x: hidden;
 	font: 12px;
 	transition: all 0.2s;
+    background-color: var(--clrMenuDropdown);
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 table {

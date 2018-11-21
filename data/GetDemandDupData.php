@@ -29,7 +29,7 @@
 			{
 				$oNode = new Nodes();
 				$oNode->iSourceEmailCount=$myRow["iSourceEmailCount"];
-				$oNode->sLastname=$myRow["sLastname"];
+				$oNode->sLastname=ucfirst($myRow["sLastname"]);
 				$oNode->iTargetEmailCount=$myRow["iTargetEmailCount"];
 				array_push($arrNodes,$oNode);
 			}

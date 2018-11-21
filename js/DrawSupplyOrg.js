@@ -65,16 +65,13 @@ function DrawSupplyOrg()
 		NewTreeNodes.append("rect")
 			.attr("width", function(myNode) {return myNode.x1 - myNode.x0; })
 			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; })
-			.attr("class", function(myNode){return myNode.data.sLastname==oCurrNode.data.sLastname ? "selected" : null;})
+			.attr("class", function(myNode){return myNode.data.iUserID==oCurrNode.data.iUserID ? "selected" : null;})
 			.on("click",fGlobalNodeClick);
 
 		NewTreeNodes.append("text")
-				.selectAll("tspan")
-				.data(function(myNode) { return myNode.data.sLastname.split(/(?=[A-Z][^A-Z])/g); })
-			.enter().append("tspan")
-				.attr("x", 4)
-				.attr("y", function(d, i) { return 13 + i * 10; })
-				.text(function(myNode) { return myNode; });		
+				.text(function(myNode) { return myNode.data.sLastname; })
+				.attr("x", 10)
+				.attr("y", function(myNode) {return this.getBBox().height+4;});
 
 		var UpdateTreeNodes=NewTreeNodes.merge(myTreeCells);
 

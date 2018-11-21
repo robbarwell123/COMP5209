@@ -30,7 +30,7 @@
 				$oUser = new User();
 				$oUser->iUserID=$myRow["iUserID"];
 				$oUser->sUser=$myRow["sUser"];
-				$oUser->sLastname=$myRow["sLastname"];
+				$oUser->sLastname=ucfirst($myRow["sLastname"]);
 				$oUser->iEmailCount=$myRow["iEmailCount"];
 				array_push($arrPeers,$oUser);
 			}

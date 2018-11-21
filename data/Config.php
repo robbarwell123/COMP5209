@@ -4,6 +4,6 @@
 		'sDBUser'=>'email',
 		'sDBPassword'=>'email',
 		'sDBName'=>'email',
-		'iOverlapMin'=>40
+		'iOverlapMin'=>49
 	];
 ?>

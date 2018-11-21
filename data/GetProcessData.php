@@ -41,7 +41,7 @@
 				$oLink->source=$myRow["iFromID"]==$iUserID ? "CURRUSER" : "S".$myRow["iFromID"];
 				$oLink->target=$myRow["iToID"]==$iUserID ? "CURRUSER" : "T".$myRow["iToID"];
 				$oLink->iUserID=$myRow["iToID"]==$iUserID ? $myRow["iFromID"] : $myRow["iToID"];
-				$oLink->value=$myRow["iSize"];
+				$oLink->value=$myRow["iSize"]>1 ? log($myRow["iSize"],2) : 1;
 				array_push($arrLinks,$oLink);
 				array_push($arrSource,$myRow["iFromID"]);
 				array_push($arrTarget,$myRow["iToID"]);
@@ -90,17 +90,17 @@
 				{
 					$oNode = new Nodes();
 					$oNode->iUserID="S".$myRow["iUserID"];
-					$oNode->sLastname=$myRow["sLastname"];
+					$oNode->sLastname=ucfirst($myRow["sLastname"]);
 					array_push($arrNodes,$oNode);
 					$oNode = new Nodes();
 					$oNode->iUserID="T".$myRow["iUserID"];
-					$oNode->sLastname=$myRow["sLastname"];
+					$oNode->sLastname=ucfirst($myRow["sLastname"]);
 					array_push($arrNodes,$oNode);
 				}else
 				{
 					$oNode = new Nodes();
 					$oNode->iUserID="CURRUSER";
-					$oNode->sLastname=$myRow["sLastname"];
+					$oNode->sLastname=ucfirst($myRow["sLastname"]);
 					array_push($arrNodes,$oNode);
 				}
 			}

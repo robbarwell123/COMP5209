@@ -1,7 +1,7 @@
 :root {
 	--clrNode: #D3D3D3;
 	--clrNodeChildren: #42F486;
-	--clrFilteredNode: #CC00FF;
+	--clrFilteredNode: #e97d25;
 	--clrUserLinks: #B3CDE3;
 	--clrHistoryLinks: #FBB4AE;
 }
@@ -26,6 +26,10 @@
 
 .ArrowMarkerHead{
 	fill: var(--clrHistoryLinks)
+}
+
+.OrgChartNode {
+	cursor: pointer;	
 }
 
 .OrgChartNode .NormalNode{

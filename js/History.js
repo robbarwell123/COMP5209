@@ -6,7 +6,6 @@ var optHistory=true;
 
 function fHistoryOption()
 {
-	fDisplayMenu();	
 	optHistory=document.getElementById("idHistoryOption").checked;
 	GetHistoryLinks();
 }

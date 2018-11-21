@@ -1,5 +1,5 @@
 :root {
-	--iNodeWidth: 20;
+	--iNodeWidth: 24;
 	--iNodePadding: 20;
 }
 
@@ -9,6 +9,10 @@
 
 .ProcessNode text {
 	
+}
+
+.ProcessNode.Selected rect{
+	fill: var(--clrSelectedNode);
 }
 
 .ProcessLink {
