@@ -1,0 +1,25 @@
+.SupplyDupNodes {
+	fill: rgb(204, 235, 197);
+}
+
+.SupplyDupLinks {
+	fill: none;
+}
+
+.SupplyDupLinks.CurrentNode {
+	fill: #D3D3D3;
+}
+
+.SupplyDupLinks.Selected {
+	fill: #decbe3;
+}
+
+.SupplyDupLinksText{
+	fill: black;
+}
+.SupplyDupLinksText.CurrentNode{
+	fill: black;
+}
+.SupplyDupLinksText.CompareNode{
+	fill: #D3D3D3;
+}
