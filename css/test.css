@@ -1,25 +1,25 @@
 .SupplyDupNodes {
-	fill: rgb(204, 235, 197);
+	font: 10px sans-serif
+}
+
+.SupplyDupNodes.Selected {
+	fill: red
 }
 
 .SupplyDupLinks {
+/*
+	stroke: steelblue;
+*/
+	stroke: none;
+	stroke-opacity: 0.5;
 	fill: none;
 }
 
-.SupplyDupLinks.CurrentNode {
-	fill: #D3D3D3;
+.SupplyDupLinks.SupplyDupLinkShow{
+	stroke: steelblue
 }
 
 .SupplyDupLinks.Selected {
-	fill: #decbe3;
+	stroke: red;
 }
 
-.SupplyDupLinksText{
-	fill: black;
-}
-.SupplyDupLinksText.CurrentNode{
-	fill: black;
-}
-.SupplyDupLinksText.CompareNode{
-	fill: #D3D3D3;
-}

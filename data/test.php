@@ -52,7 +52,9 @@
 		$myPrep->execute();
 			
 		$myResults=$myPrep->get_result();
-				
+		$arrCompareNodes=array();
+		$arrCurrNode=array();
+		
 		if($myResults->num_rows > 0)
 		{
 			while($myRow=$myResults->fetch_assoc())
@@ -61,8 +63,11 @@
 				$oNode->iUserID=$myRow["iUserID"];
 				$oNode->sLastname=ucfirst($myRow["sLastname"]);
 				$oNode->iOverlapPercent=$myRow["iOverlapPercent"];
-				array_push($arrNodes,$oNode);
+				$myRow["iOverlapPercent"]==-2 ? array_push($arrCompareNodes,$oNode) : $oCurrNode=$oNode;
 			}
+		}else
+		{
+			$arrCompareNodes=null;
 		}
 		
 		$myPrep->close();		
@@ -70,33 +75,68 @@
 		$arrLinks=array();
 		for($iGetLinks=0;$iGetLinks<count($arrNodes);$iGetLinks++)
 		{
-			if($arrNodes[$iGetLinks]->iOverlapPercent>-2)
-			{
-				$myPrep=$myConnection->prepare("CALL GetOverlapLinks(?,?)");
-				$myPrep->bind_param("ii",$iUserID,$arrNodes[$iGetLinks]->iUserID);
+			$myPrep=$myConnection->prepare("CALL GetOverlapLinks(?,?)");
+			$myPrep->bind_param("ii",$iUserID,$arrNodes[$iGetLinks]->iUserID);
 
-				$myPrep->execute();
-					
-				$myResults=$myPrep->get_result();
-
-				if($myResults->num_rows > 0)
-				{
-					while($myRow=$myResults->fetch_assoc())
-					{
-						$oLink = new Links();
-						$oLink->iSource=$myRow["intTarget"];
-						$oLink->iTarget=$myRow["iUserID"];
-						$oLink->iSize=$myRow["iTargetEmailCount"];
-						array_push($arrLinks,$oLink);
-					}
-				}
+			$myPrep->execute();
 				
-				$myPrep->close();		
+			$myResults=$myPrep->get_result();
+
+			if($myResults->num_rows > 0)
+			{
+				while($myRow=$myResults->fetch_assoc())
+				{
+					$oLink = new Links();
+					$oLink->iSource=$myRow["intTarget"];
+					$oLink->iTarget=$myRow["iUserID"];
+					$oLink->iSize=max(log($myRow["iTargetEmailCount"],2),1);
+					array_push($arrLinks,$oLink);
+				}
+			}
+			
+			$myPrep->close();		
+		}
+		$myPrep=$myConnection->prepare("CALL GetOverlapLinks(?,?)");
+		$myPrep->bind_param("ii",$iUserID,$iUserID);
+
+		$myPrep->execute();
+			
+		$myResults=$myPrep->get_result();
+
+		if($myResults->num_rows > 0)
+		{
+			while($myRow=$myResults->fetch_assoc())
+			{
+				$oLink = new Links();
+				$oLink->iSource=$myRow["intTarget"];
+				$oLink->iTarget=$myRow["iUserID"];
+				$oLink->iSize=max(log($myRow["iTargetEmailCount"],2),1);
+				array_push($arrLinks,$oLink);
 			}
 		}
 		
+		$myPrep->close();		
+		
 		$oRtn = new stdClass();
-		$oRtn->nodes=$arrNodes;
+		
+		$oRtnNodes = new stdClass();
+		$oRtnNodes->name="Nodes";
+		$oRtnNodes->children=array();
+		
+		$oRtnCurrNode = $oCurrNode;
+		array_push($oRtnNodes->children,$oRtnCurrNode);
+
+		$oRtnCompNodes = new stdClass();
+		$oRtnCompNodes->name="Comparison Nodes";
+		$oRtnCompNodes->children=$arrCompareNodes;
+		array_push($oRtnNodes->children,$oRtnCompNodes);		
+		
+		$oRtnDupNodes = new stdClass();
+		$oRtnDupNodes->name="Similar Nodes";
+		$oRtnDupNodes->children=$arrNodes;
+		array_push($oRtnNodes->children,$oRtnDupNodes);		
+
+		$oRtn->nodes=$oRtnNodes;
 		$oRtn->links=$arrLinks;
 		
 		echo json_encode($oRtn);
