@@ -7,6 +7,6 @@
 	--clrMenuDropdown: #F9F9F9;
 	--clrGenericNode: rgb(204, 235, 197);
 	--clrSelectedNode: #decbe3;
-	--clrTableRow: #F7F7F7;
+	--clrVisitedNode: red;
 	--clrHover: #CBD5E7;
 }

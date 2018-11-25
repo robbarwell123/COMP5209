@@ -17,6 +17,8 @@ function fUserPeersClick(oNode)
 
 function fGlobalNodeClick(oNode)
 {
+	if(oNode.data==null){oNode.data=oNode};
+
 	var oSelectedNode=d3.selectAll(".OrgChartNode")
 		.filter(function(myNode){return myNode.data.iUserID==oNode.data.iUserID});
 	
@@ -28,6 +30,7 @@ function fGlobalNodeClick(oNode)
 	fAddToHistory(oCurrNode);
 	fRefocusNode(oCurrNode);
 	doFilter();
+	panelOrgChart=panelOrgChart.update();
 }
 
 function fGlobalNodeContextClick(oNode)

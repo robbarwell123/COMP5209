@@ -39,8 +39,15 @@
 			$arrPeers=null;
 		}
 	}
+
+	$oRtn = new stdClass();
+	$oRtn->iUserID=0;
+	$oRtn->sUser="Return";
+	$oRtn->sLastname="Return";
+	$oRtn->iEmailCount=0;
+	$oRtn->children=$arrPeers;
 	
-	echo json_encode($arrPeers);
+	echo json_encode($oRtn);
 
 	$myPrep->close();
 	$myConnection->close();

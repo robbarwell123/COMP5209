@@ -1,15 +1,11 @@
-.SupplyOrgNodes{
+.SupplyOrgNodes rect {
 	fill: var(--clrGenericNode);
 }
 
-.SupplyOrgNodes.Selected{
+.SupplyOrgNodes rect.selected{
 	fill: var(--clrSelectedNode);
 }
 
 .SupplyOrgNodes {
 	cursor: pointer;		
-}
-
-.SupplyOrgNodesTitle {
-	font-size: 10px;
 }

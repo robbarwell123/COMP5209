@@ -35,6 +35,8 @@ function fResize()
 	document.getElementById('idSupplyDupNav').style.height=iUnitHeight;
 	document.getElementById('idSupplyDupContent').style.height=iUnitHeight;
 	document.getElementById('idSupplyDupContent').style.width=iUnitWidth-140;		
+	panelSupplyDup = panelSupplyDup!=null ? panelSupplyDup.size().update() : null;
+	
 }
 
 function fStartup()

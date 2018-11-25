@@ -8,10 +8,11 @@
 		public $iUserID;
 		public $iLevel;
 		public $iMySize;
+		public $iParentLinkSize;
 		public $children;
 	}
 	
-	function fBuildNode($iNodeID, $myPrepStatement, $iCurrLevel)
+	function fBuildNode($iNodeID, $myPrepStatement, $iCurrLevel,$iFromId)
 	{
 		$GLOBALS['iLevel']=$iNodeID;
 		$myPrepStatement->execute();
@@ -23,14 +24,26 @@
 		{
 			while($myRow=$myResults->fetch_assoc())
 			{
-#				echo "ID: ".$myRow["iUserID"]." Name: ".$myRow["sUser"]."<BR>";
 				$oUser = new User();
 				$oUser->iUserID=$myRow["iUserID"];
 				$oUser->sEmail=$myRow["sUser"];
 				$oUser->sLastname=ucfirst($myRow["sLastname"]);
 				$oUser->iLevel=$iCurrLevel;
 				$oUser->iMySize=$myRow["iEmailCount"];
-				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement,$iCurrLevel+1);
+				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement,$iCurrLevel+1,$oUser->iUserID);
+				if($iFromId!=0)
+				{
+					$myPrepLink=$GLOBALS['myConnection']->prepare("CALL GetOrgLink(?,?)");
+					$myPrepLink->bind_param("ii",$iFromId,$oUser->iUserID);
+					$myPrepLink->execute();
+					$myLinkResults=$myPrepLink->get_result();
+					if($myLinkResults->num_rows == 1)
+					{
+						$myLinkRow=$myLinkResults->fetch_assoc();
+						$oUser->iParentLinkSize=$myLinkRow["iLinkSize"]>0 ? log($myLinkRow["iLinkSize"],2) : 1;
+					}
+					$myPrepLink->close();
+				}
 				array_push($arrChildren,$oUser);
 			}
 		}else
@@ -53,7 +66,7 @@
 	$myPrep=$myConnection->prepare("SELECT * FROM tbl_orgchart WHERE iManager=?");
 	$myPrep->bind_param("i",$iLevel);
 		
-	echo json_encode(fBuildNode(0,$myPrep,1)[0]);
+	echo json_encode(fBuildNode(0,$myPrep,1,0)[0]);
 
 	$myPrep->close();
 	$myConnection->close();

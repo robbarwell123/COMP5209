@@ -1,0 +1,83 @@
+:root {
+	--clrNode: #D3D3D3;
+	--clrNodeChildren: #42F486;
+	--clrFilteredNode: #e97d25;
+	--clrUserLinks: #B3CDE3;
+	--clrHistoryLinks: #FBB4AE;
+}
+
+.OrgChartLinks {
+	fill: none;
+	stroke: var(--clrNode);
+	stroke-width: 2px;	
+}
+
+.OrgChartUserLinks {
+	fill: none;
+	stroke: var(--clrUserLinks);
+	stroke-width: 2px;	
+}
+
+.HistoryLinks {
+	fill: none;
+	stroke: var(--clrHistoryLinks);
+	stroke-width: 2px;	
+}
+
+.ArrowMarkerHead{
+	fill: var(--clrHistoryLinks)
+}
+
+.OrgChartNode {
+	cursor: pointer;	
+}
+
+.OrgChartNode .NormalNode{
+	stroke: var(--clrNode);
+	stroke-width: 3px;
+}
+
+.OrgChartNode .NoChildren{
+	fill: white
+}
+
+.OrgChartNode .HasChildren{
+	fill: var(--clrNode)
+}
+
+.OrgChartNode .History{
+	stroke: var(--clrVisitedNode)
+}
+
+.OrgChartNode .SelectedNode{
+	fill: none;
+	stroke: var(--clrSelectedNode);
+	stroke-width: 3px;
+}
+
+.OrgChartNode .FilterMatchNode{
+	fill: none;
+	stroke: var(--clrFilteredNode);
+	stroke-width: 3px;
+}
+
+.OrgChartNode text{
+	font: 12px sans-serif;
+}
+
+.GlobalFilter {
+	float: left;
+    position: absolute;
+    z-index: 200;
+    background-color: white;
+    overflow-x: hidden;
+	font: 12px sans-serif;
+}
+
+#idGlobalFilters {
+	padding: 20px 0 0 0;
+}
+
+#GlobalFilterButton {
+	transition: 1s;
+}

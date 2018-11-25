@@ -10,10 +10,10 @@
 		<SCRIPT src="js/Layout.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/Layout.css">
 		<SCRIPT src="js/Navigation.js"></SCRIPT>
-		<LINK rel="stylesheet" type="text/css" href="css/Navigation.css">
 		<SCRIPT src="js/History.js"></SCRIPT>
 
 		<SCRIPT src="js/DrawDemandOrg.js"></SCRIPT>
+		<LINK rel="stylesheet" type="text/css" href="css/DemandOrg.css">
 		<SCRIPT src="js/DrawDemandOrgHelper.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/SupplyOrg.css">
 		<SCRIPT src="js/DrawSupplyOrg.js"></SCRIPT>
@@ -38,7 +38,7 @@
 						&nbsp;
 						<IMG src="img/menu.svg" width="16" height="16" style="position: relative; top: -4px;" onclick="javascript:fDisplayMenu()">
 						<DIV id="idMainMenuContent" style="visibility: hidden">
-							<INPUT type="checkbox" id="idHistoryOption" checked onclick="javascript:fHistoryOption()">&nbsp;History
+							<INPUT type="checkbox" id="idHistoryOption" onclick="javascript:fHistoryOption()">&nbsp;History
 						</DIV>
 						&nbsp;
 						<SPAN class="Logo">DSOC</SPAN>

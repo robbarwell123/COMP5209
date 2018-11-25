@@ -10,27 +10,22 @@ function DrawSupplyOrg()
 	
 	var myLinksCanvas;
 	var myLinksGraphics;
-	var myTreemap;
 	var myPeerData;
-	var myTreemap;
-		
+
+	var iBarWidth=20;
+	
 	function Render(){}
 
 	Render.newTreemap = function () {
 		sJSONLoc=sJSONLoc+iNodeID;
-				
+
 		myLinksCanvas = d3.select(sContentLoc).append("svg")
 			.attr("id",sID);
 
 		myLinksGraphics = myLinksCanvas.append("g");
 
 		d3.json(sJSONLoc).then(function(data) {
-			myPeerData=d3.hierarchy(data);
-
-			myTreemap = d3.treemap()
-				.tile(d3.treemapResquarify)
-				.round(true)
-				.paddingInner(3);			
+			myPeerData=data;
 
 			Render.update();
 		});
@@ -45,44 +40,35 @@ function DrawSupplyOrg()
 			.attr("width", iWidth)
 			.attr("height", iHeight);
 
-		myTreemap
-			.size([iWidth, iHeight]);
-			
-		myPeerData
-			.sum(function(myNode) {return myNode.iEmailCount})
-			.sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+		var x = d3.scaleBand().range([0, iWidth]).padding(0.1);
+		var y = d3.scaleLinear().range([0, iHeight]);				
 
-		myTreemap(myPeerData);
+		x.domain(myPeerData.map(function(myNode) { return myNode.sLastname; }));
+		y.domain([0, myPeerData[0].iEmailCount]);
 		
-		var myTreeCells = myLinksGraphics.selectAll(".SupplyOrgNodes")
-			.data(myPeerData.leaves(), function(myNode){return myNode.data.iUserID;});
+		var myPeerBars = myLinksGraphics.selectAll(".SupplyOrgNodes")
+			.data(myPeerData, function(myNode){return myNode.iUserID;});
 
-		var NewTreeNodes=myTreeCells.enter()
-			.append("g")
-				.attr("class","SupplyOrgNodes")
-				.attr("transform", function(myNode) { return "translate(" + myNode.x0 + "," + myNode.y0 + ")"; });
-	
-		NewTreeNodes.append("rect")
-			.attr("width", function(myNode) {return myNode.x1 - myNode.x0; })
-			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; })
-			.attr("class", function(myNode){return myNode.data.iUserID==oCurrNode.data.iUserID ? "selected" : null;})
-			.on("click",fGlobalNodeClick);
 
-		NewTreeNodes.append("text")
-				.text(function(myNode) { return myNode.data.sLastname; })
-				.attr("x", 10)
-				.attr("y", function(myNode) {return this.getBBox().height+4;});
+		myPeerBars.enter()
+			.append("rect")
+				.attr("class",function(myNode){return myNode.iUserID==oCurrNode.data.iUserID ? "SupplyOrgNodes Selected" : "SupplyOrgNodes"})
+				.on("click",fGlobalNodeClick);
 
-		var UpdateTreeNodes=NewTreeNodes.merge(myTreeCells);
+		myPeerBars.enter()
+			.append("text")
+				.attr("class","SupplyOrgNodesTitle")
+				.text(function(myNode){return myNode.sLastname});
 
-		d3.selectAll(".SupplyOrgNodes").transition().duration(iDuration)
-			.attr("transform", function(myNode) { return "translate(" + myNode.x0 + "," + myNode.y0 + ")"; });
-
-		UpdateTreeNodes.selectAll("rect").transition().duration(iDuration)
-			.attr("width", function(myNode) { return myNode.x1 - myNode.x0; })
-			.attr("height", function(myNode) { return myNode.y1 - myNode.y0; });
-
-		var OldTreeNodes = myTreeCells.exit().remove();							
+		myLinksGraphics.selectAll(".SupplyOrgNodes").transition().duration(iDuration)
+			.attr("x", function(myNode) { return x(myNode.sLastname); })
+			.attr("width", x.bandwidth())
+			.attr("y", function(myNode) { return iHeight - y(myNode.iEmailCount); })
+			.attr("height", function(myNode) { return y(myNode.iEmailCount); });
+				
+		myLinksGraphics.selectAll(".SupplyOrgNodesTitle").transition().duration(iDuration)
+			.attr("x", function(myNode) { return x(myNode.sLastname)+(x.bandwidth()/2)-(this.getBBox().width/2); })
+			.attr("y", function(myNode) {return iHeight-this.getBBox().height;});
 		
 		return Render;
 	}

@@ -141,6 +141,7 @@ function DrawDemandOrg()
 				.attr("class", "OrgChartLinks")
 			.append("path")
 				.attr("class", "OrgChartLinksPaths")
+				.style("stroke-width",function(myNode){return myNode.data.iParentLinkSize})
 				.attr("d", function(myNode) {
 					return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
 				});
@@ -185,7 +186,10 @@ function DrawDemandOrg()
 		UpdateNodes.selectAll('.NormalNode')
 			.attr('r',5)
 			.attr("class",function(myNode) {
-				return myNode._children ? "NormalNode HasChildren" : "NormalNode NoChildren";
+				var sClass="NormalNode";
+				sClass+=myNode._children ? " HasChildren" : " NoChildren";
+				sClass+=!optHistory && arrIHistory.indexOf(myNode.data.iUserID)>-1 ? " History" : "";
+				return sClass;
 			});
 
 		var OldNodes = myNodes.exit()

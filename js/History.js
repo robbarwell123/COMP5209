@@ -2,12 +2,13 @@ var arrHistory=[];
 var arrIHistory=[];
 var lstHistory;
 
-var optHistory=true;
+var optHistory=false;
 
 function fHistoryOption()
 {
 	optHistory=document.getElementById("idHistoryOption").checked;
 	GetHistoryLinks();
+	panelOrgChart=panelOrgChart.update();
 }
 
 function fAddToHistory(oNode)
