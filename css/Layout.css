@@ -90,6 +90,8 @@ body {
 	background: white;
 	border-radius: 10px;
 	border: var(--iBorder) solid var(--clrOutline);
+	min-height: 300px;
+	min-width: 300px;
 }
 
 .GridNavContainer {

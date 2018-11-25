@@ -119,6 +119,16 @@
 			</DIV>
 			<DIV id="idGridSupplyDup" class="GridSupplyDup">
 				<DIV id="idSupplyDup" class="Panel">
+					<DIV id="idSupplyDupContent">
+					</DIV>
+					<DIV id="idSupplyDupFilter">
+						<CENTER>
+							<SPAN id="idSupplyDupRangeFilterValue" class="SupplyDupNodes">(40)</SPAN>
+							<INPUT type="range" value="40" min="10" id="idSupplyDupRangeFilter" onchange="fChangeSupplyDupFilter(this.value)">
+						</CENTER>
+					</DIV>
+					<DIV id="idSupplyDupNav">
+					</DIV>
 				</DIV>				
 			</DIV>
 			<DIV class="GridBlank"></DIV>

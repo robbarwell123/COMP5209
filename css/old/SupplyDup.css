@@ -1,0 +1,26 @@
+table.SupplyDupTable{
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+table.SupplyDupTable th, td{
+    border-bottom: 1px solid #ddd;
+	width: 100%;
+}
+
+table.SupplyDupTable tr:nth-child(even){
+	background-color: var(--clrTableRow);
+}
+
+table.SupplyDupTable tr:nth-child(odd){
+}
+
+table.SupplyDupTable tr:hover{
+	cursor: pointer;
+	background-color: var(--clrHover);
+}
+
+table.SupplyDupTable td{
+	padding: 2px;
+}

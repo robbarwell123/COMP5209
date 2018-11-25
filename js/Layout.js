@@ -30,6 +30,11 @@ function fResize()
 	
 	document.getElementById('idSupplyDup').style.height=iUnitHeight;
 	document.getElementById('idSupplyDup').style.width=iUnitWidth;	
+	
+	document.getElementById('idSupplyDupFilter').style.height=iUnitHeight;
+	document.getElementById('idSupplyDupNav').style.height=iUnitHeight;
+	document.getElementById('idSupplyDupContent').style.height=iUnitHeight;
+	document.getElementById('idSupplyDupContent').style.width=iUnitWidth-140;		
 }
 
 function fStartup()

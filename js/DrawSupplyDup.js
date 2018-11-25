@@ -1,100 +1,206 @@
 function DrawSupplyDup()
 {
-	var iWidth=900;
-	var iHeight=500;
+	var iWidth=800;
+	var iHeight=800;
 	var sJSONLoc="data/GetSupplyDupData.php?iUserID=";
 	var sContentLoc="";
-	var sID="idSupplyDupChart";
+	var sID="idSupplyDup";
 	var iNodeID=0;
 	
-	var mySupplyDupTable;
-	var myData;
-		
+	var iOffset;
+	
+	var mySupplyDupCanvas;
+	var mySupplyDupGraphics;
+	var mySupplyDupNavCanvas;
+	var mySupplyDupNavGraphics;
+	
+	var myDataNodes;
+	var myDataLinks;
+	var myDataDupNodes;
+	
+	var iFilterOverlapPercent=40;
+	
 	function Render(){}
 
 	Render.newSupplyDup = function () {
 		sJSONLoc=sJSONLoc+iNodeID;
-				
-		mySupplyDupTable = d3.select(sContentLoc).append("TABLE")
-			.attr("id",sID)
-			.attr("class","SupplyDupTable");
 
+		iOffset=document.getElementById('idSupplyDupFilter').clientWidth+document.getElementById('idSupplyDupNav').clientWidth;
+
+		mySupplyDupCanvas = d3.select(sContentLoc+"Content").append("svg")
+			.attr("id",sID);
+
+		mySupplyDupNavCanvas = d3.select(sContentLoc+"Nav").append("svg")
+			.attr("id",sID);
+
+		mySupplyDupGraphics=mySupplyDupCanvas.append("g");
+		mySupplyDupNavGraphics=mySupplyDupNavCanvas.append("g");
+		
 		d3.json(sJSONLoc).then(function(data) {
-			myData=data;
+			myDataNodes=d3.hierarchy(data.comparenodes);
+			myDataLinks=data.links;
+			myDataDupNodes=data.nodes;
 			
+			Render.updateLinks();
 			Render.update();
 			
-			if(myData!=null)
-			{
-				fUpdateDemandDup(myData[0]);
-			}
-		});
-
-				
+			fClickNode(myDataDupNodes[0],0);
+		});	
+		
 		return Render;
 	};
 	
-	Render.update = function()
+	Render.updateLinks = function()
 	{
-		sColumns=["Employee","Percent&nbsp;Overlap"];
+		mySupplyDupNavCanvas
+			.attr("width",document.getElementById('idSupplyDupNav').clientWidth);
 		
-		var myHeaders=mySupplyDupTable
-			.append("THEAD")
+		var myNavLinks = mySupplyDupNavGraphics.selectAll(".SupplyDupNavLinks")
+				.data(myDataDupNodes.filter(function(myNavLink){return myNavLink.iOverlapPercent>=iFilterOverlapPercent}),function(myNode){return myNode.iUserID});
 
-		var myContent=mySupplyDupTable
-			.append("TBODY");
+		myNavLinks.exit().remove();
+		
+		myNavLinks.enter()
+				.append("text")
+					.attr("id",function(myNode){return "DupNavLink"+myNode.iUserID})
+					.attr("class","SupplyDupNavLinks")
+					.text(function(myNode){return myNode.sLastname+" ("+myNode.iOverlapPercent+")"})
+					.on("mouseenter",fShowNode)	
+					.on("mouseleave",fHideNode)
+					.on("click",fClickNode);
+
+		var iY=15;
+		var iYInc=15;
+
+		mySupplyDupNavGraphics.selectAll(".SupplyDupNavLinks").transition().duration(iDuration)
+			.attr("y",function(myLink) {iY=iY+iYInc;return iY;});
+					
+		mySupplyDupNavCanvas
+			.attr("height", iY+iYInc);
 			
-		myHeaders.append("TR")
-			.selectAll("TH")
-			.data(sColumns).enter()
-				.append('th')
-				.html(function (myColumn) { return myColumn; });
-
-				if(myData!=null)
-		{
-			var myRows=myContent.selectAll("TR")
-				.data(myData)
-				.enter()
-				.append("TR")
-				.on("click",fUpdateDemandDup);
-
-			myRows
-				.append("TD")
-				.text(function(myNode){return myNode.sLastname;});
-
-			myRows
-				.append("TD")
-				.text(function(myNode){return myNode.iOverlapPercent;});
-		}else
-		{
-			mySupplyDupTable
-				.text("No Redundancy Found.");
-		}
-		
 		return Render;
 	}
 	
-	Render.remove = function()
+	Render.update = function()
 	{
-		d3.select("#"+sID).remove();
-		return null;
+			
+			
+		mySupplyDupCanvas
+			.attr("width", iWidth-iOffset)
+			.attr("height", iHeight);
+		
+		mySupplyDupGraphics
+			.attr("transform", "translate(" + ((iWidth-iOffset)/2) + "," + (iHeight/2) + ")");
+		
+		var iRadius=Math.min(iWidth,iHeight)/2-2;
+		var iInnerRadius=iRadius-50;
+		
+		var myCluster = d3.cluster()
+			.size([360, iInnerRadius]);
+
+		myCluster(myDataNodes);
+
+		var myLinks = mySupplyDupGraphics.append("g").selectAll(".SupplyDupLinks");
+		var myNodes = mySupplyDupGraphics.append("g").selectAll(".SupplyDupNodes");
+
+		myNodes.data(myDataNodes.leaves(),function(myNode){return myNode.data.iUserID}).enter()
+			.append("text")
+				.attr("class", function(myNode){
+					if(myNode.data.iOverlapPercent==-1)
+					{
+						return "SupplyDupNodes Selected";
+					}else
+					{
+						return "SupplyDupNodes";
+					}					
+				})
+				.attr("dy", "0.31em")
+				.attr("transform", function(myNode){
+					return "rotate(" + (myNode.x - 90) + ")translate(" + (myNode.y + 8) + ",0)" + (myNode.x < 180 ? "" : "rotate(180)");
+				})
+				.attr("text-anchor", function(myNode) { return myNode.x < 180 ? "start" : "end"; })
+				.text(function(myNode){
+					sEnd=myNode.data.iOverlapPercent>-1 ? " ("+myNode.data.iOverlapPercent+")": "";
+					return myNode.data.sLastname+sEnd;
+				});
+
+		fAddNodesToLinks(myDataNodes.leaves());
+
+		myLinks.data(myDataLinks).enter()
+			.append("path")
+				.attr("id",function(myLink){return "SupplyDupLink"+myLink.iSource})
+				.attr("class", function(myLink){
+					if(myLink.bRoot)
+					{
+						return "SupplyDupLinks Selected";
+					}else
+					{
+						return "SupplyDupLinks";
+					}
+				})
+				.attr("d", fMakePath)
+				.style("stroke-width",function(myLink){
+					return parseInt(myLink.iSize);
+				});
+	  
+		return Render;
+	}
+
+	function fMakePath(myLink)
+	{
+		var iSX = myLink.oSource.y * Math.cos((myLink.oSource.x-90)/180 * Math.PI);
+		var iSY = myLink.oSource.y * Math.sin((myLink.oSource.x-90)/180 * Math.PI);
+		var iTX = myLink.oTarget.y * Math.cos((myLink.oTarget.x-90)/180 * Math.PI);
+		var iTY = myLink.oTarget.y * Math.sin((myLink.oTarget.x-90)/180 * Math.PI);
+
+		return "M"+iSX+" "+iSY+" Q 0 0 "+iTX+" "+iTY;			
 	}
 	
+	function fAddNodesToLinks(myNodes)
+	{
+		var arrNodeIndex=[];
+
+		myNodes.forEach(function(myNode){
+			arrNodeIndex.push(myNode.data.iUserID);
+		});
+
+		myDataLinks.forEach(function(oLink){
+			oLink.iSource==myNodes[0].data.iUserID ? oLink.bRoot=true : oLink.bRoot=false;
+			oLink.oSource=myNodes[0];
+			oLink.oTarget=myNodes[arrNodeIndex.indexOf(oLink.iTarget)];
+		});
+	}
+		
+	Render.remove = function(){
+		d3.select("#"+sID).remove();
+		return null;
+	};
+
 	Render.size = function()
 	{
 		var divLinksStyle=window.getComputedStyle(document.getElementById("idSupplyDup"), null);
 		iWidth=parseFloat(divLinksStyle.getPropertyValue("width"));
 		iHeight=parseFloat(divLinksStyle.getPropertyValue("height"));
 
+		document.getElementById("idSupplyDupFilter").style.paddingTop=(iHeight/2)-(document.getElementById("idSupplyDupRangeFilter").clientHeight/2);
+		
 		return Render;
 	}
+	
+	Render.graphics = function() {
+		return mySupplyDupGraphics;
+	};
+
+	Render.navgraphics = function() {
+		return mySupplyDupNavGraphics;
+	};
 	
 	Render.width = function(iValue) {
 		if(!arguments.length) return iWidth;
 		iWidth=iValue;
 		return Render;
 	};
-
+	
 	Render.height = function(iValue) {
 		if(!arguments.length) return iHeight;
 		iHeight=iValue;
@@ -112,18 +218,6 @@ function DrawSupplyDup()
 		sContentLoc=sValue;
 		return Render;
 	};
-
-	Render.id = function(sValue) {
-		if(!arguments.length) return sID;
-		sID=sValue;
-		return Render;
-	};
-
-	Render.filter = function(sValue) {
-		if(!arguments.length) sFilter=null;
-		sFilter=sValue;
-		return Render;
-	};
 	
 	Render.nodeid = function(iValue) {
 		if(!arguments.length) return iNodeID;
@@ -131,5 +225,21 @@ function DrawSupplyDup()
 		return Render;
 	};
 
+	Render.id = function(sValue) {
+		if(!arguments.length) return sID;
+		sID=sValue;
+		return Render;
+	};
+
+	Render.filter = function(iValue) {
+		if(!arguments.length) return iFilterOverlapPercent;
+		iFilterOverlapPercent=iValue;
+		return Render;
+	};
+
+	Render.getdata = function() {
+		return myData;
+	};
+	
 	return Render;
 }

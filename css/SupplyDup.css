@@ -1,26 +1,51 @@
-table.SupplyDupTable{
-	border-spacing: 0;
-	table-layout: fixed;
-	width: 100%;
+.SupplyDupNodes {
+	font-size: 10px
 }
 
-table.SupplyDupTable th, td{
-    border-bottom: 1px solid #ddd;
-	width: 100%;
+.SupplyDupNodes.Selected {
+	fill: var(--clrSelectedNode)
 }
 
-table.SupplyDupTable tr:nth-child(even){
-	background-color: var(--clrTableRow);
+.SupplyDupLinks {
+	stroke: none;
+	stroke-opacity: 0.5;
+	fill: none;
 }
 
-table.SupplyDupTable tr:nth-child(odd){
+.SupplyDupLinks.SupplyDupLinkShow{
+	stroke: var(--clrGenericNode)
 }
 
-table.SupplyDupTable tr:hover{
+.SupplyDupLinks.Selected {
+	stroke: var(--clrSelectedNode);
+}
+
+.SupplyDupNavLinks {
+	font-size: 10px;
 	cursor: pointer;
-	background-color: var(--clrHover);
 }
 
-table.SupplyDupTable td{
-	padding: 2px;
+.SupplyDupNavLinks.SupplyDupNavLinksSelected {
+	stroke: var(--clrGenericNode)
+}
+
+
+#idSupplyDupFilter {
+	width: 40px;
+	float: left;
+}
+
+#idSupplyDupNav {
+	width: 100px;
+	overflow-y: auto;
+	float: left;
+}
+
+#idSupplyDupContent {
+	float: left;
+}
+
+#idSupplyDupRangeFilter {
+	-webkit-appearance: slider-vertical;
+	width: 30px;
 }
