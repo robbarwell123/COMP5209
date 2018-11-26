@@ -20,6 +20,7 @@
 
 		<SCRIPT src="https://unpkg.com/d3-sankey@0"></SCRIPT>
 		<SCRIPT src="js/DrawDemandSupplyProcess.js"></SCRIPT>
+		<SCRIPT src="js/DrawDemandSupplyProcessLayout.js"></SCRIPT>
 		<SCRIPT src="js/DrawDemandSupplyProcessHelper.js"></SCRIPT>
 		<LINK rel="stylesheet" type="text/css" href="css/SupplyDemandProcess.css">		
 		

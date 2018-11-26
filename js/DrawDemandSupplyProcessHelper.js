@@ -28,16 +28,28 @@ function fResizeDemandSupplyProcess()
 function fShowProcessLinks(oNode)
 {
 	var oSelectedNodes=panelDemandSupplyProcess.graphics().selectAll(".ProcessLink")
-		.filter(function(myNode){
-					return myNode.iUserID==oNode.iUserID;
+		.filter(function(myLink){
+					return myLink.classid==oNode.classid;
 		});
 
 	oSelectedNodes
 		.attr("class", function(myNode){return "ProcessLink Selected";})
+
+	var oSelectedNodes=panelDemandSupplyProcess.graphics().selectAll(".ProcessNode")
+		.filter(function(myNode){
+					return myNode.data.iUserID==oNode.classid;
+		});
+
+	oSelectedNodes
+		.attr("class", function(myNode){return "ProcessNode Selected";})
+
 }
 
 function fHideProcessLinks()
 {
 	panelDemandSupplyProcess.graphics().selectAll(".ProcessLink")
-		.attr("class", function(myNode){return "ProcessLink "+myNode.sClass;})
+		.attr("class", function(myLink){return myLink.sUnique=="Multiple" ? "ProcessLink FlowThrough" : "ProcessLink Unique";});
+
+	panelDemandSupplyProcess.graphics().selectAll(".ProcessNode")
+		.attr("class", "ProcessNode");		
 }

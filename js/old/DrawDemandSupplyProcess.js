@@ -1,9 +1,7 @@
 function DrawDemandSupplyProcess()
 {
-	var oLayoutConfig=new Object();
-	oLayoutConfig.iNodeWidth=20;
-	oLayoutConfig.iNodePadding=20;
-	oLayoutConfig.iOffsetWidth=60;
+	var iNodeWidth=0;
+	var iNodePadding=50;
 	
 	var iWidth=900;
 	var iHeight=500;
@@ -59,8 +57,8 @@ function DrawDemandSupplyProcess()
 	
 	function fCenterSankeyNode()
 	{
-		var iY=-(document.getElementById('idDemandSupplyProcessContent').clientHeight/2);
-		var iX=0;
+		var iY=-oCurrUser.y0+(document.getElementById('idDemandSupplyProcessContent').clientHeight/2);
+		var iX=-oCurrUser.x0+(document.getElementById('idDemandSupplyProcessContent').clientWidth/2);
 		
 		myProcessCanvas.transition()
 			.duration(iDuration)
@@ -73,53 +71,51 @@ function DrawDemandSupplyProcess()
 			.attr("width", iWidth)
 			.attr("height", iHeight);
 
-		oLayoutConfig.iHeight=iUnitHeight*2;
-		oLayoutConfig.iWidth=iWidth;
-
-		var dataLayout=fModifiedSankeyLayout(dData,iNodeID,oLayoutConfig);
+		mySankey
+			.size([iWidth, 2000]);
+	
+		myProcessData = mySankey.nodes(dData.nodes).links(dData.links)();
 		
 		myLinks=myProcessGraphics.selectAll(".ProcessLink")
-			.data(dataLayout.links, function(myLink){return myLink.id});
+			.data(myProcessData.links, function(myNode){return myNode.source+myNode.target});
 		
 		myLinks.exit().remove();
 		
+		myLinks.attr("d",d3.sankeyLinkHorizontal());
+		
 		myNewLinks=myLinks.enter()
 			.append("path")
-				.attr("id",function(myLink){return myLink.classid;})
-				.attr("class", function(myLink){
-					return myLink.sUnique=="Multiple" ? "ProcessLink FlowThrough" : "ProcessLink Unique";
-				})
-				.style("stroke-width", function(myLink){return myLink.iStroke;})
+				.attr("class", function(myNode){return "ProcessLink "+myNode.sClass;})
+				.attr("d", d3.sankeyLinkHorizontal())
+				.style("stroke-width", function(myNode){return myNode.width;})
+				.sort((a, b) => b.dy - a.dy)
 				.on("mouseleave",fHideProcessLinks)
-				.on("mouseenter",fShowProcessLinks);			
-
-		myProcessGraphics.selectAll(".ProcessLink")
-			.attr("d", function(myLink){
-				return "M"+myLink.x1+" "+myLink.y1+"L"+myLink.x2+" "+myLink.y2;
-			});
-				
+				.on("mouseenter",fShowProcessLinks);
+		
 		myNodes=myProcessGraphics.selectAll(".ProcessNode")
-			.data(dataLayout.nodes, function(myNode){return myNode.id});
+			.data(myProcessData.nodes, function(myNode){return myNode.id});
 		
 		myNodes.exit().remove();
-
+		
+		myNodes.attr("transform",function(myNode){return "translate("+myNode.x0+","+myNode.y0+")";});
+		
 		myNewNodes=myNodes.enter()
 			.append("g")
-				.attr("id",function(myNode){return myNode.data.iUserID})
-				.attr("class","ProcessNode");
+				.attr("class",function(myNode){if(myNode.iUserID=="CURRUSER"){oCurrUser=myNode}; return myNode.iUserID=="CURRUSER" ? "ProcessNode Selected" : "ProcessNode";})
+				.attr("transform",function(myNode){return "translate("+myNode.x0+","+myNode.y0+")";});
 		
 		myNewNodes.append("rect")
-			.attr("height", function(myNode){return myNode.height;})
-			.attr('width', function(myNode){return myNode.width;});
+			.attr("height", function(myNode){return (myNode.y1 - myNode.y0)>0 ? (myNode.y1 - myNode.y0) : 1;})
+			.attr('width', function(myNode){return myNode.x1 - myNode.x0});
 
 		myNewNodes.append("text")
-			.text(function(myNode){return myNode.data.sLastname;})
-			.attr("y", function(myNode){return myNode.id==iNodeID ? -5 : (myNode.height)/2})
+			.text(function(myNode){return myNode.sLastname;})
+			.attr("y", function(myNode){return myNode.iUserID=="CURRUSER" ? -5 : (myNode.y1-myNode.y0)/2})
 			.attr("x", function(myNode){
-				if(myNode.id==iNodeID)
+				if(myNode.iUserID=="CURRUSER")
 				{
-					return (myNode.width/2)-(this.getBBox().width/2);
-				}else if(myNode.id.charAt(0)=="T")
+					return -1*(this.getBBox().width/2);
+				}else if(myNode.iUserID.charAt(0)=="T")
 				{
 					return (iNodeWidth+5);
 				}else
@@ -127,10 +123,7 @@ function DrawDemandSupplyProcess()
 					return -1*(this.getBBox().width+5);
 				}
 			});
-
-		myProcessGraphics.selectAll(".ProcessNode").transition().duration(iDuration)
-			.attr("transform",function(myNode){return "translate("+myNode.x+","+myNode.y+")";});
-			
+		
 		return Render;
 	}
 	

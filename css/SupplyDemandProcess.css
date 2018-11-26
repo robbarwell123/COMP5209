@@ -8,11 +8,15 @@
 }
 
 .ProcessNode text {
-	
+	font-size: 10px;
 }
 
 .ProcessNode.Selected rect{
-	fill: var(--clrSelectedNode);
+	fill: blue;
+}
+
+.ProcessNode.Selected text{
+	fill: blue;
 }
 
 .ProcessLink {
