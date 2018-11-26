@@ -66,9 +66,11 @@ function DrawDemandSupplyProcess()
 			.duration(iDuration)
 			.call(myProcessZoom.transform, d3.zoomIdentity.translate(iX,iY));
 	}
-	
+		
 	Render.update = function()
 	{	
+		var fGenLinks = d3.linkHorizontal();
+	
 		myProcessCanvas
 			.attr("width", iWidth)
 			.attr("height", iHeight);
@@ -94,10 +96,8 @@ function DrawDemandSupplyProcess()
 				.on("mouseenter",fShowProcessLinks);			
 
 		myProcessGraphics.selectAll(".ProcessLink")
-			.attr("d", function(myLink){
-				return "M"+myLink.x1+" "+myLink.y1+"L"+myLink.x2+" "+myLink.y2;
-			});
-				
+			.attr("d",fGenLinks);
+			
 		myNodes=myProcessGraphics.selectAll(".ProcessNode")
 			.data(dataLayout.nodes, function(myNode){return myNode.id});
 		

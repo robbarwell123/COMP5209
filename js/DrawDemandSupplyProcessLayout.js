@@ -123,6 +123,8 @@ function fModifiedSankeyLayout(myData,iCurrUserID,oLayoutConfig)
 		myData.links[iDoWork].x2=arrNewNodes[arrNewNodesIdx.indexOf(idx2)].x;
 		myData.links[iDoWork].y2=idx2==iCurrUserID ? iYCurrUser+myData.nodes[arrNodes.indexOf(myData.links[iDoWork].data.source)].midy : arrNewNodes[arrNewNodesIdx.indexOf(idx2)].y+arrNewNodes[arrNewNodesIdx.indexOf(idx2)].height/2;
 		myData.links[iDoWork].sUnique=idx1==iCurrUserID ? arrNewNodes[arrNewNodesIdx.indexOf(idx2)].type : arrNewNodes[arrNewNodesIdx.indexOf(idx1)].type ;
+		myData.links[iDoWork].source=[myData.links[iDoWork].x1,myData.links[iDoWork].y1];
+		myData.links[iDoWork].target=[myData.links[iDoWork].x2,myData.links[iDoWork].y2];
 	}
 	
 	var oRtn=new Object();
