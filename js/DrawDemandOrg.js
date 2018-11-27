@@ -19,6 +19,9 @@ function DrawDemandOrg()
 	var myOrgChartRoot;
 	var myVisibleNodes;
 	
+	var arrAllNodes=[];
+	var arrAllNodesIdx=[];
+	
 	var myOrgZoom=d3.zoom()
 		.on("zoom",fOrgZoomHandler);
 	
@@ -60,11 +63,11 @@ function DrawDemandOrg()
 			oCurrNode=myOrgChartRoot;
 
 			myOrgChartRoot.sum(function(myNode){return 1;});
-			myOrgChartRoot.children.forEach(fUpdateNode);
+			myOrgChartRoot.each(fUpdateNode);
 			myOrgChartRoot.sum(function(myNode){return myNode.iMySize;});
 			
 			myOrgChartRoot.children.forEach(fCollapse);
-
+			
 			Render.update(myOrgChartRoot);
 
 			fAddToHistory(oCurrNode);
@@ -73,10 +76,12 @@ function DrawDemandOrg()
 		
 		return Render;
 	};
-
+	
 	function fUpdateNode(oNode)
 	{
-		oNode.iNodeSize=oNode.value;			
+		oNode.iNodeSize=oNode.value;
+		arrAllNodes.push(oNode);
+		arrAllNodesIdx.push(oNode.data.iUserID);
 	}
 
 	function fExpand(oNode)
@@ -141,7 +146,6 @@ function DrawDemandOrg()
 				.attr("class", "OrgChartLinks")
 			.append("path")
 				.attr("class", "OrgChartLinksPaths")
-				.style("stroke-width",function(myNode){return myNode.data.iParentLinkSize})
 				.attr("d", function(myNode) {
 					return "M" + myNode.x + "," + myNode.y + "C" + myNode.x + "," + (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," +  (myNode.y + myNode.parent.y) / 2 + " " + myNode.parent.x + "," + myNode.parent.y;
 				});
@@ -234,6 +238,12 @@ function DrawDemandOrg()
 
 	Render.visibleNodes = function() {
 		return myVisibleNodes;
+	};
+	Render.allNodes = function() {
+		return arrAllNodes;
+	};
+	Render.allNodesIdx = function() {
+		return arrAllNodesIdx;
 	};
 	
 	Render.zoom = function(iXPos,iYPos) {

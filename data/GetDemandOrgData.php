@@ -8,7 +8,6 @@
 		public $iUserID;
 		public $iLevel;
 		public $iMySize;
-		public $iParentLinkSize;
 		public $children;
 	}
 	
@@ -31,19 +30,6 @@
 				$oUser->iLevel=$iCurrLevel;
 				$oUser->iMySize=$myRow["iEmailCount"];
 				$oUser->children=fBuildNode($myRow["iUserID"],$myPrepStatement,$iCurrLevel+1,$oUser->iUserID);
-				if($iFromId!=0)
-				{
-					$myPrepLink=$GLOBALS['myConnection']->prepare("CALL GetOrgLink(?,?)");
-					$myPrepLink->bind_param("ii",$iFromId,$oUser->iUserID);
-					$myPrepLink->execute();
-					$myLinkResults=$myPrepLink->get_result();
-					if($myLinkResults->num_rows == 1)
-					{
-						$myLinkRow=$myLinkResults->fetch_assoc();
-						$oUser->iParentLinkSize=$myLinkRow["iLinkSize"]>0 ? log($myLinkRow["iLinkSize"],2) : 1;
-					}
-					$myPrepLink->close();
-				}
 				array_push($arrChildren,$oUser);
 			}
 		}else

@@ -8,6 +8,7 @@ function DrawSupplyDup()
 	var iNodeID=0;
 	
 	var iOffset;
+	var iScale=2;
 	
 	var mySupplyDupCanvas;
 	var mySupplyDupGraphics;
@@ -146,7 +147,7 @@ function DrawSupplyDup()
 					}
 				})
 				.style("stroke-width",function(myLink){
-					return parseInt(myLink.iSize);
+					return parseInt(myLink.iSize)*iScale;
 				});
 
 		mySupplyDupGraphicsLinks.selectAll(".SupplyDupLinks").transition().duration(iDuration)

@@ -51,56 +51,36 @@ bShowConnections=false;
 
 function fShowConnections(oNode)
 {
-	sURL="data/GetOrgChartUserLinks.php?iUserID="+oNode.data.iUserID;
-	
 	bShowConnections=true;
-	d3.json(sURL).then(function(data){
-		var arrVisibleNodes=panelOrgChart.visibleNodes();
-		var arrAllNodes=panelOrgChart.allNodes();
-		var arrAllNodesIdx=panelOrgChart.allNodesIdx();
-		
-		var myLinks={};
-		
-		data.forEach(function(myNode){
-			if(arrVisibleNodes.indexOf(myNode.iUserID)>-1)
-			{
-				iFindNodeID=myNode.iUserID;
-			}else
-			{
-				iFindNodeID=myNode.iUserID;
-				while(arrVisibleNodes.indexOf(iFindNodeID)==-1)
-				{
-					iFindNodeID=arrAllNodes[arrAllNodesIdx.indexOf(iFindNodeID)].parent.data.iUserID;
-				}
-			}
-			myLinks[iFindNodeID]=typeof myLinks[iFindNodeID]=="undefined" ? parseInt(myNode.iEmailCount) : myLinks[iFindNodeID]+parseInt(myNode.iEmailCount);
-		});
-		
-		var arrLinks=[];
-		var oLink;
-		var iSource=[oNode.x,oNode.y];
-		
-		for(var iKey in myLinks)
+	d3.json('data/GetOrgChartUserLinks.php', {
+	  method:"POST",
+	  headers: {"Content-type": "application/json; charset=UTF-8"},
+	  body: JSON.stringify({
+		iUserID: oNode.data.iUserID,
+		covers: panelOrgChart.visibleNodes()
+	  })
+	}).then(function(data){		
+		if(data.error==0)
 		{
-			oLink=new Object();
-			oLink.id=parseInt(iKey);
-			oLink.source=iSource;
-			oLink.target=[arrAllNodes[arrAllNodesIdx.indexOf(oLink.id)].x,arrAllNodes[arrAllNodesIdx.indexOf(oLink.id)].y]
-			oLink.size=Math.log2(myLinks[iKey]);
-			arrLinks.push(oLink);
-		}
-		
-		var myLinkGen=d3.linkVertical();
+			var arrMatch=data.results.split(",");
+			for(var iConvert=0; iConvert<arrMatch.length; iConvert++) { arrMatch[iConvert] = +arrMatch[iConvert]; };
 
-		var myLinks=panelOrgChart.graphicsUserLinks().selectAll(".OrgChartUserLinks")
-			.data(arrLinks,function(myLink){return myLink.id});
-			
-		myLinks=myLinks.enter().append("g")
-			.attr("class", "OrgChartUserLinks");
-		
-		myLinks.append("path")
-			.style("stroke-width",function(myLink){return myLink.size})
-			.attr("d",myLinkGen);
+			var oSelectedNode=d3.selectAll(".OrgChartNode")
+			.filter(function(myNode){
+				return arrMatch.indexOf(myNode.data.iUserID)>-1
+			});
+
+			if(bShowConnections)
+			{
+				oSelectedNode.each(function(oSelectNode){
+					panelOrgChart.graphicsUserLinks()
+						.append("g")
+							.attr("class", "OrgChartUserLinks")
+						.append("path")
+							.attr("d", "M" + oNode.x + "," + oNode.y + "L"+oSelectNode.x +","+oSelectNode.y);
+				});
+			}
+		}
 	});		
 }
 
