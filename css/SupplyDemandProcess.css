@@ -4,7 +4,7 @@
 }
 
 .ProcessNode rect {
-	fill: rgb(204, 235, 197);
+	fill: var(--clrGenericNode);
 }
 
 .ProcessNode text {
@@ -12,28 +12,26 @@
 }
 
 .ProcessNode.Selected rect{
-	fill: blue;
+	fill: var(--clrSelectedLink);	
 }
 
 .ProcessNode.Selected text{
-	fill: blue;
+	fill: var(--clrSelectedLink);	
 }
 
 .ProcessLink {
   fill: none;
-  stroke-opacity: .16;
-  transition-property: stroke-opacity;
-  transition-duration: 0.5s;
+  transition: 0.5s;
 }
 
 .ProcessLink.Unique{
-  stroke: red;	
+  stroke: var(--clrUniqueLink);	
 }
 
 .ProcessLink.FlowThrough{
-  stroke: black;	
+  stroke: var(--clrGenericLink);	
 }
 
 .ProcessLink.Selected{
-  stroke: blue;	
+  stroke: var(--clrSelectedLink);	
 }

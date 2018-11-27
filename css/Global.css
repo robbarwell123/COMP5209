@@ -2,11 +2,21 @@
 	--iMargin: 5px;
 	--iPadding: 5px;
 	--iBorder: 2px;
-	--clrOutline: #D3D3D3;
+	
 	--clrNavBar: #607D8B;
 	--clrMenuDropdown: #F9F9F9;
+
+	--clrOutline: #D3D3D3;
+
 	--clrGenericNode: rgb(204, 235, 197);
 	--clrSelectedNode: #decbe3;
-	--clrVisitedNode: red;
-	--clrHover: #CBD5E7;
+	
+	--clrGenericLink: #D3D3D3;
+	--clrUniqueLink: #FBB4AE;
+	--clrSelectedLink: #B3CDE3;
+	
+	--clrOrgNode: #D3D3D3;
+	--clrHistory: #FBB4AE;
+	
+	--clrFilteredNode: #e97d25;
 }

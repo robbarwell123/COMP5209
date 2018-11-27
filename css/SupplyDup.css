@@ -18,6 +18,7 @@
 
 .SupplyDupLinks.Selected {
 	stroke: var(--clrSelectedNode);
+	stroke-opacity: 1;
 }
 
 .SupplyDupNavLinks {

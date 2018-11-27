@@ -1,31 +1,23 @@
-:root {
-	--clrNode: #D3D3D3;
-	--clrNodeChildren: #42F486;
-	--clrFilteredNode: #e97d25;
-	--clrUserLinks: #B3CDE3;
-	--clrHistoryLinks: #FBB4AE;
-}
-
 .OrgChartLinks {
 	fill: none;
-	stroke: var(--clrNode);
+	stroke: var(--clrOrgNode);
 	stroke-width: 2px;	
 }
 
 .OrgChartUserLinks {
 	fill: none;
-	stroke: var(--clrUserLinks);
+	stroke: var(--clrSelectedLink);
 	stroke-width: 2px;	
 }
 
 .HistoryLinks {
 	fill: none;
-	stroke: var(--clrHistoryLinks);
+	stroke: var(--clrHistory);
 	stroke-width: 2px;	
 }
 
 .ArrowMarkerHead{
-	fill: var(--clrHistoryLinks)
+	fill: var(--clrHistory)
 }
 
 .OrgChartNode {
@@ -33,7 +25,7 @@
 }
 
 .OrgChartNode .NormalNode{
-	stroke: var(--clrNode);
+	stroke: var(--clrOrgNode);
 	stroke-width: 3px;
 }
 
@@ -42,11 +34,11 @@
 }
 
 .OrgChartNode .HasChildren{
-	fill: var(--clrNode)
+	fill: var(--clrOrgNode)
 }
 
 .OrgChartNode .History{
-	stroke: var(--clrVisitedNode)
+	stroke: var(--clrHistory)
 }
 
 .OrgChartNode .SelectedNode{
