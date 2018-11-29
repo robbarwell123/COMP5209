@@ -1,8 +1,10 @@
 .DemandDupBarsTarget {
-	fill: var(--clrSelectedNode);
+    fill: var(--clrSelectedNode);
+    opacity: 0.75;
 }
 .DemandDupBarsSource {
-	fill: var(--clrGenericNode);
+    fill: var(--clrGenericNode);
+    opacity: 0.75;
 }
 
 .DemandDupBarsTitles {
