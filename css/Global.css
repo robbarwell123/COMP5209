@@ -8,11 +8,11 @@
 
 	--clrOutline: #D3D3D3;
 
-	--clrGenericNode: rgb(204, 235, 197);
-	--clrSelectedNode: #decbe3;
+	--clrGenericNode: #2d80b2;
+	--clrSelectedNode: #fb6542;
 	
 	--clrGenericLink: #D3D3D3;
-	--clrUniqueLink: #FBB4AE;
+	--clrUniqueLink: #626d71;
 	--clrSelectedLink: #B3CDE3;
 	
 	--clrOrgNode: #D3D3D3;
