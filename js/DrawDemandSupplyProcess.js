@@ -106,7 +106,7 @@ function DrawDemandSupplyProcess()
 		myNewNodes=myNodes.enter()
 			.append("g")
 				.attr("id",function(myNode){return myNode.data.iUserID})
-				.attr("class","ProcessNode");
+				.attr("class",function(myNode){return myNode.id==iNodeID ? "ProcessNode Main" : "ProcessNode";});
 		
 		myNewNodes.append("rect")
 			.attr("height", function(myNode){return myNode.height;})

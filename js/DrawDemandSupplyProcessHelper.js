@@ -47,9 +47,9 @@ function fShowProcessLinks(oNode)
 
 function fHideProcessLinks()
 {
-	panelDemandSupplyProcess.graphics().selectAll(".ProcessLink")
+	panelDemandSupplyProcess.graphics().selectAll(".ProcessLink.Selected")
 		.attr("class", function(myLink){return myLink.sUnique=="Multiple" ? "ProcessLink FlowThrough" : "ProcessLink Unique";});
 
-	panelDemandSupplyProcess.graphics().selectAll(".ProcessNode")
+	panelDemandSupplyProcess.graphics().selectAll(".ProcessNode.Selected")
 		.attr("class", "ProcessNode");		
 }

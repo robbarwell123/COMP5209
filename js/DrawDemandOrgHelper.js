@@ -98,9 +98,12 @@ function fShowConnections(oNode)
 		myLinks=myLinks.enter().append("g")
 			.attr("class", "OrgChartUserLinks");
 		
-		myLinks.append("path")
-			.style("stroke-width",function(myLink){return myLink.size})
-			.attr("d",myLinkGen);
+		if(bShowConnections)
+		{
+			myLinks.append("path")
+				.style("stroke-width",function(myLink){return myLink.size})
+				.attr("d",myLinkGen);			
+		}
 	});		
 }
 
