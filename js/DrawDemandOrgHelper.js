@@ -52,7 +52,7 @@ bShowConnections=false;
 function fShowConnections(oNode)
 {
 	sURL="data/GetOrgChartUserLinks.php?iUserID="+oNode.data.iUserID;
-	
+
 	bShowConnections=true;
 	d3.json(sURL).then(function(data){
 		var arrVisibleNodes=panelOrgChart.visibleNodes();
@@ -60,7 +60,7 @@ function fShowConnections(oNode)
 		var arrAllNodesIdx=panelOrgChart.allNodesIdx();
 		
 		var myLinks={};
-		
+
 		data.forEach(function(myNode){
 			if(arrVisibleNodes.indexOf(myNode.iUserID)>-1)
 			{
@@ -90,7 +90,7 @@ function fShowConnections(oNode)
 			arrLinks.push(oLink);
 		}
 		
-		var myLinkGen=d3.linkVertical();
+		var myLinkGen=d3.linkHorizontal();
 
 		var myLinks=panelOrgChart.graphicsUserLinks().selectAll(".OrgChartUserLinks")
 			.data(arrLinks,function(myLink){return myLink.id});
