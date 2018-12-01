@@ -22,6 +22,7 @@ function DrawSupplyDup()
 	var myDataDupNodes;
 	
 	var iFilterOverlapPercent=40;
+	var iNodeOffset;
 	
 	function Render(){}
 
@@ -128,7 +129,11 @@ function DrawSupplyDup()
 
 		mySupplyDupGraphicsNodes.selectAll(".SupplyDupNodes").transition().duration(iDuration)
 			.attr("transform", function(myNode){
-				return "rotate(" + (myNode.x - 90) + ")translate(" + (myNode.y + 8) + ",0)" + (myNode.x < 180 ? "" : "rotate(180)");
+				if(myNode.data.iOverlapPercent==-1)
+				{
+					iNodeOffset=-90 - myNode.x;
+				}
+				return "rotate(" + (myNode.x + iNodeOffset) + ")translate(" + (myNode.x < 180 ? (myNode.y + 8) : (myNode.y + 8 + this.getBBox().width)) + ",0)";
 			})
 			.attr("text-anchor", function(myNode) { return myNode.x < 180 ? "start" : "end"; })
 				
@@ -159,10 +164,10 @@ function DrawSupplyDup()
 
 	function fMakePath(myLink)
 	{
-		var iSX = myLink.oSource.y * Math.cos((myLink.oSource.x-90)/180 * Math.PI);
-		var iSY = myLink.oSource.y * Math.sin((myLink.oSource.x-90)/180 * Math.PI);
-		var iTX = myLink.oTarget.y * Math.cos((myLink.oTarget.x-90)/180 * Math.PI);
-		var iTY = myLink.oTarget.y * Math.sin((myLink.oTarget.x-90)/180 * Math.PI);
+		var iSX = myLink.oSource.y * Math.cos((myLink.oSource.x+iNodeOffset)/180 * Math.PI);
+		var iSY = myLink.oSource.y * Math.sin((myLink.oSource.x+iNodeOffset)/180 * Math.PI);
+		var iTX = myLink.oTarget.y * Math.cos((myLink.oTarget.x+iNodeOffset)/180 * Math.PI);
+		var iTY = myLink.oTarget.y * Math.sin((myLink.oTarget.x+iNodeOffset)/180 * Math.PI);
 
 		return "M"+iSX+" "+iSY+" Q 0 0 "+iTX+" "+iTY;			
 	}
