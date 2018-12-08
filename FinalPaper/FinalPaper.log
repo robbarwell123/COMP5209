@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  29 NOV 2018 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 10:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,14 +616,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
 \abstractwidth=\skip53
-<pictures/CypressView.jpg, id=44, 1260.71pt x 497.86pt>
+<pictures/CypressView.jpg, id=88, 1260.71pt x 497.86pt>
 File: pictures/CypressView.jpg Graphic file (type jpg)
 <use pictures/CypressView.jpg>
 Package pdftex.def Info: pictures/CypressView.jpg  used on input line 88.
 (pdftex.def)             Requested size: 467.22528pt x 184.50919pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 88.
-<diamondrule.pdf, id=45, 213.79875pt x 12.045pt>
+<diamondrule.pdf, id=89, 213.79875pt x 12.045pt>
 File: diamondrule.pdf Graphic file (type pdf)
 <use diamondrule.pdf>
 Package pdftex.def Info: diamondrule.pdf  used on input line 88.
@@ -640,57 +640,149 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 88.
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 \item ‚
+            ÄúHow do we support decision makers to minimize negative side-ef...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
- <./pictures/CypressView.jpg> <./diamondrule.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
- [2
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 \item ‚
+            ÄúHow do we value a person in the organization?‚Äù
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 \item ‚
+            ÄúHow do we provide options to users to address vacancies within...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.100 \item "
+             Where is the gap?";
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \item "
+             How big is the gap?"; and
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102 \item "
+             What can I do about the gap?".
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 \item O
+             rganizational -
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.107 \item P
+             rocess -
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 \item R
+             edundancy -
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./pictures/CypressView.jpg> <./diamondrule.pdf>] [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
+ [3
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
-
-
-Package rerunfilecheck Warning: File `FinalPaper.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `FinalPaper.out':
-(rerunfilecheck)             Before: B7A08689E540912253041CE50E347A47;513
-(rerunfilecheck)             After:  F882C9478132538DD0C7A5B56702E0D6;453.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
+(rerunfilecheck)             Checksum: 1CDA32D97400406233FFAAFD478DEE33;1164.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
  ) 
 Here is how much of TeX's memory you used:
- 8401 strings out of 494585
- 127503 string characters out of 6177924
- 248539 words of memory out of 5000000
- 11810 multiletter control sequences out of 15000+600000
- 37825 words of font info for 132 fonts, out of 8000000 for 9000
+ 8459 strings out of 494585
+ 128115 string characters out of 6177924
+ 252543 words of memory out of 5000000
+ 11821 multiletter control sequences out of 15000+600000
+ 40414 words of font info for 157 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 33i,7n,38p,946b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.12} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.11} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.10} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.8} has been referenced but does not exis
-t, replaced by a fixed one
-
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-
-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
-1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (2 pages, 582633 bytes).
+ 33i,7n,38p,1228b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
+f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on FinalPaper.pdf (3 pages, 593261 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 38491 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 40627 words of extra memory for PDF output out of 42996 (max. 10000000)
 
