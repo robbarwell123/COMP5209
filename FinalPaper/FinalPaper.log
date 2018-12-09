@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,50 +461,63 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 
 Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 79.
+(hyperref)                setting the option has no effect on input line 71.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 79.
+(hyperref)                setting the option has no effect on input line 71.
 
-Package hyperref Info: Option `pageanchor' set `true' on input line 79.
-Package hyperref Info: Option `plainpages' set `false' on input line 79.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 79.
+Package hyperref Info: Option `pageanchor' set `true' on input line 71.
+Package hyperref Info: Option `plainpages' set `false' on input line 71.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 71.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 79.
+(hyperref)                setting the option has no effect on input line 71.
 
-Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 79.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 71.
 
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 79.
-Package hyperref Info: Option `breaklinks' set `true' on input line 79.
-Package hyperref Info: Option `colorlinks' set `false' on input line 79.
-Package hyperref Info: Option `nesting' set `true' on input line 79.
-Package hyperref Info: Option `linktocpage' set `true' on input line 79.
-(./FinalPaper.aux)
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 71.
+Package hyperref Info: Option `breaklinks' set `true' on input line 71.
+Package hyperref Info: Option `colorlinks' set `false' on input line 71.
+Package hyperref Info: Option `nesting' set `true' on input line 71.
+Package hyperref Info: Option `linktocpage' set `true' on input line 71.
+(./FinalPaper.aux
+
+LaTeX Warning: Label `fig:global' multiply defined.
+
+
+LaTeX Warning: Label `fig:global' multiply defined.
+
+
+LaTeX Warning: Label `fig:global' multiply defined.
+
+
+LaTeX Warning: Label `fig:global' multiply defined.
+
+)
 \openout1 = `FinalPaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 75.
  (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 83.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 75.
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -538,7 +551,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 83.
+LaTeX Info: Redefining \microtypecontext on input line 75.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -554,7 +567,7 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \big@size=\dimen140
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 83.
+Package hyperref Info: Link coloring OFF on input line 75.
 
 (c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -564,15 +577,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count117
 )
-LaTeX Info: Redefining \ref on input line 83.
-LaTeX Info: Redefining \pageref on input line 83.
-LaTeX Info: Redefining \nameref on input line 83.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
 
 (./FinalPaper.out) (./FinalPaper.out)
 \@outlinefile=\write3
 \openout3 = `FinalPaper.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 88.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 80.
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -581,7 +594,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 88
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 80
 .
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
@@ -591,198 +604,119 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 88
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 80
 .
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 88
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 80
 .
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 88
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 80
 .
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
-\abstractwidth=\skip53
-<pictures/CypressView.jpg, id=88, 1260.71pt x 497.86pt>
-File: pictures/CypressView.jpg Graphic file (type jpg)
-<use pictures/CypressView.jpg>
-Package pdftex.def Info: pictures/CypressView.jpg  used on input line 88.
-(pdftex.def)             Requested size: 467.22528pt x 184.50919pt.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 88.
-<diamondrule.pdf, id=89, 213.79875pt x 12.045pt>
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 80.
+<diamondrule.pdf, id=116, 213.79875pt x 12.045pt>
 File: diamondrule.pdf Graphic file (type pdf)
 <use diamondrule.pdf>
-Package pdftex.def Info: diamondrule.pdf  used on input line 88.
+Package pdftex.def Info: diamondrule.pdf  used on input line 80.
 (pdftex.def)             Requested size: 213.79822pt x 12.04495pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 88.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 88.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 88.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 80.
 
 (c:/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./diamondrule.pdf>]
+<pictures/version1.JPG, id=155, 1204.5pt x 676.77844pt>
+File: pictures/version1.JPG Graphic file (type jpg)
+<use pictures/version1.JPG>
+Package pdftex.def Info: pictures/version1.JPG  used on input line 162.
+(pdftex.def)             Requested size: 251.31898pt x 141.20857pt.
+<pictures/version2.jpg, id=156, 1204.5pt x 813.0375pt>
+File: pictures/version2.jpg Graphic file (type jpg)
+<use pictures/version2.jpg>
+Package pdftex.def Info: pictures/version2.jpg  used on input line 171.
+(pdftex.def)             Requested size: 251.31898pt x 169.63878pt.
+ [2 <./pictures/version1.JPG>]
+<pictures/orgdemand.jpg, id=164, 624.08156pt x 317.68687pt>
+File: pictures/orgdemand.jpg Graphic file (type jpg)
+<use pictures/orgdemand.jpg>
+Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 193.
+(pdftex.def)             Requested size: 251.31898pt x 127.9305pt.
+<pictures/version3.jpg, id=166, 1606.0pt x 1164.35pt>
+File: pictures/version3.jpg Graphic file (type jpg)
+<use pictures/version3.jpg>
+Package pdftex.def Info: pictures/version3.jpg  used on input line 202.
+(pdftex.def)             Requested size: 251.31898pt x 182.19574pt.
+ [3 <./pictures/version2.jpg> <./pictures/orgdemand.jpg> <./pictures/version3.j
+pg>]
+<pictures/palmtree.jpg, id=177, 579.66562pt x 273.27094pt>
+File: pictures/palmtree.jpg Graphic file (type jpg)
+<use pictures/palmtree.jpg>
+Package pdftex.def Info: pictures/palmtree.jpg  used on input line 221.
+(pdftex.def)             Requested size: 251.31898pt x 118.47992pt.
+ [4 <./pictures/palmtree.jpg>] (./FinalPaper.bbl
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
 )
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.96 \item ‚
-            ÄúHow do we support decision makers to minimize negative side-ef...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 \item ‚
-            ÄúHow do we value a person in the organization?‚Äù
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 \item ‚
-            ÄúHow do we provide options to users to address vacancies within...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.100 \item "
-             Where is the gap?";
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 \item "
-             How big is the gap?"; and
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.102 \item "
-             What can I do about the gap?".
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.106 \item O
-             rganizational -
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.107 \item P
-             rocess -
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.108 \item R
-             edundancy -
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./pictures/CypressView.jpg> <./diamondrule.pdf>] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
- [3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
 Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
-(rerunfilecheck)             Checksum: 1CDA32D97400406233FFAAFD478DEE33;1164.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+(rerunfilecheck)             Checksum: 5FFC54023F79CF3ADADC3374F8B548D3;1578.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
  ) 
 Here is how much of TeX's memory you used:
- 8459 strings out of 494585
- 128115 string characters out of 6177924
- 252543 words of memory out of 5000000
- 11821 multiletter control sequences out of 15000+600000
- 40414 words of font info for 157 fonts, out of 8000000 for 9000
+ 8647 strings out of 494585
+ 130560 string characters out of 6177924
+ 252345 words of memory out of 5000000
+ 11870 multiletter control sequences out of 15000+600000
+ 48537 words of font info for 229 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 33i,7n,38p,1228b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,7n,38p,1211b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (3 pages, 593261 bytes).
+Output written on FinalPaper.pdf (5 pages, 757778 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 40627 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 47359 words of extra memory for PDF output out of 51595 (max. 10000000)
 

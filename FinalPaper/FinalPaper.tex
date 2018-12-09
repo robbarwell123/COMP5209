@@ -47,7 +47,7 @@
 %\shortauthortitle{Firstauthor \MakeLowercase{\textit{et al.}}: Paper Title}
 
 \abstract{
-  Our abstract goes here.
+DSOC is a novel way to visualize the complex problem of organizational change by allowing the user to quickly see where gaps exist in an organization, understand the gaps that exist, and help the user determine how they might fill the gaps.  This is supported by using email within an organization to model the flow from one employee to another.  This representation provide the most current and concrete representation of the organization and allows the user to make better decisions when faced with organizational change.
 } 
 \keywords{Organizational change, decision-making, information visualization}
 
@@ -59,14 +59,6 @@
  \CCScat{K.6.1}{Management of Computing and Information Systems}%
 {Project and People Management}{Life Cycle};
  \CCScat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
-}
-
-%% Uncomment below to include a teaser figure.
-\teaser{
-  \centering
-  \includegraphics[width=\linewidth]{CypressView}
-  \caption{In the Clouds: Vancouver from Cypress Mountain. Note that the teaser may not be wider than the abstract block.}
-	\label{fig:teaser}
 }
 
 %% Uncomment below to disable the manuscript note
@@ -85,37 +77,157 @@
 \firstsection{Introduction}
 
 \maketitle
-The idea of organizational change has started to shift over the past decade with the introduction of the gig economy and other non-traditional employment models.  Historically a person would obtain a job after high school and university and stay with the same company until retirement.  This has fundamentally changed where employees are commonly switching jobs every 2-3 years and some might be more contract workers then employees.  This can stress an organization especially if the change is not well understood.  Understanding the intricate interlocking contingencies between people in an organization can be difficult and changes to its social structure hard to understand.  This paper looks to create a visualization tool to help an organization understand these changes and help decision makers minimize negative side-effects from the change.
-The visualization will support the other concept we want to introduce which is organizational change from the information flow perspective vice the traditional organization hierarchy.  To understand how change will disrupt the flow of information through an organization you first have to model the flow.  We have chosen to model the flow based on the email communications within an organization combined with social networking theory.
+
+The rise of the \lq gig economy\rq{}\cite{de2015rise,friedman2014workers} has forced society through a massive transition in the past two decades with people transitioning between jobs with greater frequency.  Historically, a person would obtain a job from high school or university and stay with a specific company until they retire.  This resulted in organizations that had minimal change, which could be easily managed. Modern organizations are forced to adapt with the shift to the gig economy and other non-traditional employment models.  
+
+An organization is a social network\cite{scott1988social} of individuals engaged in complex \emph{interlocking contingencies}\cite{glenn2006complexity}: individuals in an organization are tightly interconnected, where the behaviour of one both depends on, and has subsequent consequences for the behaviour of others\cite{glenn2006complexity}. This feature of organizations means that the results of changes to its social structure (say, by adding or removing an individual) can be difficult to understand. Change is disruptive, and care must be taken to minimize any negative side-effects. The challenge of minimizing organizational disruption as a result of personnel change depends critically on understanding the effects of that change. In the gig economy, this challenge, and the need for tools that support it, is even greater. 
+
+We aim to address this problem through \emph{information visualization}. Visualizations support thought by reducing the gap between the data, and the users' \emph{mental model} of the data\cite{yi2007toward}. A mental model is an internal representation of how something in the world works\cite{staggersmodel,norman2014some}. Wherever there is distance between the presentation of the data and our understanding of the data, mental work must be done so that understanding is possible. This type of mental work does not bring us closer to solving domain goals, but rather is a sort of unfortunate precursor for the really important work, and therefore should be avoided wherever possible\cite{paas2003cognitive}. Fortunately, the physical environment can be used to store information, which allows us to \lq off-load\rq{} mental work onto the environment\cite{wilson2002six}. Visualizations are essentially one way of effectively leveraging this property of the environment to aid thought.
 
 \section{Background}
 
+\subsection{Methodology}
+The development of our visualization started with defining a methodology to help guide the design process.  We reviewed a number of papers in the area of evaluation of information visualization.  We found this area of research to be less concrete then other topics we had studied before.  The Challenge of Information Visualization Evaluation\cite{challengeofinfoviseval} paper we reviewed helped us to clarify our evaluation criteria and approach by validating our desire to present our design and findings to various user groups throughout the design process.  The Empirical Studies in Information Visualization: Seven Scenarios paper\cite{sevenscenarios} paper supported our desire to have an iterative approach similar agile software development.  The approach presented in the paper was Pre-design, design, prototype, deployment, and re-design.  This approach would also line up with using different user groups through the process.
+
+Our design process involved us consulting three different user groups:
+\begin{itemize}
+	\item Group A - Government Department - This group represents users who address organizational change questions for a large Canadian Government department. 
+	\item Group B - Academics - This group represents various academics at our University.
+	\item Group C - Private Company - This group represents users at a private multi-national company who discovered our research during the design process.
+\end{itemize}
+
+Using these three groups we could gain informal feedback throughout the design process and strike a balance between modern visualization concepts that push the envelope and how a real world user would interpret those concepts.  By version 3 of our design we started to see the balance between the modern visualizations that the academics helped generate and the needs of real world users.  Our opinion is this approach should be standard in any visualization development to ensure there is a user adoption path that meets the needs of a broader audience.
+
+After the initial design was explored we presented it to Group A who provided valuable feedback that contributed to the development of version 2.  Version 2 was then shown to Group B who helped define what version 3 would look like.  The academics were invaluable to help generate creative solutions to some of the challenges real users identified, but we were unable to solve on our own.  Version 3 was then shown to all Groups to validate the value they would obtain from our visualization.
+
 \subsection{Problem Space}
-Similar to the design aspect of the problem we also went through an iterative process to redefine our initial problem.  The original problem we started with was "How to address empty positions within an organization?"  This was a topic of interest to us as we know many organizations are facing organizational modeling problems within the current context of the "gig" economy where employees are constantly changing jobs and might only be with a company for a short term.  This leads to organizational charts that are quickly out of date and do not accurate reflect the true distribution and flow of work within an organization.  
-After reflect this was further refined into the following problems:
+Development of the design also led to reframing the original problem.  This required an iterative process to try and make sense of what we were looking for the visualization to help with.  This loosely followed a sense making model presented by Peter Pirolli and Stuart Card\cite{cognativetaskanalysis} where we started with a question eventually leading to a hypothesis and then through a validation process.  
+
+The original problem was "How to address empty positions within an organization?"  This was a topic of interest to us as we know many organizations are facing organizational modeling problems within the current context of the "gig" economy where employees are constantly changing jobs and might only be with a company for a short term.  This leads to organizational charts that are quickly out of date and do not accurate reflect the true distribution and flow of work within an organization.  
+Further discussion led to refining the problem as:
+\begin{itemize}
 \item “How do we support decision makers to minimize negative side-effects from organizational change?”
 \item “How do we value a person in the organization?”
 \item “How do we provide options to users to address vacancies within an organization?”
-These can be further reshaped to what a user community (i.e. managers) would understand which are:
-\item "Where is the gap?";
-\item "How big is the gap?"; and
-\item "What can I do about the gap?".
+\end{itemize}
+These statements can be further reshaped to what a user (i.e. managers) would understand the problem as.
+\begin{itemize}
+\item "Where is the gap?"
+\item "How big is the gap?"
+\item "What can I do about the gap?"
+\end{itemize}
 
 \subsection{Option Space}
-With the problem space defined we can focus on how the user would explore the problem space.  This is typically done by viewing the problem from different angles or through different lens.  When we discussed our refined problem with users and asked them how they would address the problem they talked about exploring the problem by looking at it from an organizational perspective and a process perspective.  When we discussed how to fill the gaps we also noted a third perspective around redundancy.  Below is a quick description of the mental model for each view:
-\item Organizational - 
-\item Process - 
-\item Redundancy - 
+Using a refined problem description we started to focus on how we would address these statements.  Using the work done by Ware on Visual Thinking Algorithms\cite[Chapter 11]{ware2012information} we decided to enumerate the steps a user would do manually to solve the problem statements and determine where visualization could help offload cognitive processes.
+
+During our walk through with users we discovered they were sub dividing the problem and exploring it from different perspectives.  Some aspects of the process they found difficult was keeping track of what part of the problem space they had explored and modeling different views of the problem.  These tasks could easily be addressed with a visualization.  Below is a quick description of the different views that represent the users mental model of the probelm.
+\begin{itemize}
+\item Organizational - This places an employee in the traditional hierarchical organizational structure.  Commonly this is represented by a tree where the employee is a node and an edge is the link between nodes.
+\item Process - This places an employee as part of a process where they receive information, process information, and output information to the next stage of the process.  Users typically used flow charts and other process diagrams to represent this view.
+\item Redundancy - During the walk through we noticed it was most common to address the vacancy by re-distributing the workload within the group, however the users occasionally tried to find people that did similar tasks as replacement.
+\end{itemize}
+
+\subsection{Data}
+During the exploration of the problem space we needed to identify what data we were going to present to the user with the visualization.  Building upon previous work from our colleague on information flow within an organization we decided to use emails.  We found the majority of communication within a modern organization is through email or instant messaging.  Using emails we would have an accurate and up to date model of how information flows through an organization.  
+
+This concept resonated well with both the user and academic groups since it represented an improvement from the traditional organizational chart model which is typically out of date and does not capture the true contributions to the team of an individual employee.
+
+The data model requires enrichment through the addition of value models.  One value model would be required to address the statement of "How big is the gap?" and the other value model would be required for "What can I do about the gap?".  Both value models presented below are rudimentary as the primary focus of this paper is the visualization problem and not the data problem.
+
+\begin{itemize}
+\item Gap Size - By modeling each employee as a node the emails between nodes would represent an edge with a weight of 1.
+\item Gap Options - One option to address the gap could be redistributing the work to a "similar" employee. The value model we used to compare two employees is based on the overlap in the number of individuals they communicate with. 
+\end{itemize}
 
 \section{Design}
 
-Our visualization came organically through a couple iterations and discussions with real world users.  The original design was developed by the authors, this design was then presented to real world users interested in the topic.  Based on their feedback adjustments were made to refine the design.  After a second round a feedback from the users we showed it to academics who provided further feedback.  This resulted in the final design presented in this paper.
+\subsection{Evolution of Design}
+Our visualization was generated organically based on discussions with the groups identified in the previous section.  Based on their feedback adjustments were made to refine the design until the final design was reached.
+
+Our design went through 3 major versions.
+\begin{itemize}
+	\item Version 1 - The initial design by the authors that focused on the organization and communication problem.
+	\item Version 2 - Added the process and redundancy views.
+	\item Version 3 - Refined the process and redundancy views to better align with the users mental model and how they interact with the visualization.
+\end{itemize}
+
+The most complex part of the design problem was creating a functional layout that conveyed the complex intricacies of organizational change.  The initial part of the design focused around understanding what tools we could leverage and how to fit them with the users mental model.  We required an intuitive layout that would allow the user to quickly understand the different views into the problem and allow the user to quickly understand where they are in their mental process.
+
+\subsection{Layout}
+\subsubsection{Structure}
+The original design shown in Figure 1 had 3 viewing panes to try and convey the organizational perspective of information flow and the process perspective.  It attempted to do this using the standard organizational tree for organizational structure and a tree map to show the volume of communication between a selected individual and their communication links.  This view presented many challenges for users as they found it difficult to understand what the visualization was trying to communicate and weren't able to fit it into their mental model.  Based on feedback from Group A and reflection by the authors we determined that this concept was better communicated as a traditional supply demand problem as these were the words Group A typically used most often during the review of the first design.  This feedback allowed us to revise our design to a layout which was 2xN column representation that broke the problem in a supply / demand issue.  This allowed the users to better address the question of "How do we support decision makers to minimize negative side-effects from organizational change?" by understanding the impact and if required redistribute work based on available supply.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{pictures/version1.JPG}
+	\caption{Version 1}
+	\label{fig:global}
+\end{figure}
+
+The second designed shown in Figure 2 seemed to resonate better when shown to Group B and subsequently in version 3 for Groups A and C.  This allowed all groups to focus on the individual views within the visualizations versus focusing on the layout.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{pictures/version2.jpg}
+	\caption{Version 2}
+	\label{fig:global}
+\end{figure}
+
+Allowing each row to represent a different view of the problem space enables the flexibility to include different views in the future as more users trials of the system are conducted.
+
+\subsubsection{Navigation}
+Complimentary to the structure of the layout is how the user will navigate the layout.  Our goal was to provide the user with the freedom to explore the problem however they choose.  This required the support of a brushing scatter plot concept where the interactions within an individual sub view are reflected in the other sub views to ensure the user is always viewing the problem from a single data point through a number of lens.
+As the user explored the problem it was also important to have a way for them to keep track of the problem space they have already explored.  This was a salient point that we found during the literature review with the quote “Information exploration is inherently a process with many steps, so keeping the history of actions and allowing users to retrace their steps is important”\cite{anafigueiras}.  This quote accurate describes how our users would interact with the system.  This was included by providing the user the option to display history as direction arrows or simply coloring the nodes in the organizational chart.  The user can then navigate the history using the navigation bar at the top of the screen.
+
+\subsection{Organizational}
+The organizational demand and supply view were the most consistent between version 1 and 3.  The demand view was modeled as a classical organizational tree structure as this paradigm was most aligned with the users current mental model of the problem.  During the design phase we uncovered a number of issues that we needed to address.
+\begin{itemize}
+	\item Actions - Some organizational trees can be large and we need to provide the user with the ability to zoom in and out of the tree, expand a node with children and select a node.  In version 1 we decided to use a single click to expand a node and select a node with one action and double click would zoom in and out of the tree.  Users in Group A found this confusing since opening the children of a node would also cause the node to be visited.  This was refined in version 2 where a single click selected a node, the double click would zoom in and out, and a right mouse click would open a node with children.  
+	\item Highlight - During the initial design of version 1 we needed to come up with a creative solution to visualize the various states a node could have.  This includes: being selected, having children, being visited, and being filtered.  We originally experimented with glyphs and other icons, however this resulted in a visualization that was too "busy".  We settled on using concentric circles of different colors as shown in Figure 3 to denote various states of a node.  A node with children has a filled in circle.  A node that the user has visited appears in red.  A node that is filter is orange. And a node that is selected appears red.  We recognized the issue this might present for color blind people and also chose to vary the size of circle around the nodes to account for this.
+	\item Navigation - Navigating large trees can present challenges for some users.  This was addressed by providing a real time filter where the user adjusts the filter parameters which are quickly reflected by circles appearing and disappearing around nodes in the tree that match the filter criteria.  Additionally the organization demand panel can be expand to fill the whole window to help the user navigate the entire tree.  Additional short cuts are provided at the top of the frame to center on the current selected node, expand all nodes, or collapse all nodes.
+	\item Comparison - Version 1 of the design provide a feature that allowed the user to hover over a node and display the nodes they communicated with using a blue line.  This was further refined based on discussions with Group B to incorporate a weight.  This would then allow the user to see the overlap of where the employee is within the organization and which other employees they communicate with and how much.  This is denoted by the blue line in figure 3.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{pictures/orgdemand.jpg}
+	\caption{Node Selection}
+	\label{fig:global}
+\end{figure}
+
+The original organizational supply view was a horizontal bar chart as shown on the left side of figure 1.  In version 2 we experimented with changing this to a tree map as we wanted to show the relative size of each employee in a group compared to the others.  The space filling method\cite{shneiderman1992tree} as discussed in Ben Shneiderman original treemap paper was appealing since we did not know how large a group might be.  After discussion with Group B we decided treemaps were not appropriate since there were no levels to drill down to or group by.  It was also noted by Group A that a bar chart might be better for a comparison view point.  When the user clicks on any of the bars it will re-orient all views to select the employee.  The final vertical bar chart is shown in figure 4.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{pictures/version3.jpg}
+	\caption{Version 3}
+	\label{fig:global}
+\end{figure}
+
+\subsection{Process}
+
+The process demand and supply view went through the most significant change between versions.  In version 1 a treemap was used to model the communication flow between the selected employee and those they communicate with.  This approach was great a showing the relative comparison of communication from the view of an employee, however Group A noted that this didn't really show flow of information and made it hard to determine what information started or ended with the selected employee.  Group A's suggestion was to investigate using a Sankey diagram.
+In version 2 we added a Sankey diagram, however this version presented a number of challenges for Group B.  The unbalanced flow connections led the group to believe there was some sort of knowledge in the way it flowed from left to right which was simply a function of the layout algorithm and not used to communicate any information.  Additionally some communication links were large and made the visualization hard to interpret.  It was further compounded by users not being lined up on the left and right of the diagram.  Based on this feedback a complete redesign of the diagram was required.
+Version 3 significantly changed the layout from version 2.  We scaled the links to make them easier to differentiate on the screen, color was added to denote links that either started or ended with the selected employee, and most significantly we lined up the communication flow so if a user was an incoming and outgoing communication flow they would appear at the same location on both the left and right hand side of the screen.
+The unique nature of the Sankey diagram allows it to both show demand and supply.  This concept will be further discussed in the evaluation and discussion section.
+
+\subsection{Redundancy}
+
+The redundancy view was introduced in version 2 after discussions with Group A.  They thought it would be a "neat" idea to show similar people within an organization as a potential supply source to solve the identified gap.  Version 2 included a simple implementation where a back to back bar chart was used to help the user determine if the supply lined up with the demand and a table allowed the user to select the best supply based on the value model discussed in the previous section.
+Group B had some challenges with the supply part of the design as a table wasn't how users typically compared two options.  This led us to investigate a number of options including hierarchical edge bundling and chord diagrams to try and show the overlap between two selections.  The chord diagram presented challenges since the selected employee would fill the entire circle making it hard to differentiate between the different paths.  The hierarchical edge bundling had the challenge of not showing the relative size of each connection.  This was over come by merging the two concepts to create the palm tree diagram.  This diagram allows the user to hover over the list of recommended users which was the table in version 2 and see the comparison.  This is shown in figure 5.  The slider also allows the user to adjust the cut off of the list in real time to try and narrow the scope of comparison without discounting employees that might have poor overlap with other employees.  This approach seemed to resonate well with all user groups in version 3 as it was flexible to an employee with many connections and provided instantaneous feedback to the user. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{pictures/palmtree.jpg}
+	\caption{Palm Tree}
+	\label{fig:global}
+\end{figure}
+
+\section{Implementation}
+The system is primarily implemented using PHP, HTML, CSS, and Javascript using the D3 library.  A number of visualization systems were contemplated, however D3 was chosen due to its maturity level and flexibility to visualize our problem space.
 
 \subsection{Data}
-To achieve the goal of a visualization to communicate knowledge or discover new knowledge we first had to develop a problem set to create a visualization for.  Our colleague Brad Mazurek came up with the original idea to understand the impact of information flow through an organization when the organization changes.  This resulted in a number of discussions to determine how to model information flow and visualize the impact to any changes within the flow.  The result of this discussion was using email and associated SMTP information as a representation of information flow within an organization.
-Traditional organization structure is captured within an organizational chart, however these charts tend to be outdated quickly and do not represent the true flow of information or value of an individual employee.
-
-The initial value model is based on a primitive concept of each email representing a value of 1.  This results in the generation of a node, representing a person, and an edge representing a single email between 2 people with a weight of 1.  Using SMTP header information this was easy to model in a database.  Alternative value models are discussed in section 5 under future work.
+Using SMTP header information this was easy to model in a database.  Alternative value models are discussed in section 5 under future work.
 
 To demonstrate our value model we chose the popular Enron email data set.  This data set was originally made public during the Federal Energy Regulatory Commission investigation.  It contains the emails of approximately 150 users in the Eron organization.  Most of these users are senior managers.  This particular data set has been studied a number of times primarily with a focus in social networking and natural language processing.  This paper will use this data set to illustrate our visualization to support the flow of information through an organization.  
 
@@ -125,29 +237,14 @@ In addition to the email boxes of users we also required an organizational chart
 
 The Enron data set was obtained from Carniege Mellon University.  It was processed using a Python script to parse all the SMTP header information from a given email.  This was then stored in a MySQL database for further processing by the application.  SMTP information was chosen since it contained all the information required to construct the nodes and edges within the graph.  
 
-\subsection{Methodology}
-Before conducting any design work we first needed to come up with a methodology to use and the supporting infrastructure and resources.  Based on a number of papers we reviewed on the topic such as "The Challenge of Information Visualization Evaluation" we had to think about our evaluation criteria and approach.  Based on some of the concepts presented in "Empirical Studies in Information Visualization: Seven Scenarios paper" we determined we needed an iterative approach similar to the approach presented in the paper of Pre-design, design, prototype, deployment, and re-design.  This approach involved gaining support for real world users and academics to provide informal feedback through the design process.  This also allowed us to strike a balance between modern visualization concepts that push the envelope and how a real world user would interpret those concepts.  By version 3 of our design we started to see the balance between the modern visualizations that the academics helped generate and the needs of real world users.  Our opinion is this approach should be standard in any visualization development to ensure there is a user adoption path that meets the needs of a broader audience.
-After the initial design was explored we first presented it to real world users to validate our brain storming.  We obtained a lot of valuable feedback which we will guide you through in the next section.  The second design was then shown to academics to help generate creative solutions to some of the challenges real world users had identified but we were unable to solve on our own.  After this we conducted another review with users who noticed our design had evolved significantly since the first time they viewed it.
-
-\section{Evolution of Design}
-
-Designing a functional layout that conveyed the complex problem of organizational change turned out to be complex.  The initial part of the problem focused around the sense making problem that is described in the "Ivan Herman" paper.  We needed an intuitive design that would allow the user to quickly understand the different views into the problem and allow the user to quickly understand where they are in their mental process.
-
-\subsection{Layout}
-\subsubsection{Structure}
-The original design as shown in Figure 1 had 3 viewing panes to try and convey the organizational perspective of information flow and the process perspective.  It attempted to do this using the standard organizational tree for organizational structure and a tree map to show the volume of communication between a selected individual and their communication links.  This view presented many challenges for users as they found it difficult to understand what the visualization was trying to communicate and weren't able to fit it into their mental model.  Based on feedback from the user group and reflection within the project team we determined that this concept was better communicated as a traditional supply demand problem as these were the words users typically used most often during the review of the first design.  This feedback allowed us to revise our design to a layout which was 2xN column representation that broke the problem in a supply / demand issue.  This allowed the users to better address the question of "How do we support decision makers to minimize negative side-effects from organizational change?" by understanding the impact and if required redistribute work based on available supply.
-
-The second designed seemed to resonate better when shown to academics and users.  This allowed both groups to focus more on the individual visualizations of the sub problems versus focusing on the layout.
-
-By allowing each row to represent a sub problem within our over all problem space allowed the flexibility to include different views in the future as more users trial the system and help us evolve the design.
-
-\subsubsection{Navigation}
-Complimentary to the structure of the layout is how the user will navigate the layout.  Our goal was to provide the user with the freedom to explore the problem however they choose.  This required the support of a brushing scatter plot concept where the interactions within an individual sub view are reflected in the other sub views to ensure the user is always viewing the problem from a single data point through a number of lens.
-As the user explored the problem it was also important to have a way for them to keep track of the problem space they have already explored.  This was a very salient point that we found during the literature review specifically within the paper "Towards the Understanding of Interaction in Information Visualization paper by Ana Figueiras" where the author mentions “Information exploration is inherently a process with many steps, so keeping the history of actions and allowing users to retrace their steps is important”.  This quote accurate describes how our users would interact with the system.  This led to us incorporating history either using direction arrows as shown in figure X or simply coloring the nodes in the organizational chart in figure Y.  The user can then navigate the history using the navigation bar at the top of the screen.
-
-\section{Implementation}
+\subsection{Color}
+Unified color
 
 \section{Evaluation and Discussion}
+
+\subsection{Organizational Models}
+During our discussion of the system with a project engineering manager from a private company we realized the power of our concept.  They saw version 3 of the design and it helped them work through a problem they were having with trying to flatten their organization.  Having the different views into organizational composition really helped to create a discussion around how to move away from the hierarchical / level based view of an organization.  This concept could be extended to completely revise what organizational hierarchy means.  
+The concept that was generated during this discussion focused around having an employee connected with 1 or more skills.  The would then be placed in a resource pool and assigned to one or more processes that require that skill.  Those processes would be run by a process manager who is responsible for moving the process from A to B and requesting an employee with a given skill from the pool of resources.  This would have the effect of reducing the number of levels in an organization and making it more agile.  It could also be extended to concepts such as changing the renumeration model from a standard job specification to skills based.
 
 \subsection{Future Work}
 During the design and development of the visualization we discovered many areas that required further thought and research.  Some of these areas came from users while others were highlighted by academics.
@@ -173,10 +270,16 @@ The current layout was developed to allow extension to the application with new 
 
 \subsection{Documentation}
 
-As the user explores the data set it would be helpful for the application to capture the notes or thoughts of the user as the look at the problem space.  This might involve adding a sticky note type feature to each node that could then be used in a collaborative environment to allow multiple users to generate a solution.
+As the user explores the data set it would be helpful for the application to capture the notes or thoughts of the user as the look at the problem space.  This might involve adding a sticky note type feature to each node that could then be used in a collaborative environment to allow multiple users to generate a solution\cite{ware2012information}.
 
 \section{Conclusions}
 
 We found during our research there was a lot of excitement about this topic and there are a number of different pieces of follow on work that we can use in the future.
+
+\section{Acknowledgments}
+We would like to thank our colleague Mr Brad Mazurek for the initial idea of modeling information flow in an organization with SMTP headers.  Also we would like to thank the various user groups and academics for helping to shape our design.
+
+\bibliographystyle{IEEEtran}
+\bibliography{Bibliography.bib}
 
 \end{document}

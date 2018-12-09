@@ -1,21 +1,28 @@
-\BOOKMARK [1][]{section.2}{Introduction}{}% 1
-\BOOKMARK [1][]{section.4}{Background}{}% 2
-\BOOKMARK [2][]{subsection.5}{Problem Space}{section.4}% 3
-\BOOKMARK [2][]{subsection.6}{Option Space}{section.4}% 4
-\BOOKMARK [1][]{section.7}{Design}{}% 5
-\BOOKMARK [2][]{subsection.8}{Data}{section.7}% 6
-\BOOKMARK [2][]{subsection.9}{Data Preparation}{section.7}% 7
-\BOOKMARK [2][]{subsection.10}{Methodology}{section.7}% 8
-\BOOKMARK [1][]{section.11}{Evolution of Design}{}% 9
-\BOOKMARK [2][]{subsection.12}{Layout}{section.11}% 10
-\BOOKMARK [3][-]{subsubsection.13}{Structure}{subsection.12}% 11
-\BOOKMARK [3][-]{subsubsection.14}{Navigation}{subsection.12}% 12
-\BOOKMARK [1][]{section.15}{Implementation}{}% 13
-\BOOKMARK [1][]{section.16}{Evaluation and Discussion}{}% 14
-\BOOKMARK [2][]{subsection.17}{Future Work}{section.16}% 15
-\BOOKMARK [2][]{subsection.18}{Value Model}{section.16}% 16
-\BOOKMARK [2][]{subsection.19}{Performance}{section.16}% 17
-\BOOKMARK [2][]{subsection.20}{Data}{section.16}% 18
-\BOOKMARK [2][]{subsection.21}{Views}{section.16}% 19
-\BOOKMARK [2][]{subsection.22}{Documentation}{section.16}% 20
-\BOOKMARK [1][]{section.23}{Conclusions}{}% 21
+\BOOKMARK [1][]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][]{section.3}{Background}{}% 2
+\BOOKMARK [2][]{subsection.4}{Methodology}{section.3}% 3
+\BOOKMARK [2][]{subsection.5}{Problem Space}{section.3}% 4
+\BOOKMARK [2][]{subsection.6}{Option Space}{section.3}% 5
+\BOOKMARK [2][]{subsection.7}{Data}{section.3}% 6
+\BOOKMARK [1][]{section.8}{Design}{}% 7
+\BOOKMARK [2][]{subsection.9}{Evolution of Design}{section.8}% 8
+\BOOKMARK [2][]{subsection.10}{Layout}{section.8}% 9
+\BOOKMARK [3][-]{subsubsection.11}{Structure}{subsection.10}% 10
+\BOOKMARK [3][-]{subsubsection.14}{Navigation}{subsection.10}% 11
+\BOOKMARK [2][]{subsection.15}{Organizational}{section.8}% 12
+\BOOKMARK [2][]{subsection.18}{Process}{section.8}% 13
+\BOOKMARK [2][]{subsection.19}{Redundancy}{section.8}% 14
+\BOOKMARK [1][]{section.21}{Implementation}{}% 15
+\BOOKMARK [2][]{subsection.22}{Data}{section.21}% 16
+\BOOKMARK [2][]{subsection.23}{Data Preparation}{section.21}% 17
+\BOOKMARK [2][]{subsection.24}{Color}{section.21}% 18
+\BOOKMARK [1][]{section.25}{Evaluation and Discussion}{}% 19
+\BOOKMARK [2][]{subsection.26}{Organizational Models}{section.25}% 20
+\BOOKMARK [2][]{subsection.27}{Future Work}{section.25}% 21
+\BOOKMARK [2][]{subsection.28}{Value Model}{section.25}% 22
+\BOOKMARK [2][]{subsection.29}{Performance}{section.25}% 23
+\BOOKMARK [2][]{subsection.30}{Data}{section.25}% 24
+\BOOKMARK [2][]{subsection.31}{Views}{section.25}% 25
+\BOOKMARK [2][]{subsection.32}{Documentation}{section.25}% 26
+\BOOKMARK [1][]{section.33}{Conclusions}{}% 27
+\BOOKMARK [1][]{section.34}{Acknowledgments}{}% 28
