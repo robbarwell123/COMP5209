@@ -224,41 +224,84 @@ Group B had some challenges with the supply part of the design as a table wasn't
 \end{figure}
 
 \section{Implementation}
-The system is primarily implemented using PHP, HTML, CSS, and Javascript using the D3 library.  A number of visualization systems were contemplated, however D3 was chosen due to its maturity level and flexibility to visualize our problem space.
+Each version of the design was implemented using MySQL, PHP, HTML, CSS, and Javascript using the D3 library.  A number of visualization systems were contemplated, however D3 was chosen due to its maturity level and flexibility to visualize our designs.
 
 \subsection{Data}
-Using SMTP header information this was easy to model in a database.  Alternative value models are discussed in section 5 under future work.
+Email (SMTP) header information was used to implement the value model discussed in the previous sections.  Alternative value models later in the paper.
 
 To demonstrate our value model we chose the popular Enron email data set.  This data set was originally made public during the Federal Energy Regulatory Commission investigation.  It contains the emails of approximately 150 users in the Eron organization.  Most of these users are senior managers.  This particular data set has been studied a number of times primarily with a focus in social networking and natural language processing.  This paper will use this data set to illustrate our visualization to support the flow of information through an organization.  
 
-In addition to the email boxes of users we also required an organizational chart to represent what the organization thinks is the structure of the employees.  Unfortunately, during our research we were unable to obtain an organizational chart.  This is a well documented problem with the data set which has limited research against it for lack of undisputable verification.  Since our research is primarily focused on the visualization and not the under laying data we decided to use the organizational chart developed by A, B, C in the paper XYZ (https://event.cwi.nl/lsde/2015-2016/group5.pdf).  Based on our research this is one of the more accurate examples to model the organization from a standard organizational structure vice a social networking structure.
+In addition to the email boxes of users we also required an organizational chart to represent what the organization thinks is the structure of their employees.  Unfortunately, during our research we were unable to obtain an organizational chart.  This is a well documented problem with the data set which has limited research against it for lack of verification.  Since our research is primarily focused on the visualization and not the under laying data we decided to use the organizational chart reverse engineered by a group from the University of Amsterdam\cite{enronorgchart}.  Based on our research this is one of the more accurate papers to model the organization from a standard organizational structure vice a social networking structure.
 
-\subsection{Data Preparation}
+\subsubsection{Data Preparation}
 
 The Enron data set was obtained from Carniege Mellon University.  It was processed using a Python script to parse all the SMTP header information from a given email.  This was then stored in a MySQL database for further processing by the application.  SMTP information was chosen since it contained all the information required to construct the nodes and edges within the graph.  
 
-\subsection{Color}
-Unified color
+\subsection{Organizational}
+The organizational view was straight forward to implement using the hierarchical tree and bar chart components of D3.  Custom path generation was required to connect nodes when a user hover over them to denote the email and not organizational connections as shown by the blue lines in figure 3.  This was accomplished by binding the database node id to the D3 object id.  This facilitated the selection of individual nodes in the tree to determine their x and y position to draw a path between.  This process was also used for the history link paths as shown in figures 1 and 2.
+The only design choice that arose during implementation was what to do when two nodes are connected, but one node isn't visible.  In this case we decided to connect it the visible node to the closest parent of the hidden node.
+
+\subsection{Process}
+The process view was the most complex to implement.  It required a custom layout generator.  The generator takes a list of all nodes and edges for a current view.  It then splits the edges into incoming and outgoing.  After iterating through the edges to determine if the incoming or outgoing edge is greater it then conducts a layout which utilizes the full space allocation.  Nodes are also logarithmically scaled to reduce overlap and make the visualization easier to use.
+
+\subsection{Redundancy}
+The redundancy view was the most challenging to implement since it had a number of custom visualization components.  A custom bar chart was required to display the back to back bars in the redundancy demand view since D3 only had a standard bar chart.  However, a number of D3 features that create bar charts were utilized to create the back to back bar chart.  
+The most challenging feature to create was the palm tree in the redundancy supply panel.  This required a custom layout that would place the selected employee in a circle with all the people they communicate with.  Then additional layers were required on top to position the compared employee in place of the selected employee.  This also required a custom data structure to communicate this information from the server to the D3 engine.
+
+\subsection{Other Implementation Choices}
+Color - A single color scheme was implemented to ensure consistency across all views.  This provides consistency for the user where all the nodes are the same color regardless of view and the selected node is easily identifiable.
+Layout - The layout was implemented using CSS grids that allow for the screen to be divided into frames.  This facilitated the layout of allowing 2 rows within the window at any point in time.  
+Labels - Labels were added to reduce confusion of the new demand / supply layout in version 2.  Users found this very helpful to understand the problem space.
 
 \section{Evaluation and Discussion}
 
-\subsection{Organizational Models}
-During our discussion of the system with a project engineering manager from a private company we realized the power of our concept.  They saw version 3 of the design and it helped them work through a problem they were having with trying to flatten their organization.  Having the different views into organizational composition really helped to create a discussion around how to move away from the hierarchical / level based view of an organization.  This concept could be extended to completely revise what organizational hierarchy means.  
-The concept that was generated during this discussion focused around having an employee connected with 1 or more skills.  The would then be placed in a resource pool and assigned to one or more processes that require that skill.  Those processes would be run by a process manager who is responsible for moving the process from A to B and requesting an employee with a given skill from the pool of resources.  This would have the effect of reducing the number of levels in an organization and making it more agile.  It could also be extended to concepts such as changing the renumeration model from a standard job specification to skills based.
+\subsection{Overview}
+Evaluation of the design was done at a number of points during the development.  The final design was primarily utilized to provide direction on future work and understand how organizations might use the final product.  During the development we explained our design using a use case which helped focus users to how we intended the system to be used.
 
-\subsection{Future Work}
-During the design and development of the visualization we discovered many areas that required further thought and research.  Some of these areas came from users while others were highlighted by academics.
+\subsection{Use Case Walk Through}
+The original problem was how to address empty positions in the organization.  This could be from employees switching jobs, they could be on temporary leave of absences, or the could be seconded to other positions.  The result of this is the manager needs to determine what gap is left by the employee and how to fill it.  Taking a hypothetical situation where you have a manager named Eric who has a gap left when his employee Rob quit.  He now needs to go through the process to address the 3 problem statements we enumerated in the first section.
+
+\begin{itemize}
+	\item "Where is the gap?" - Gaps left when an employee leaves are not restricted to the employees organizational group, but could effect other groups as well.  Job descriptions are typically a poor reflect of an employees job as they are only updated when an employee leaves.  This means Eric in our example needs to look at the organizational side of the problem and the process side of the problem.
+	\item "How big is the gap?" - When gaps are found the manager needs to know are they small such as a person just needs to sign an approval form, or are they big such as the person who is responsible for producing a yearly financial report.
+	\item "What can I do about the gap?" - This problem is the most complex as it require the manager to evaluate first if they are filling the gap and then what resources do they have available to them to fill the gap.
+\end{itemize}
+
+\subsubsection{Finding the Gap}
+Our visualization helps Eric with each of these questions.  First he can identify the gap by using the organizational demand tree shown in Figure 4.  By navigating and filtering the tree Eric can start to understand if Rob managed any employees under him or maybe he was more senior and larger parts of the tree will be without leadership.  The tree can also be used to quickly determine which parts of the organization might be effected most by hovering over Rob and looking where the largest blue lines connect to.
+Understanding where the gap is can also be viewed from the process view where Eric can determine which email connections start or stop with Rob.  This typically denotes starts and ends of processes that would be high priority to back fill.  Additionally the process diagram can provide Eric an overview of the stronger communicate links Rob had which might also need to be addressed as Rob may have been a significant part of an individual process.
+
+\subsubsection{Size of the Gap}
+During the exploration process in finding the gap, Eric has already started to understand the size of the problem by the weight of the lines either in the organization or process demand chart.
+
+\subsubsection{Filling the Gap}
+Eric can now use the supply side of the application to see how he might fill the gap he identify.  This could come from a redistribution of workload within the group.  The organizational supply bar chart can quickly show Eric the relative contribution of Rob to the group and potentially identify other people in the group that may be under utilized.
+The process chart can be used to determine if Rob is even required in some processes.  This could result in system efficiencies by remove Rob from the process and simply having people on the left side connect directly with people on the right side.
+Lastly, Eric can try and find other employees in the organization that provide a similar role to Rob and see if they have spare capacity to take over some of the workload.  This is done by hovering over names on the right side of the palm tree and trying to find one that aligns the best.  This can be studied in further detail using the redundancy demand view.
+
+\subsubsection{Result}
+The result of this process is Eric having a better understanding of the gap created when Rob left the position and possible sources of workload redistribution to people within the organizational group, others in the process, or other employees in the organization that provide a similar role.
+In a real world scenario Eric would most likely fill the gap with one or more of the identified supply sources.  This is why our tool was design as decision support and not decision making since a human is still required to weigh the pros and cons of these options.
+
+\subsection{Organizational Models}
+Our discussions with Group 3 solidified our understand of the power of our concept.  When Group 3 saw the final design they immediate connected how it cold help their organization solve the problem given to them by their management to flatten their organizational chart.  Having the different views that our application presented allowed Group 3 to revise their concept of using a hierarchy to model their organization and start thinking about using processes instead.
+The new model that was discussed involves removing the hierarchical nature of an organization and replace it with the concept of employees that have skills and contribute to processes.  This would result in the organization only needing 2 or 3 levels to manage the allocation of resources and deal with conflicts when they arise.
+The concept of a traditional project manager would be extended and modified to create a process manager.  The process manager would be responsible for identifying the skills required to accomplish their process.  A resource manager would then provide an employee with those skills for the time identified by the process manager.  This would have the effect of providing the organization with the flexibility to recruit specific skills vice generic positions that may or may not require that skill depending on the job.
+The concept is further extended to employee renumeration where it could be adapted to pay based on skill or proficiency of a skill.  Therefore employees with more skills or deeper knowledge of skill would be remunerated at a higher rate.
+
+\section{Future Work}
+During the design and development of the visualization we discovered many areas that required further thought and research.  Some of these areas were identified by us and others came from the groups that supported our research.
 
 \subsection{Value Model}
-While presenting to both groups we found that after they understood the visualization which was typically quick after version 2 of the design they wanted to focus their time and discussions around the value model aspect of the problem vice the visualization.
+All groups were quick to understand the visualization we were demonstrating and wanted to focus their time and discussions around the value model aspect of the problem vice the visualization.
 
 The weight of each edge in the value model needs to be adjusted.  For example this could include a new value based on whether the user is in the from, to, bcc, or cc field.  It could also explore the content within the email through natural language processing to reduce the weight of trivial emails that do not contribute value to the business.
 
-The value model around redundancy could also be adjusted to account for volume or frequency of emails to help the user find another person in the organization with appropriate overlap.
+The value model around redundancy could also be adjusted to account for volume or frequency of emails to help the user find another employee in the organization with appropriate overlap.
 
 \subsection{Performance}
 
-The current data is housed in a relational database which is not optimized for graph sets.  To increase the performance of the application it might be better aligned with a noSQL type of database or other non-traditional RDBMS.
+The current data is housed in a relational database which is not optimized for graph sets.  To increase the performance of the application it might be better aligned with a noSQL database or other non-traditional database engine.
 
 \subsection{Data}
 

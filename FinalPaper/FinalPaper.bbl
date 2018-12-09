@@ -92,4 +92,8 @@ B.~Shneiderman, ``Tree visualization with tree-maps: 2-d space-filling
   approach,'' \emph{ACM Transactions on graphics (TOG)}, vol.~11, no.~1, pp.
   92--99, 1992.
 
+\bibitem{enronorgchart}
+M.~Duczynski and B.~Yin, ``Hierarchy detection through email network
+  analysis.''
+
 \end{thebibliography}

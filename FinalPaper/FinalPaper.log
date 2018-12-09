@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,7 +630,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 80.
-<diamondrule.pdf, id=116, 213.79875pt x 12.045pt>
+<diamondrule.pdf, id=148, 213.79875pt x 12.045pt>
 File: diamondrule.pdf Graphic file (type pdf)
 <use diamondrule.pdf>
 Package pdftex.def Info: diamondrule.pdf  used on input line 80.
@@ -651,35 +651,35 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
  <./diamondrule.pdf>]
-<pictures/version1.JPG, id=155, 1204.5pt x 676.77844pt>
+<pictures/version1.JPG, id=187, 1204.5pt x 676.77844pt>
 File: pictures/version1.JPG Graphic file (type jpg)
 <use pictures/version1.JPG>
 Package pdftex.def Info: pictures/version1.JPG  used on input line 162.
 (pdftex.def)             Requested size: 251.31898pt x 141.20857pt.
-<pictures/version2.jpg, id=156, 1204.5pt x 813.0375pt>
+<pictures/version2.jpg, id=188, 1204.5pt x 813.0375pt>
 File: pictures/version2.jpg Graphic file (type jpg)
 <use pictures/version2.jpg>
 Package pdftex.def Info: pictures/version2.jpg  used on input line 171.
 (pdftex.def)             Requested size: 251.31898pt x 169.63878pt.
  [2 <./pictures/version1.JPG>]
-<pictures/orgdemand.jpg, id=164, 624.08156pt x 317.68687pt>
+<pictures/orgdemand.jpg, id=197, 624.08156pt x 317.68687pt>
 File: pictures/orgdemand.jpg Graphic file (type jpg)
 <use pictures/orgdemand.jpg>
 Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 193.
 (pdftex.def)             Requested size: 251.31898pt x 127.9305pt.
-<pictures/version3.jpg, id=166, 1606.0pt x 1164.35pt>
+<pictures/version3.jpg, id=199, 1606.0pt x 1164.35pt>
 File: pictures/version3.jpg Graphic file (type jpg)
 <use pictures/version3.jpg>
 Package pdftex.def Info: pictures/version3.jpg  used on input line 202.
 (pdftex.def)             Requested size: 251.31898pt x 182.19574pt.
  [3 <./pictures/version2.jpg> <./pictures/orgdemand.jpg> <./pictures/version3.j
 pg>]
-<pictures/palmtree.jpg, id=177, 579.66562pt x 273.27094pt>
+<pictures/palmtree.jpg, id=209, 579.66562pt x 273.27094pt>
 File: pictures/palmtree.jpg Graphic file (type jpg)
 <use pictures/palmtree.jpg>
 Package pdftex.def Info: pictures/palmtree.jpg  used on input line 221.
 (pdftex.def)             Requested size: 251.31898pt x 118.47992pt.
- [4 <./pictures/palmtree.jpg>] (./FinalPaper.bbl
+ [4 <./pictures/palmtree.jpg>] [5] (./FinalPaper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -687,36 +687,54 @@ Package pdftex.def Info: pictures/palmtree.jpg  used on input line 221.
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
-Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
-(rerunfilecheck)             Checksum: 5FFC54023F79CF3ADADC3374F8B548D3;1578.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
 
+
+Package rerunfilecheck Warning: File `FinalPaper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `FinalPaper.out':
+(rerunfilecheck)             Before: 4401707635BD746F1FB11DF3185CDDE5;2113
+(rerunfilecheck)             After:  74EF42E6E8D7F168E2D749526EF941D9;2175.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 8647 strings out of 494585
- 130560 string characters out of 6177924
- 252345 words of memory out of 5000000
- 11870 multiletter control sequences out of 15000+600000
- 48537 words of font info for 229 fonts, out of 8000000 for 9000
+ 8674 strings out of 494585
+ 130927 string characters out of 6177924
+ 252381 words of memory out of 5000000
+ 11879 multiletter control sequences out of 15000+600000
+ 48656 words of font info for 231 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  33i,7n,38p,1211b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
-f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (5 pages, 757778 bytes).
+pdfTeX warning (dest): name{section.41} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.36} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.35} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.34} has been referenced but does not exi
+st, replaced by a fixed one
+
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on FinalPaper.pdf (6 pages, 765580 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 47359 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 47423 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -15,47 +15,49 @@ Warning--empty journal in sevenscenarios
 Warning--empty year in sevenscenarios
 Warning--empty journal in cognativetaskanalysis
 Warning--empty year in cognativetaskanalysis
+Warning--empty journal in enronorgchart
+Warning--empty year in enronorgchart
 
 Done.
-You've used 15 entries,
+You've used 16 entries,
             4024 wiz_defined-function locations,
-            901 strings with 9524 characters,
-and the built_in function-call counts, 9891 in all, are:
-= -- 835
-> -- 179
+            904 strings with 9620 characters,
+and the built_in function-call counts, 10219 in all, are:
+= -- 855
+> -- 188
 < -- 88
-+ -- 101
-- -- 28
-* -- 476
-:= -- 1588
-add.period$ -- 31
-call.type$ -- 15
-change.case$ -- 14
++ -- 105
+- -- 30
+* -- 492
+:= -- 1642
+add.period$ -- 33
+call.type$ -- 16
+change.case$ -- 15
 chr.to.int$ -- 186
-cite$ -- 19
-duplicate$ -- 737
-empty$ -- 777
-format.name$ -- 34
-if$ -- 2232
+cite$ -- 22
+duplicate$ -- 769
+empty$ -- 809
+format.name$ -- 37
+if$ -- 2300
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 115
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 241
+int.to.str$ -- 16
+missing$ -- 121
+newline$ -- 71
+num.names$ -- 16
+pop$ -- 262
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 775
+skip$ -- 798
 stack$ -- 0
-substring$ -- 453
-swap$ -- 585
+substring$ -- 454
+swap$ -- 599
 text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
-warning$ -- 4
-while$ -- 51
-width$ -- 17
-write$ -- 163
-(There were 4 warnings)
+type$ -- 16
+warning$ -- 6
+while$ -- 52
+width$ -- 18
+write$ -- 169
+(There were 6 warnings)
