@@ -1,18 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.22)  8 DEC 2018 20:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.22)  14 DEC 2018 16:30
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**FinalPaper.tex
-(./FinalPaper.tex
-LaTeX2e <2018-04-01> patch level 5
-(./vgtc.cls
+**\input FinalPaper.tex
+(./FinalPaper.tex (./vgtc.cls
 Document Class: vgtc 2006/05/21 IEEE VGTC
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-(c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -35,31 +34,31 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abstxtspace=\skip46
 \vgtc@copyrightlength=\skip47
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
 )
-(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks15
 \MT@count=\count88
@@ -68,7 +67,7 @@ LaTeX Info: Redefining \textls on input line 793.
 LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
 \MT@listname@count=\count89
 
-(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 913.
@@ -77,10 +76,10 @@ LaTeX Info: Redefining \lslig on input line 913.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
-(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -95,12 +94,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -237,7 +236,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/mathptmx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -273,18 +272,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(c:/texlive/2018/texmf-dist/tex/latex/cite/cite.sty
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(c:/texlive/2018/texmf-dist/tex/latex/tabu/tabu.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
 
-(c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \col@sep=\dimen108
 \ar@mcellbox=\box26
@@ -294,7 +293,7 @@ Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \backup@length=\skip50
 \ar@cellbox=\box27
 )
-(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box28
 \sift@deathcycles=\count90
@@ -324,7 +323,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@vleads=\box32
 \tabu@cellskip=\skip51
 )
-(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \heavyrulewidth=\dimen121
 \lightrulewidth=\dimen122
@@ -344,14 +343,42 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@lastruleclass=\count100
 \@thisrulewidth=\dimen133
 )
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip52
+\enit@outerparindent=\dimen134
+\enit@toks=\toks19
+\enit@inbox=\box33
+\enitdp@description=\count101
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -363,10 +390,6 @@ Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
@@ -391,27 +414,27 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen134
-\Hy@linkcounter=\count101
-\Hy@pagecounter=\count102
+\@linkdim=\dimen135
+\Hy@linkcounter=\count102
+\Hy@pagecounter=\count103
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count103
+\Hy@SavedSpaceFactor=\count104
 
-(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4535.
@@ -421,17 +444,17 @@ Package hyperref Info: Plain pages OFF on input line 4550.
 Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4788.
-\c@Hy@tempcnt=\count104
+\c@Hy@tempcnt=\count105
 
-(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5141.
-\XeTeXLinkMargin=\dimen135
-\Fld@menulength=\count105
-\Field@Width=\dimen136
-\Fld@charsize=\dimen137
+\XeTeXLinkMargin=\dimen136
+\Fld@menulength=\count106
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
 Package hyperref Info: Hyper figures OFF on input line 6396.
 Package hyperref Info: Link nesting OFF on input line 6401.
 Package hyperref Info: Hyper index ON on input line 6404.
@@ -441,50 +464,47 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6421.
 Package hyperref Info: PDF/A mode OFF on input line 6426.
 LaTeX Info: Redefining \ref on input line 6466.
 LaTeX Info: Redefining \pageref on input line 6470.
-\Hy@abspage=\count106
-\c@Item=\count107
-\c@Hfootnote=\count108
+\Hy@abspage=\count107
+\c@Item=\count108
+\c@Hfootnote=\count109
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2018/09/30 v6.88a Hyperref driver for pdfTeX
-\Fld@listcount=\count109
-\c@bookmark@seq@number=\count110
+\Fld@listcount=\count110
+\c@bookmark@seq@number=\count111
 
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip52
+\Hy@SectionHShift=\skip53
 )
 
 Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 71.
+(hyperref)                setting the option has no effect on input line 75.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 71.
+(hyperref)                setting the option has no effect on input line 75.
 
-Package hyperref Info: Option `pageanchor' set `true' on input line 71.
-Package hyperref Info: Option `plainpages' set `false' on input line 71.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 71.
+Package hyperref Info: Option `pageanchor' set `true' on input line 75.
+Package hyperref Info: Option `plainpages' set `false' on input line 75.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 75.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 71.
+(hyperref)                setting the option has no effect on input line 75.
 
-Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 71.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 75.
 
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 71.
-Package hyperref Info: Option `breaklinks' set `true' on input line 71.
-Package hyperref Info: Option `colorlinks' set `false' on input line 71.
-Package hyperref Info: Option `nesting' set `true' on input line 71.
-Package hyperref Info: Option `linktocpage' set `true' on input line 71.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 75.
+Package hyperref Info: Option `breaklinks' set `true' on input line 75.
+Package hyperref Info: Option `colorlinks' set `false' on input line 75.
+Package hyperref Info: Option `nesting' set `true' on input line 75.
+Package hyperref Info: Option `linktocpage' set `true' on input line 75.
 (./FinalPaper.aux
-
-LaTeX Warning: Label `fig:global' multiply defined.
-
 
 LaTeX Warning: Label `fig:global' multiply defined.
 
@@ -497,48 +517,48 @@ LaTeX Warning: Label `fig:global' multiply defined.
 )
 \openout1 = `FinalPaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 75.
- (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 75.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 79.
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen138
-\scratchbox=\box33
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen139
-\MPnumerator=\count115
-\makeMPintoPDFobject=\count116
-\everyMPtoPDFconversion=\toks20
-) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+\scratchcounter=\count112
+\scratchdimen=\dimen139
+\scratchbox=\box34
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen140
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks21
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -547,11 +567,11 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.jpeg,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 75.
+LaTeX Info: Redefining \microtypecontext on input line 79.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -562,124 +582,121 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-(c:/texlive/2018/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-\big@size=\dimen140
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 75.
+\big@size=\dimen141
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 79.
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count117
+\c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 75.
-LaTeX Info: Redefining \pageref on input line 75.
-LaTeX Info: Redefining \nameref on input line 75.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 
 (./FinalPaper.out) (./FinalPaper.out)
 \@outlinefile=\write3
 \openout3 = `FinalPaper.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 80.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 84.
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 80
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 84
 .
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 80
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 84
 .
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 80
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 84
 .
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 80
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 84
 .
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 80.
-<diamondrule.pdf, id=148, 213.79875pt x 12.045pt>
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 84.
+<diamondrule.pdf, id=160, 213.79875pt x 12.045pt>
 File: diamondrule.pdf Graphic file (type pdf)
 <use diamondrule.pdf>
-Package pdftex.def Info: diamondrule.pdf  used on input line 80.
+Package pdftex.def Info: diamondrule.pdf  used on input line 84.
 (pdftex.def)             Requested size: 213.79822pt x 12.04495pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 80.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 84.
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./diamondrule.pdf>]
-<pictures/version1.JPG, id=187, 1204.5pt x 676.77844pt>
-File: pictures/version1.JPG Graphic file (type jpg)
-<use pictures/version1.JPG>
-Package pdftex.def Info: pictures/version1.JPG  used on input line 162.
-(pdftex.def)             Requested size: 251.31898pt x 141.20857pt.
-<pictures/version2.jpg, id=188, 1204.5pt x 813.0375pt>
-File: pictures/version2.jpg Graphic file (type jpg)
-<use pictures/version2.jpg>
-Package pdftex.def Info: pictures/version2.jpg  used on input line 171.
-(pdftex.def)             Requested size: 251.31898pt x 169.63878pt.
- [2 <./pictures/version1.JPG>]
-<pictures/orgdemand.jpg, id=197, 624.08156pt x 317.68687pt>
-File: pictures/orgdemand.jpg Graphic file (type jpg)
-<use pictures/orgdemand.jpg>
-Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 193.
-(pdftex.def)             Requested size: 251.31898pt x 127.9305pt.
-<pictures/version3.jpg, id=199, 1606.0pt x 1164.35pt>
+)
+<pictures/version3.jpg, id=171, 1606.0pt x 1164.35pt>
 File: pictures/version3.jpg Graphic file (type jpg)
 <use pictures/version3.jpg>
-Package pdftex.def Info: pictures/version3.jpg  used on input line 202.
+Package pdftex.def Info: pictures/version3.jpg  used on input line 93.
 (pdftex.def)             Requested size: 251.31898pt x 182.19574pt.
- [3 <./pictures/version2.jpg> <./pictures/orgdemand.jpg> <./pictures/version3.j
-pg>]
-<pictures/palmtree.jpg, id=209, 579.66562pt x 273.27094pt>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./diamondrule.pdf> <./pictures/version3.jpg>] [2]
+<pictures/version2.jpg, id=216, 1204.5pt x 813.0375pt>
+File: pictures/version2.jpg Graphic file (type jpg)
+<use pictures/version2.jpg>
+Package pdftex.def Info: pictures/version2.jpg  used on input line 203.
+(pdftex.def)             Requested size: 251.31898pt x 169.63878pt.
+<pictures/orgdemand.jpg, id=218, 624.08156pt x 317.68687pt>
+File: pictures/orgdemand.jpg Graphic file (type jpg)
+<use pictures/orgdemand.jpg>
+Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 225.
+(pdftex.def)             Requested size: 251.31898pt x 127.9305pt.
+ [3 <./pictures/version2.jpg>]
+<pictures/palmtree.jpg, id=226, 579.66562pt x 273.27094pt>
 File: pictures/palmtree.jpg Graphic file (type jpg)
 <use pictures/palmtree.jpg>
-Package pdftex.def Info: pictures/palmtree.jpg  used on input line 221.
+Package pdftex.def Info: pictures/palmtree.jpg  used on input line 248.
 (pdftex.def)             Requested size: 251.31898pt x 118.47992pt.
- [4 <./pictures/palmtree.jpg>] [5] (./FinalPaper.bbl
+ [4 <./pictures/orgdemand.jpg> <./pictures/palmtree.jpg>] [5] (./FinalPaper.bbl
+
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -687,54 +704,37 @@ Package pdftex.def Info: pictures/palmtree.jpg  used on input line 221.
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
  [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
+Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
+(rerunfilecheck)             Checksum: 43633313B3C3DEABD6C9E01BB950E9A3;2316.
 
-
-Package rerunfilecheck Warning: File `FinalPaper.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `FinalPaper.out':
-(rerunfilecheck)             Before: 4401707635BD746F1FB11DF3185CDDE5;2113
-(rerunfilecheck)             After:  74EF42E6E8D7F168E2D749526EF941D9;2175.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
  ) 
 Here is how much of TeX's memory you used:
- 8674 strings out of 494585
- 130927 string characters out of 6177924
- 252381 words of memory out of 5000000
- 11879 multiletter control sequences out of 15000+600000
- 48656 words of font info for 231 fonts, out of 8000000 for 9000
+ 9457 strings out of 494584
+ 142114 string characters out of 6177773
+ 275159 words of memory out of 5000000
+ 12647 multiletter control sequences out of 15000+600000
+ 50800 words of font info for 238 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 33i,7n,38p,1211b,377s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.41} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.36} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.35} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.34} has been referenced but does not exi
-st, replaced by a fixed one
-
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-
-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
-1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (6 pages, 765580 bytes).
+ 33i,8n,38p,1218b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on FinalPaper.pdf (6 pages, 699378 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 47423 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 47954 words of extra memory for PDF output out of 51595 (max. 10000000)
 
