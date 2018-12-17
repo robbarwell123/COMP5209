@@ -99,7 +99,7 @@ During the course of development, as a result of our conversations with others a
 
 An individual's function within an organization can be viewed using different lenses. For example, employees can be viewed in terms of their position in the hierarchical structure of the organization, the processes they participate in, and their process- and organizational-agnostic social ties. When dealing with an organizational change issue, the manager be considering each of these views (and perhaps others not mentioned) on both sides of the demand and supply issue mentioned above.
 
-We proposed DSOC (Decision Support for Organizational Change), a visual analytics dashboard to help managers respond to organizational change in a way that minimizes disruption to the organization. A screenshot of our functional prototype is shown in Figure~\ref{fig:global}. When using DSOC, managers are shows a number of visualizations that each help managers grapple with a part of the complex demand and supply problem. Visualizations are organized into two columns: demand and supply, and as many rows corresponding to the views of an employee that a manager is interested in. We implement demand and supply visualizations for three views: \emph{organizational}, \emph{process}, and \emph{redundancy}, which correspond to the three example views mentioned in the example above. 
+We proposed DSOC (Decision Support for Organizational Change), a visual analytics dashboard to help managers respond to organizational change in a way that minimizes disruption to the organization. A screenshot of our functional prototype is shown in Figure~\ref{fig:version3}. When using DSOC, managers are shows a number of visualizations that each help managers grapple with a part of the complex demand and supply problem. Visualizations are organized into two columns: demand and supply, and as many rows corresponding to the views of an employee that a manager is interested in. We implement demand and supply visualizations for three views: \emph{organizational}, \emph{process}, and \emph{redundancy}, which correspond to the three example views mentioned in the example above. 
 
 In this paper, we discuss \textellipsis in Section~\ref{sec:litreview}, \textellipsis in Section~\ref{sec:design} \textellipsis in Section \ref{sec:implementation} \textellipsis in Section~\ref{sec:evaldiscuss} \textellipsis in Section~\ref{sec:future} \textellipsis in Section~\ref{sec:conclusions}
 
@@ -171,6 +171,13 @@ During our walkthrough of V1 with Group A, we presented V1 of the interface and 
 \item [Process] This places an employee as part of a process where they receive information, process information, and output information to the next stage of the process.  Users typically used flow charts and other process diagrams to represent this view.
 \item [Redundancy] During the walk through we noticed it was most common to address the vacancy by re-distributing the workload within the group, however the users occasionally tried to find people that did similar tasks as replacement.
 \end{description}
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{pictures/version1.JPG}
+  \caption{Version 1. }
+  \label{fig:version1}
+\end{figure}
+      
 
 \subsubsection{Data}
 During the exploration of the problem space we needed to identify what data we were going to present to the user with the visualization.  Building upon previous work from our colleague on information flow within an organization \textbf{{\color{Plum}Can we say a sentence or two about this previous work?}}, we decided to use emails.  The majority of communication within a modern organization is through email or instant messaging.  We thought that analyzing email data would allow us to build an accurate and up to date model of how information flows through an organization.  
@@ -188,12 +195,10 @@ The data model requires enrichment through the addition of value models.  One va
 	\centering
 	\includegraphics[width=\columnwidth]{pictures/Sketch.jpg}
 	\caption{UI design sketch drawn after initial meeting with Group 1. Shows the grid pattern and several of the visualizations used in the final version.}
-	\label{fig:global}
+	\label{fig:sketch}
 \end{figure}
 
 \subsection{Evolution of Design}
-
-\textbf{{\color{Plum}Can we see a screenshot of version 1? abandoning that design for version 2 was a key stage in the design's evolution. }}
 
 Our made incremental refinements to our design in response to feedback obtained from the users in the groups mentioned in Section \ref{sec:methodology}. Our design went through three major versions:
 
@@ -203,27 +208,31 @@ Our made incremental refinements to our design in response to feedback obtained 
 	\item [\textbf{V3}] Refined the process and redundancy views to better align with the users' mental model and how they interact with the visualization.
 \end{enumerate}
 
-Our biggest challenge was creating a functional and comprehensible layout that also conveyed the complex intricacies of organizational change. 
+Our greatest challenge was creating a functional and comprehensible layout that also conveyed the complex intricacies of organizational change.
 
 \subsection{Layout}
 \subsubsection{Structure}
-The original design shown in Figure \ref{fig:version3} had  viewing panes to try and convey the organizational perspective of information flow and the process perspective.  It attempted to do this using the standard organizational tree for organizational structure and a tree map to show the volume of communication between a selected individual and their communication links.  This view presented many challenges for users as they found it difficult to understand what the visualization was trying to communicate and weren't able to fit it into their mental model.  Based on feedback from Group A and reflection by the authors we determined that this concept was better communicated as a traditional supply demand problem as these were the words Group A typically used most often during the review of the first design.  This feedback allowed us to revise our design to a layout which was 2xN column representation that broke the problem in a supply / demand issue.  This allowed the users to better address the question of "How do we support decision makers to minimize negative side-effects from organizational change?" by understanding the impact and if required redistribute work based on available supply.
+The original, design shown in Figure \ref{fig:version1}, had  viewing panes to try and convey the organizational perspective of information flow and the process perspective.  It attempted to do this using the standard organizational tree for organizational structure and a tree map to show the volume of communication between a selected individual and their communication links.
 
+This view presented many challenges for users as they found it difficult to understand what the visualization was trying to communicate. There seemed to be a severe incompatibility between this design and Group A's mental model of the problem of organizational change. For Group A, the problem at hand boiled down to a problem of \emph{supply} and \emph{demand} (these were the words they used most frequently during this conversation), yet these concepts were not straightforwardly represented in our design. This observation called for a major redesign of the structure, where starting in V2 (Figure \ref{fig:version2}) we would build the notion of supply and demand into our structure. The first stage in this redesign is captured in the sketch in Figure \ref{fig:sketch}.
 
-The second designed shown in Figure 2 seemed to resonate better when shown to Group B and subsequently in version 3 for Groups A and C.  This allowed all groups to focus on the individual views within the visualizations versus focusing on the layout.
+The new design featured a grid layout of 2 columns $\times $ N rows. Visualizations that focus on the \emph{demand} aspect of the problem are placed in the left column, and visualizations focusing on the \emph{supply} aspect are placed in the right column. By visualizing both the supply and demand aspects of the problem next to each other, managers can simultaneously see the gaps left by an individual's absence, and also ways to fill those gaps. 
+
+The grid layout redesign seemed to resonate better with all groups.  This allowed all groups to focus on the individual views within the visualizations versus focusing on the layout.
+
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{pictures/version2.jpg}
 	\caption{Version 2}
-	\label{fig:global}
+	\label{fig:version2}
 \end{figure}
 
 Allowing each row to represent a different view of the problem space enables the flexibility to include different views in the future as more users trials of the system are conducted.
 
 \subsubsection{Navigation}
 Complimentary to the structure of the layout is how the user will navigate the layout.  Our goal was to provide the user with the freedom to explore the problem however they choose.  This required the support of a brushing scatter plot concept where the interactions within an individual sub view are reflected in the other sub views to ensure the user is always viewing the problem from a single data point through a number of lens.
-As the user explored the problem it was also important to have a way for them to keep track of the problem space they have already explored.  This was a salient point that we found during the literature review with the quote “Information exploration is inherently a process with many steps, so keeping the history of actions and allowing users to retrace their steps is important”\cite{anafigueiras}.  This quote accurate describes how our users would interact with the system.  This was included by providing the user the option to display history as direction arrows or simply coloring the nodes in the organizational chart.  The user can then navigate the history using the navigation bar at the top of the screen.
+As the user explored the problem it was also important to have a way for them to keep track of the problem space they have already explored.  This was a salient point that we found during the literature review with the quote ``Information exploration is inherently a process with many steps, so keeping the history of actions and allowing users to retrace their steps is important''\cite{anafigueiras}.  This quote accurate describes how our users would interact with the system.  This was included by providing the user the option to display history as direction arrows or simply coloring the nodes in the organizational chart.  The user can then navigate the history using the navigation bar at the top of the screen.
 
 \subsection{Organizational}
 The organizational demand and supply view were the most consistent between version 1 and 3.  The demand view was modeled as a classical organizational tree structure as this paradigm was most aligned with the users current mental model of the problem.  During the design phase we uncovered a number of issues that we needed to address.
@@ -232,7 +241,7 @@ The organizational demand and supply view were the most consistent between versi
 Some organizational trees can be large and we need to provide the user with the ability to zoom in and out of the tree, expand a node with children and select a node.  In version 1 we decided to use a single click to expand a node and select a node with one action and double click would zoom in and out of the tree.  Users in Group A found this confusing since opening the children of a node would also cause the node to be visited.  This was refined in version 2 where a single click selected a node, the double click would zoom in and out, and a right mouse click would open a node with children.
 
 \paragraph{Highlight}
-During the initial design of version 1 we needed to come up with a creative solution to visualize the various states a node could have.  This includes: being selected, having children, being visited, and being filtered.  We originally experimented with glyphs and other icons, however this resulted in a visualization that was too "busy".  We settled on using concentric circles of different colors as shown in Figure 3 to denote various states of a node.  A node with children has a filled in circle.  A node that the user has visited appears in red.  A node that is filter is orange. And a node that is selected appears red.  We recognized the issue this might present for color blind people and also chose to vary the size of circle around the nodes to account for this.
+During the initial design of version 1 we needed to come up with a creative solution to visualize the various states a node could have.  This includes: being selected, having children, being visited, and being filtered.  We originally experimented with glyphs and other icons, however this resulted in a visualization that was too ``busy''.  We settled on using concentric circles of different colors as shown in Figure 3 to denote various states of a node.  A node with children has a filled in circle.  A node that the user has visited appears in red.  A node that is filter is orange. And a node that is selected appears red.  We recognized the issue this might present for color blind people and also chose to vary the size of circle around the nodes to account for this.
 
 \paragraph{Navigation}
 Navigating large trees can present challenges for some users.  This was addressed by providing a real time filter where the user adjusts the filter parameters which are quickly reflected by circles appearing and disappearing around nodes in the tree that match the filter criteria.  Additionally the organization demand panel can be expand to fill the whole window to help the user navigate the entire tree.  Additional short cuts are provided at the top of the frame to center on the current selected node, expand all nodes, or collapse all nodes.
@@ -240,13 +249,11 @@ Navigating large trees can present challenges for some users.  This was addresse
 \paragraph{Comparison}
 Version 1 of the design provide a feature that allowed the user to hover over a node and display the nodes they communicated with using a blue line.  This was further refined based on discussions with Group B to incorporate a weight.  This would then allow the user to see the overlap of where the employee is within the organization and which other employees they communicate with and how much.  This is denoted by the blue line in figure 3.
 
-
-
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{pictures/orgdemand.jpg}
 	\caption{Node Selection}
-	\label{fig:global}
+	\label{fig:node}
 \end{figure}
 
 The original organizational supply view was a horizontal bar chart as shown on the left side of figure 1.  In version 2 we experimented with changing this to a tree map as we wanted to show the relative size of each employee in a group compared to the others.  The space filling method~\cite{shneiderman1992tree} as discussed in Ben Shneiderman original treemap paper was appealing since we did not know how large a group might be.  After discussion with Group B we decided treemaps were not appropriate since there were no levels to drill down to or group by.  It was also noted by Group A that a bar chart might be better for a comparison view point.  When the user clicks on any of the bars it will re-orient all views to select the employee.  The final vertical bar chart is shown in figure 4.
@@ -269,7 +276,7 @@ Group B had some challenges with the supply part of the design as a table wasn't
 	\centering
 	\includegraphics[width=\columnwidth]{pictures/palmtree.jpg}
 	\caption{Palm Tree}
-	\label{fig:global}
+	\label{fig:palm}
 \end{figure}
 
 \section{Implementation}
@@ -300,14 +307,11 @@ The most challenging feature to create was the palm tree in the redundancy suppl
 
 \subsection{Other Implementation Choices}
 
-\paragraph{Colour} A single color scheme was implemented to ensure consistency across all views.  This provides consistency for the user where all the nodes are the same color regardless of view and the selectednode is easily identifiable.
-
-\paragraph{Layout} The layout was implemented using CSS grids that allow for the screen to be divided into frames.  This facilitated the layout of allowing 2 rows within the window at any point in time.
-
-\paragraph{Labels} Labels were added to reduce confusion of the new demand/supply layout in version 2.  Users found this very helpful to understand the problem space.
-
-
-
+\begin{description}
+\item [Colour] A single colour scheme was implemented to ensure consistency across all views.  This provides consistency for the user where all the nodes are the same color regardless of view and the selectednode is easily identifiable.
+\item[Layout] The layout was implemented using CSS grids that allow for the screen to be divided into frames.  This facilitated the layout of allowing 2 rows within the window at any point in time.
+\item[Labels] Labels were added to reduce confusion of the new demand/supply layout in version 2.  Users found this very helpful to understand the problem space.
+\end{description}
 
 \section{Evaluation and Discussion}
 \label{sec:evaldiscuss}
