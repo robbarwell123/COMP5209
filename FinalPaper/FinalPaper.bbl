@@ -70,13 +70,18 @@ M.~Wilson, ``Six views of embodied cognition,'' \emph{Psychonomic bulletin \&
 C.~Plaisant, ``The challenge of information visualization evaluation,''
   \emph{IEEE Proc. of AVI}, 2004.
 
-\bibitem{sevenscenarios}
+\bibitem{lam2012empirical}
 H.~Lam, E.~Bertini, P.~Isenberg, C.~Plaisant, and S.~Carpendale, ``Empirical
-  studies in information visualization: Seven scenarios.''
+  studies in information visualization: Seven scenarios,'' \emph{IEEE
+  transactions on visualization and computer graphics}, vol.~18, no.~9, pp.
+  1520--1536, 2012.
 
-\bibitem{cognativetaskanalysis}
+\bibitem{pirolli2005sensemaking}
 P.~Pirolli and S.~Card, ``The sensemaking process and leverage points for
-  analyst technology as identified through cognitive task analysis.''
+  analyst technology as identified through cognitive task analysis,'' in
+  \emph{Proceedings of international conference on intelligence analysis},
+  vol.~5.\hskip 1em plus 0.5em minus 0.4em\relax McLean, VA, USA, 2005, pp.
+  2--4.
 
 \bibitem{ware2012information}
 C.~Ware, \emph{Information visualization: perception for design}.\hskip 1em
@@ -92,8 +97,10 @@ B.~Shneiderman, ``Tree visualization with tree-maps: 2-d space-filling
   approach,'' \emph{ACM Transactions on graphics (TOG)}, vol.~11, no.~1, pp.
   92--99, 1992.
 
-\bibitem{enronorgchart}
-M.~Duczynski and B.~Yin, ``Hierarchy detection through email network
-  analysis.''
+\bibitem{rowe2007automated}
+R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
+  hierarchy detection through email network analysis,'' in \emph{Proceedings of
+  the 9th WebKDD and 1st SNA-KDD 2007 workshop on Web mining and social network
+  analysis}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 109--117.
 
 \end{thebibliography}

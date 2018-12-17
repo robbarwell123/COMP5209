@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: FinalPaper.aux
 The style file: IEEEtran.bst
@@ -11,53 +11,46 @@ Database file #1: Bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty journal in sevenscenarios
-Warning--empty year in sevenscenarios
-Warning--empty journal in cognativetaskanalysis
-Warning--empty year in cognativetaskanalysis
-Warning--empty journal in enronorgchart
-Warning--empty year in enronorgchart
 
 Done.
 You've used 16 entries,
             4024 wiz_defined-function locations,
-            904 strings with 9620 characters,
-and the built_in function-call counts, 10219 in all, are:
-= -- 855
-> -- 188
-< -- 88
-+ -- 105
-- -- 30
-* -- 492
-:= -- 1642
-add.period$ -- 33
+            913 strings with 9950 characters,
+and the built_in function-call counts, 11928 in all, are:
+= -- 1015
+> -- 218
+< -- 116
++ -- 125
+- -- 32
+* -- 573
+:= -- 1863
+add.period$ -- 35
 call.type$ -- 16
 change.case$ -- 15
-chr.to.int$ -- 186
-cite$ -- 22
-duplicate$ -- 769
-empty$ -- 809
-format.name$ -- 37
-if$ -- 2300
+chr.to.int$ -- 252
+cite$ -- 16
+duplicate$ -- 860
+empty$ -- 937
+format.name$ -- 39
+if$ -- 2730
 int.to.chr$ -- 0
 int.to.str$ -- 16
-missing$ -- 121
+missing$ -- 133
 newline$ -- 71
 num.names$ -- 16
-pop$ -- 262
+pop$ -- 265
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 798
+skip$ -- 940
 stack$ -- 0
-substring$ -- 454
-swap$ -- 599
-text.length$ -- 26
+substring$ -- 608
+swap$ -- 718
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 16
-warning$ -- 6
-while$ -- 52
+warning$ -- 0
+while$ -- 64
 width$ -- 18
-write$ -- 169
-(There were 6 warnings)
+write$ -- 181
