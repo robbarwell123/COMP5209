@@ -97,6 +97,21 @@ B.~Shneiderman, ``Tree visualization with tree-maps: 2-d space-filling
   approach,'' \emph{ACM Transactions on graphics (TOG)}, vol.~11, no.~1, pp.
   92--99, 1992.
 
+\bibitem{cmuenron}
+\BIBentryALTinterwordspacing
+(2015) Enron email dataset. [Online]. Available:
+  \url{https://www.cs.cmu.edu/~./enron/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{klimt2004introducing}
+B.~Klimt and Y.~Yang, ``Introducing the {Enron} corpus.'' in \emph{CEAS}, 2004.
+
+\bibitem{diesner2005exploration}
+J.~Diesner and K.~M. Carley, ``Exploration of communication networks from the
+  enron email corpus,'' in \emph{SIAM International Conference on Data Mining:
+  Workshop on Link Analysis, Counterterrorism and Security, Newport Beach,
+  CA}.\hskip 1em plus 0.5em minus 0.4em\relax Citeseer, 2005, pp. 3--14.
+
 \bibitem{rowe2007automated}
 R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
   hierarchy detection through email network analysis,'' in \emph{Proceedings of
