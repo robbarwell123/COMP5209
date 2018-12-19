@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.22)  18 DEC 2018 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.22)  18 DEC 2018 20:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -722,17 +722,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
 Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
 (rerunfilecheck)             Checksum: E7CE0B9B0BE8AC5DA53E68AEE6D3BA11;2366.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 431.
  )
 (\end occurred inside a group at level 1)
 
@@ -753,7 +753,7 @@ xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (8 pages, 1011459 bytes).
+Output written on FinalPaper.pdf (8 pages, 1011687 bytes).
 PDF statistics:
  345 PDF objects out of 1000 (max. 8388607)
  317 compressed objects within 4 object streams
