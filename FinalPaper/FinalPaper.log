@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.20)  20 DEC 2018 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.12.20)  20 DEC 2018 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -673,38 +673,38 @@ Underfull \vbox (badness 6316) has occurred while \output is active []
 
 
  <./pictures/version3.jpg> <./diamondrule.pdf>] [2]
-<pictures/version1.JPG, id=229, 1204.5pt x 676.77844pt>
+<pictures/version1.JPG, id=228, 1204.5pt x 676.77844pt>
 File: pictures/version1.JPG Graphic file (type jpg)
 <use pictures/version1.JPG>
-Package pdftex.def Info: pictures/version1.JPG  used on input line 209.
+Package pdftex.def Info: pictures/version1.JPG  used on input line 206.
 (pdftex.def)             Requested size: 251.31898pt x 141.20857pt.
-<pictures/Sketch.jpg, id=230, 559.3698pt x 608.15205pt>
+ [3 <./pictures/version1.JPG>]
+<pictures/Sketch.jpg, id=240, 559.3698pt x 608.15205pt>
 File: pictures/Sketch.jpg Graphic file (type jpg)
 <use pictures/Sketch.jpg>
-Package pdftex.def Info: pictures/Sketch.jpg  used on input line 229.
+Package pdftex.def Info: pictures/Sketch.jpg  used on input line 226.
 (pdftex.def)             Requested size: 251.31898pt x 273.23903pt.
- [3 <./pictures/version1.JPG>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 253.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 250.
 <pictures/version2.jpg, id=245, 1204.5pt x 813.0375pt>
 File: pictures/version2.jpg Graphic file (type jpg)
 <use pictures/version2.jpg>
-Package pdftex.def Info: pictures/version2.jpg  used on input line 261.
+Package pdftex.def Info: pictures/version2.jpg  used on input line 258.
 (pdftex.def)             Requested size: 251.31898pt x 169.63878pt.
  [4 <./pictures/Sketch.jpg> <./pictures/version2.jpg>]
 <pictures/orgdemand.jpg, id=257, 624.08156pt x 317.68687pt>
 File: pictures/orgdemand.jpg Graphic file (type jpg)
 <use pictures/orgdemand.jpg>
-Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 296.
+Package pdftex.def Info: pictures/orgdemand.jpg  used on input line 293.
 (pdftex.def)             Requested size: 251.31898pt x 127.9305pt.
  [5 <./pictures/orgdemand.jpg>]
 <pictures/palmtree.jpg, id=273, 579.66562pt x 273.27094pt>
 File: pictures/palmtree.jpg Graphic file (type jpg)
 <use pictures/palmtree.jpg>
-Package pdftex.def Info: pictures/palmtree.jpg  used on input line 327.
+Package pdftex.def Info: pictures/palmtree.jpg  used on input line 324.
 (pdftex.def)             Requested size: 251.31898pt x 118.47992pt.
  [6 <./pictures/palmtree.jpg>]
-LaTeX Font Info:    Try loading font information for OT1+txtt on input line 417
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 414
 .
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
@@ -722,29 +722,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 453.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
  [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 453.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
  (./FinalPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 453.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 453.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 450.
 Package rerunfilecheck Info: File `FinalPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 20B1919C6350C8FC64AC7B2E52F1285B;2591.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 453.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
  )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 393 ({)
-### simple group (level 1) entered at line 388 ({)
+### simple group (level 2) entered at line 390 ({)
+### simple group (level 1) entered at line 385 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9658 strings out of 494561
- 144980 string characters out of 6177453
+ 9657 strings out of 494561
+ 144964 string characters out of 6177453
  275198 words of memory out of 5000000
- 12783 multiletter control sequences out of 15000+600000
+ 12782 multiletter control sequences out of 15000+600000
  60994 words of font info for 287 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 33i,8n,38p,1186b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,8n,38p,1164b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/te
@@ -752,7 +752,7 @@ xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalPaper.pdf (8 pages, 1014600 bytes).
+Output written on FinalPaper.pdf (8 pages, 1015097 bytes).
 PDF statistics:
  360 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams

@@ -101,13 +101,10 @@ An individual's function within an organization can be viewed using different le
 
 We present DSOC (Decision Support for Organizational Change), a visual analytics dashboard to help managers respond to organizational change in a way that minimizes disruption to the organization. A screenshot of our functional prototype is shown in Figure~\ref{fig:version3}. When using DSOC, managers are shows a number of visualizations that each help managers grapple with a part of the complex demand and supply problem. Visualizations are organized into two columns: demand and supply, and as many rows corresponding to the views of an employee that a manager is interested in. We implement demand and supply visualizations for three views: \emph{organizational}, \emph{process}, and \emph{redundancy}, which correspond to the three example views mentioned in the example above. 
 
-In this paper, we discuss \textellipsis in Section~\ref{sec:litreview}, \textellipsis in Section~\ref{sec:design} \textellipsis in Section \ref{sec:implementation} \textellipsis in Section~\ref{sec:evaldiscuss} \textellipsis in Section~\ref{sec:future} \textellipsis in Section~\ref{sec:conclusions}
+The structure of the paper is as follows. We cover relevant concepts and related work in Section~\ref{sec:litreview}. In Section~\ref{sec:design} we describe the design of DSOC with an emphasis on how this design evolved over time. We also include background information on our development approach, the domain problem and solution, and our data model. In Section \ref{sec:implementation} we describe how we implemented our design, and challenges we faced along the way. In Section~\ref{sec:evaldiscuss} we describe the use case we presented to users, and provide a walkthrough of how a manager might use DSOC to help address the issue of am employee leaving an organization in a real-life setting. In Section~\ref{sec:future} we mention a few possible avenues for extending and enhancing DSOC in future work. Finally, we present concluding remarks in Section~\ref{sec:conclusions}.
 
 \section{Literature Review}
 \label{sec:litreview}
-
-\textbf{{\color{Plum}Need for a review of the literature in this area. Relevant concepts, similar works, etc.
-}}
 
 \subsection{Information visualization and cognition}
 
@@ -167,7 +164,7 @@ Our design was informed by consultation with three user groups. Those groups are
 
 We made the real-world viability of our design a top priority. As such, we felt it was important to show our design to people from a number of different backgrounds to help ensure that our design was comprehensible to a wide variety of potential users, and that our visualizations effectively communicated the underlying data and helped support the task at hand. Our initial design underwent two major revisions in response to feedback received from members of these groups. 
 
-After implementing Version 1 (V1) of our prototype we presented it to Group A. Group A provided the key insight that the problem we were addressing was problem of demand and supply across multiple views. The design concept behind V2---a major redesign---came directly from our interactions with Group A. V2 was then shown to V3, who pointed out a number of issues with specific visualizations.  This group provided creative ways of helping support the needs identified by Group A. V3 was then shown to all groups, where no major issues with our implementation were identified.
+After implementing Version 1 (V1) of our prototype we presented it to Group A. Group A provided the key insight that the problem we were addressing was problem of demand and supply across multiple views. The design concept behind V2 (a major redesign) came directly from our interactions with Group A. V2 was then shown to V3, who pointed out a number of issues with specific visualizations.  This group provided creative ways of helping support the needs identified by Group A. V3 was then shown to all groups, where no major issues with our implementation were identified.
 
 \subsubsection{Problem Space}
 \label{sec:problem}
