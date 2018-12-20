@@ -113,7 +113,23 @@ In this paper, we discuss \textellipsis in Section~\ref{sec:litreview}, \textell
 
 We aim to address this problem through \emph{information visualization}. Visualizations support thought by reducing the gap between the data, and the users' \emph{mental model} of the data~\cite{yi2007toward}. A mental model is an internal representation of how something in the world works~\cite{staggersmodel,norman2014some}. Wherever there is distance between the presentation of the data and our understanding of the data, mental work must be done so that understanding is possible. This type of mental work does not bring us closer to solving domain goals, but rather is a sort of unfortunate precursor for the really important work, and therefore should be avoided wherever possible~\cite{paas2003cognitive}. Fortunately, the physical environment can be used to store information, which allows us to \lq off-load\rq{} mental work onto the environment~\cite{wilson2002six}. Visualizations are essentially one way of effectively leveraging this property of the environment to aid thought.
 
-The development of our visualization started with defining a methodology to help guide the design process.  We reviewed a number of papers in the area of evaluation of information visualization.  We found this area of research to be less concrete then other topics we had studied before.  The Challenge of Information Visualization Evaluation~\cite{challengeofinfoviseval} paper we reviewed helped us to clarify our evaluation criteria and approach by validating our desire to present our design and findings to various user groups throughout the design process.  The Empirical Studies in Information Visualization: Seven Scenarios paper~\cite{lam2012empirical} paper inspired us to take an iterative approach, similar to agile software development.  The approach presented in the paper was Pre-design, design, prototype, deployment, and re-design.  This approach would also line up with using different user groups through the process.
+\subsection{Related work}
+
+The
+
+\subsubsection{EnCompass: Organizational Process Visualization}
+
+Mann~\cite{mann1999organizational} recognizes that the day-to-day operations in an organization can have little to do with its organizational reporting structure. He developed a tool called \emph{EnCompass} to help understand the relationships between individuals and the business activities they partake in. Two visualizations of the organization are provided: an ``organizational view'' and an ``issue view''. The ``organizational view'' is a 3D representation of an organization's reporting structure. The ``issue view'' is a 3D tree of all employees involved in a given process. The level the employee is placed at is determined by their important to the process, as determined by a questionnaire completed by employees. For each view, networks of process-specific employee interactions can be superimposed on the trees.
+
+EnCompass and DSOC both address the same high-level problem: the day-to-day operations of an organization are difficult to understand, and often unknown. We both try to address the first of these problems with information visualization. We differ in terms of how we address the second issue: EnCompass gathers detailed process-specific data from questionnaires issued to employees, whereas DSOC uses a simple value model of SMTP headers.
+
+The specific lower-level problem the two tools target, however, are rather different. EnCompass is meant to help align an organizations's reporting structure with its business processes (i.e. ``day-to-day operations''), whereas DSOC is meant to help managers fill gaps left by an employee's departure from an organization. Providing visualizations that specialize in showing supply and demand information respectively give DSOC an advantage in this task, and there is no equivalent functionality in EnCompass.
+
+\subsubsection{Perspective Oriented Business Process Visualization}
+
+
+
+
 
 \section{Design}
 \label{sec:design}
@@ -139,16 +155,17 @@ In the remainder of this section, we discuss the various elements of our design 
 \subsubsection{Methodology}
 \label{sec:methodology}
 
+The development of our visualization started with defining a methodology to help guide the design process.  We reviewed a number of papers in the area of evaluation of information visualization.  We found this area of research to be less concrete then other topics we had studied before.  The Challenge of Information Visualization Evaluation~\cite{challengeofinfoviseval} paper we reviewed helped us to clarify our evaluation criteria and approach by validating our desire to present our design and findings to various user groups throughout the design process.  The Empirical Studies in Information Visualization: Seven Scenarios paper~\cite{lam2012empirical} paper inspired us to take an iterative approach, similar to agile software development.  The approach presented in the paper was Pre-design, design, prototype, deployment, and re-design.  This approach would also line up with using different user groups through the process.
 
 Our design was informed by consultation with three user groups. Those groups are:
 
-\begin{enumerate}[label=(\alph*)]
-	\item [A.] \textbf{Government Department}. Members of a large department at the Government of Canada who address organizational change issues in their work.
-	\item [B.] \textbf{Academia}. Students and a professor at Carleton University.
-	\item [C.] \textbf{Private Company}. Users at a private multi-national company who discovered our research during the design process.
-        \end{enumerate}
+\begin{enumerate}[label=(\Alph*)]
+\item  \textbf{Government Department}. Members of a large department at the Government of Canada who address organizational change issues in their work.
+\item \textbf{Academia}. Students and a professor at Carleton University.
+\item \textbf{Private Company}. Users at a private multi-national company who discovered our research during the design process.
+\end{enumerate}
 
-        We made the real-world viability of our design a top priority. As such, we felt it was important to show our design to people from a number of different backgrounds to help ensure that our design was comprehensible to a wide variety of potential users, and that our visualizations effectively communicated the underlying data and helped support the task at hand. Our initial design underwent two major revisions in response to feedback received from members of these groups. 
+We made the real-world viability of our design a top priority. As such, we felt it was important to show our design to people from a number of different backgrounds to help ensure that our design was comprehensible to a wide variety of potential users, and that our visualizations effectively communicated the underlying data and helped support the task at hand. Our initial design underwent two major revisions in response to feedback received from members of these groups. 
 
 After implementing Version 1 (V1) of our prototype we presented it to Group A. Group A provided the key insight that the problem we were addressing was problem of demand and supply across multiple views. The design concept behind V2---a major redesign---came directly from our interactions with Group A. V2 was then shown to V3, who pointed out a number of issues with specific visualizations.  This group provided creative ways of helping support the needs identified by Group A. V3 was then shown to all groups, where no major issues with our implementation were identified.
 
@@ -214,7 +231,7 @@ The data model requires enrichment through the addition of value models.  One va
 	\label{fig:sketch}
 \end{figure}
 
-\subsection{Versions}
+\subsection{Major Versions}
 
 Our made incremental refinements to our design in response to feedback obtained from the users in the groups mentioned in Section \ref{sec:methodology}. Our design went through three major versions:
 
@@ -235,7 +252,7 @@ This view presented many challenges for users as they found it difficult to unde
 
 The new design featured a grid layout of 2 columns $\times $ $N$ rows. Visualizations that focus on the \emph{demand} aspect of the problem are placed in the left column, and visualizations focusing on the \emph{supply} aspect are placed in the right column. By visualizing both the supply and demand aspects of the problem next to each other, managers can simultaneously see the gaps left by an individual's absence, and also ways to fill those gaps.
 
-Visualizations for the different views of the problem space were placed inside their own row. We say there are $N$ rows because there is no theoretical upper limit to the number of views that a manager may want to examine. The views that a manager may want to examine can vary based on the demands of the specific situation they are in. We provide three example views, but more can be created and added to the dashboard as needed.
+Visualizations for the different views of the problem space were each placed inside their own row. We say there are $N$ rows because there is no theoretical upper limit to the number of views that a manager may want to examine. The views that a manager may want to examine can vary based on the demands of the specific situation they are in. We provide three example views, but more can be created and added to the dashboard as needed.
 
 We found that visualizing each view of the problem space separately had a similarly positive effect as visualizing supply and demand. 
 
@@ -255,6 +272,10 @@ Our goal was to provide the user with the freedom to explore the problem space h
 As the user explored the problem it was also important to have a way for them to keep track of the problem space they have already explored.  This was a salient point that we found during the literature review with the quote ``Information exploration is inherently a process with many steps, so keeping the history of actions and allowing users to retrace their steps is important''\cite{anafigueiras}.  This was included by providing the user the option to display history as direction arrows or simply colouring the nodes in the organizational chart.  The user can then navigate the history using the navigation bar at the top of the screen.
 
 \subsection{Views}
+We provide three views of an employee's role in an organization: \emph{organizational}, \emph{process}, and \emph{redundancy}. The \emph{organizational} view is the employee's position in the organization's reporting structure; the \emph{process} view suggests the processes they participate in, with an emphasis on whether they are at the start, end, or middle of a process; and the \emph{redundancy} view considers their pattern of communication with other individuals in the organization.
+
+In this section we describe how we represent these views in DSOC, and how this changed through the major versions.
+
 \subsubsection{Organizational}
 The organizational demand and supply view changed relatively little between V1 and V3 compared to the other visualizations.  The org-demand view was modelled after a classical organizational tree structure, as this paradigm was most aligned with the users current mental model of the problem.  During the design phase we uncovered a number of issues that we needed to address, which we discuss next.
 
@@ -364,12 +385,12 @@ Our visualization helps Eric with each of these questions.  First he can identif
 Using the process view, Eric can determine which email connections start or stop with Rob.  This typically denotes starts and ends of processes, which are high-priority gaps to fill.  Additionally, the process diagram can provide Eric an overview of the stronger communication links Rob had, which signal processes which Rob was an integral part of.
 
 \subsubsection{Size of the Gap}
-During the exploration process in finding the gap, Eric has already started to understand the size of the problem by looking at weight of the lines in the organization and process demand chart.
+During the exploration process in finding the gap, Eric has already started to understand the size of the problem by looking at weight of the lines in the organization and process demand chart. {\textbf{\color{Plum} Are there any other ways we can determine the size of the gap using DSOC? Just checking}
 
 \subsubsection{Filling the Gap}
 After Eric has a feel for the locations and the size of the gaps that have been left by Rob's departure, Eric can now use the supply side of the application to see how he might fill these gaps. Managers commonly begin their search through the supply by looking at other members of the departed's group, which is shown in the organizational supply view. The organizational supply bar chart can quickly show Eric the relative contribution of Rob to the group. Employees who are under-utilized (i.e. who have low bars) might be good candidates to take on at least some of Rob's workload. Eric may wish to take a closer look at a potential replacement's role in the organization, in which case he can click on that employee's bar to make them the new selected node, and the focus of the other visualizations. Afterwards, Eric can click the left arrow in the top right of the screen to go \lq back\rq{} to making Rob the employee of focus.
 
-The process chart can be used to determine if Rob is even required in some processes.  This could result in system efficiencies by removing Rob from the process and simply having people on the left side connect directly with people on the right side.{\textbf{\color{Plum} Can you go into a bit more detail here about how Eric might use the process view? Maybe mention a few more examples. And a general note: I think this section is really important, so if you can think of more details to add throughout showing how someone might actually use the system in a real-world scenario that would really help the reader I think.}
+The process chart can be used to determine if Rob is even required in some processes.  This could result in system efficiencies by removing Rob from the process and simply having people on the left side connect directly with people on the right side.{\textbf{\color{Plum} Is it possible to go into a bit more detail here about how Eric might use the process view? Maybe mention a few more examples. And a general note: I think this section is really important, so if you can think of more details to add throughout showing how someone might actually use the system in a real-world scenario that would really help the reader I think.}
 
 Lastly, Eric can try and find other employees in the organization who provide a similar role to Rob (i.e. they communicate with the same people with a similar frequency), and see if they have spare capacity to take on some of the workload.  Eric begins by hovering over the employee with the highest percentage overlap with Rob, and \lq roll\rq{} down the list, looking for the right pattern. Eric may find a few employees that appear to have a similar pattern. He can click on their names to make them appear in the redundancy demand view opposite Rob. This view allows a finer-grain look into who they are talking to, and how much.
 
@@ -422,8 +443,9 @@ In this paper we presented DSOC: Design Support for Organizational Change, a vis
 
 We found during our research there was a lot of excitement about this topic and there are a number of different pieces of follow on work that we can use in the future.
 
-\section{Acknowledgments}
-We would like to thank our colleague Mr. Brad Mazurek for the initial idea of modeling information flow in an organization with SMTP headers. Also we would like to thank the various user groups and academics for helping to shape our design.
+\acknowledgments{
+  We would like to thank our colleague Mr. Brad Mazurek for the initial idea of modeling information flow in an organization with SMTP headers. Also we would like to thank the various user groups and academics for helping to shape our design.
+}
 
 \bibliographystyle{IEEEtran}
 \bibliography{Bibliography.bib}
