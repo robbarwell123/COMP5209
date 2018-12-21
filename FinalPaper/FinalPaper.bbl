@@ -71,6 +71,46 @@ M.~M. Mann, ``Organizational process visualization,'' in \emph{Systems
   Sciences, 1999. HICSS-32. Proceedings of the 32nd Annual Hawaii International
   Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1999, pp. 6--pp.
 
+\bibitem{networkanalysis2015hardin}
+\BIBentryALTinterwordspacing
+J.~S. Hardin, G.~Sarkis, and P.~C. URC, ``Network analysis with the enron email
+  corpus,'' \emph{Journal of Statistics Education}, vol.~23, no.~2, p. null,
+  2015. [Online]. Available:
+  \url{https://doi.org/10.1080/10691898.2015.11889734}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rowe2007automated}
+R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
+  hierarchy detection through email network analysis,'' in \emph{Proceedings of
+  the 9th WebKDD and 1st SNA-KDD 2007 workshop on Web mining and social network
+  analysis}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 109--117.
+
+\bibitem{diesner2005communication}
+J.~Diesner, T.~L. Frantz, and K.~M. Carley, ``Communication networks from the
+  enron email corpus “it's always about the people. enron is no
+  different”,'' \emph{Computational \& Mathematical Organization Theory},
+  vol.~11, no.~3, pp. 201--228, 2005.
+
+\bibitem{diesner2005exploration}
+J.~Diesner and K.~M. Carley, ``Exploration of communication networks from the
+  enron email corpus,'' in \emph{SIAM International Conference on Data Mining:
+  Workshop on Link Analysis, Counterterrorism and Security, Newport Beach,
+  CA}.\hskip 1em plus 0.5em minus 0.4em\relax Citeseer, 2005, pp. 3--14.
+
+\bibitem{mccallum2007topic}
+A.~McCallum, X.~Wang, and A.~Corrada-Emmanuel, ``Topic and role discovery in
+  social networks with experiments on enron and academic email,'' \emph{Journal
+  of Artificial Intelligence Research}, vol.~30, pp. 249--272, 2007.
+
+\bibitem{keila2005structure}
+P.~S. Keila and D.~B. Skillicorn, ``Structure in the enron email dataset,''
+  \emph{Computational \& Mathematical Organization Theory}, vol.~11, no.~3, pp.
+  183--199, 2005.
+
+\bibitem{heer2005exploring}
+J.~Heer, ``Exploring enron: Visual data mining of e-mail,'' \emph{Online:
+  http://jheer. org/enron/[Stand: 2005-07-10]}, 2005.
+
 \bibitem{challengeofinfoviseval}
 C.~Plaisant, ``The challenge of information visualization evaluation,''
   \emph{IEEE Proc. of AVI}, 2004.
@@ -110,17 +150,5 @@ B.~Shneiderman, ``Tree visualization with tree-maps: 2-d space-filling
 
 \bibitem{klimt2004introducing}
 B.~Klimt and Y.~Yang, ``Introducing the {Enron} corpus.'' in \emph{CEAS}, 2004.
-
-\bibitem{diesner2005exploration}
-J.~Diesner and K.~M. Carley, ``Exploration of communication networks from the
-  enron email corpus,'' in \emph{SIAM International Conference on Data Mining:
-  Workshop on Link Analysis, Counterterrorism and Security, Newport Beach,
-  CA}.\hskip 1em plus 0.5em minus 0.4em\relax Citeseer, 2005, pp. 3--14.
-
-\bibitem{rowe2007automated}
-R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
-  hierarchy detection through email network analysis,'' in \emph{Proceedings of
-  the 9th WebKDD and 1st SNA-KDD 2007 workshop on Web mining and social network
-  analysis}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 109--117.
 
 \end{thebibliography}

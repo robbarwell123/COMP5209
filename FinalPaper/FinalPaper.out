@@ -1,41 +1,42 @@
 \BOOKMARK [1][]{section.2}{Introduction}{}% 1
 \BOOKMARK [1][]{section.4}{Literature Review}{}% 2
-\BOOKMARK [2][]{subsection.5}{Information visualization and cognition}{section.4}% 3
+\BOOKMARK [2][]{subsection.5}{Information Visualization and Cognition}{section.4}% 3
 \BOOKMARK [2][]{subsection.6}{Related work}{section.4}% 4
 \BOOKMARK [3][-]{subsubsection.7}{EnCompass: Organizational Process Visualization}{subsection.6}% 5
 \BOOKMARK [3][-]{subsubsection.8}{Perspective Oriented Business Process Visualization}{subsection.6}% 6
-\BOOKMARK [1][]{section.9}{Design}{}% 7
-\BOOKMARK [2][]{subsection.12}{Background}{section.9}% 8
-\BOOKMARK [3][-]{subsubsection.13}{Methodology}{subsection.12}% 9
-\BOOKMARK [3][-]{subsubsection.17}{Problem Space}{subsection.12}% 10
-\BOOKMARK [3][-]{subsubsection.21}{Option Space}{subsection.12}% 11
-\BOOKMARK [3][-]{subsubsection.23}{Data}{subsection.12}% 12
-\BOOKMARK [2][]{subsection.25}{Major Versions}{section.9}% 13
-\BOOKMARK [2][]{subsection.26}{Layout}{section.9}% 14
-\BOOKMARK [3][-]{subsubsection.27}{Structure}{subsection.26}% 15
-\BOOKMARK [3][-]{subsubsection.29}{Navigation}{subsection.26}% 16
-\BOOKMARK [2][]{subsection.30}{Views}{section.9}% 17
-\BOOKMARK [3][-]{subsubsection.31}{Organizational}{subsection.30}% 18
-\BOOKMARK [3][-]{subsubsection.37}{Process}{subsection.30}% 19
-\BOOKMARK [3][-]{subsubsection.38}{Redundancy}{subsection.30}% 20
-\BOOKMARK [1][]{section.40}{Implementation}{}% 21
-\BOOKMARK [2][]{subsection.41}{Data}{section.40}% 22
-\BOOKMARK [3][-]{subsubsection.42}{Data Preparation}{subsection.41}% 23
-\BOOKMARK [2][]{subsection.43}{Organizational}{section.40}% 24
-\BOOKMARK [2][]{subsection.44}{Process}{section.40}% 25
-\BOOKMARK [2][]{subsection.45}{Redundancy}{section.40}% 26
-\BOOKMARK [2][]{subsection.46}{Other Implementation Choices}{section.40}% 27
-\BOOKMARK [1][]{section.47}{Evaluation and Discussion}{}% 28
-\BOOKMARK [2][]{subsection.48}{Use Case Walkthrough}{section.47}% 29
-\BOOKMARK [3][-]{subsubsection.52}{Finding the Gap}{subsection.48}% 30
-\BOOKMARK [3][-]{subsubsection.53}{Size of the Gap}{subsection.48}% 31
-\BOOKMARK [3][-]{subsubsection.54}{Filling the Gap}{subsection.48}% 32
-\BOOKMARK [3][-]{subsubsection.55}{Result}{subsection.48}% 33
-\BOOKMARK [2][]{subsection.56}{Organizational Models}{section.47}% 34
-\BOOKMARK [1][]{section.57}{Future Work}{}% 35
-\BOOKMARK [2][]{subsection.58}{Value Model}{section.57}% 36
-\BOOKMARK [2][]{subsection.59}{Performance}{section.57}% 37
-\BOOKMARK [2][]{subsection.60}{Data}{section.57}% 38
-\BOOKMARK [2][]{subsection.61}{Views}{section.57}% 39
-\BOOKMARK [2][]{subsection.62}{Documentation}{section.57}% 40
-\BOOKMARK [1][]{section.63}{Conclusions}{}% 41
+\BOOKMARK [2][]{subsection.9}{Enron Corpus}{section.4}% 7
+\BOOKMARK [1][]{section.10}{Design}{}% 8
+\BOOKMARK [2][]{subsection.13}{Background}{section.10}% 9
+\BOOKMARK [3][-]{subsubsection.14}{Methodology}{subsection.13}% 10
+\BOOKMARK [3][-]{subsubsection.18}{Problem Space}{subsection.13}% 11
+\BOOKMARK [3][-]{subsubsection.22}{Option Space}{subsection.13}% 12
+\BOOKMARK [3][-]{subsubsection.24}{Data}{subsection.13}% 13
+\BOOKMARK [2][]{subsection.26}{Major Versions}{section.10}% 14
+\BOOKMARK [2][]{subsection.27}{Layout}{section.10}% 15
+\BOOKMARK [3][-]{subsubsection.28}{Structure}{subsection.27}% 16
+\BOOKMARK [3][-]{subsubsection.30}{Navigation}{subsection.27}% 17
+\BOOKMARK [2][]{subsection.31}{Views}{section.10}% 18
+\BOOKMARK [3][-]{subsubsection.32}{Organizational}{subsection.31}% 19
+\BOOKMARK [3][-]{subsubsection.38}{Process}{subsection.31}% 20
+\BOOKMARK [3][-]{subsubsection.39}{Redundancy}{subsection.31}% 21
+\BOOKMARK [1][]{section.41}{Implementation}{}% 22
+\BOOKMARK [2][]{subsection.42}{Data}{section.41}% 23
+\BOOKMARK [3][-]{subsubsection.43}{Data Preparation}{subsection.42}% 24
+\BOOKMARK [2][]{subsection.44}{Organizational}{section.41}% 25
+\BOOKMARK [2][]{subsection.45}{Process}{section.41}% 26
+\BOOKMARK [2][]{subsection.46}{Redundancy}{section.41}% 27
+\BOOKMARK [2][]{subsection.47}{Other Implementation Choices}{section.41}% 28
+\BOOKMARK [1][]{section.48}{Evaluation and Discussion}{}% 29
+\BOOKMARK [2][]{subsection.49}{Use Case Walkthrough}{section.48}% 30
+\BOOKMARK [3][-]{subsubsection.53}{Finding the Gap}{subsection.49}% 31
+\BOOKMARK [3][-]{subsubsection.54}{Size of the Gap}{subsection.49}% 32
+\BOOKMARK [3][-]{subsubsection.55}{Filling the Gap}{subsection.49}% 33
+\BOOKMARK [3][-]{subsubsection.56}{Result}{subsection.49}% 34
+\BOOKMARK [2][]{subsection.57}{Organizational Models}{section.48}% 35
+\BOOKMARK [1][]{section.58}{Future Work}{}% 36
+\BOOKMARK [2][]{subsection.59}{Value Model}{section.58}% 37
+\BOOKMARK [2][]{subsection.60}{Performance}{section.58}% 38
+\BOOKMARK [2][]{subsection.61}{Data}{section.58}% 39
+\BOOKMARK [2][]{subsection.62}{Views}{section.58}% 40
+\BOOKMARK [2][]{subsection.63}{Documentation}{section.58}% 41
+\BOOKMARK [1][]{section.64}{Conclusions}{}% 42

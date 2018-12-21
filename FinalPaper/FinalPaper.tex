@@ -106,7 +106,7 @@ The structure of the paper is as follows. We cover relevant concepts and related
 \section{Literature Review}
 \label{sec:litreview}
 
-\subsection{Information visualization and cognition}
+\subsection{Information Visualization and Cognition}
 
 We aim to address this problem through \emph{information visualization}. Visualizations support thought by reducing the gap between the data, and the users' \emph{mental model} of the data~\cite{yi2007toward}. A mental model is an internal representation of how something in the world works~\cite{staggersmodel,norman2014some}. Wherever there is distance between the presentation of the data and our understanding of the data, mental work must be done so that understanding is possible. This type of mental work does not bring us closer to solving domain goals, but rather is a sort of unfortunate precursor for the really important work, and therefore should be avoided wherever possible~\cite{paas2003cognitive}. Fortunately, the physical environment can be used to store information, which allows us to \lq off-load\rq{} mental work onto the environment~\cite{wilson2002six}. Visualizations are essentially one way of effectively leveraging this property of the environment to aid thought.
 
@@ -130,6 +130,13 @@ POBPV and DSOC both apprecite the complexity of organizations, and try to make t
 
 However, the two tools are targeted at quite different problems. The focus in POBPV is on understanding business processes, not employees. It is difficult to imagine a manager using this tool to address organizational change, as employees are only directly represented in one of the five views (organizational). POBPV also uses much simpler visualizations: simple hierarchies, flow charts, and UML diagrams, perhaps because rich and interactive visualizations were more difficult to implement when the tool was designed. 
 
+\subsection{Enron Corpus}
+
+As a result of the infamous investigation into the Enron corporate scandal, the Federal Energy Regulatory Commission subpoenaed Enron's email records. Later, these records were made available to the public, and since have become one of the most valuable datasets for research~\cite{networkanalysis2015hardin}. 
+
+The use of the Enron corpus in research is ``prolific and wide-ranging''~\cite{networkanalysis2015hardin}. For example, it has been used by social network analysts to: detect social hierarchies~\cite{rowe2007automated}, to study how patterns of communication shifted between normal operations and the crisis stage~\cite{diesner2005communication,diesner2005exploration},  to find out the topics of emails and the social roles of the communicators~\cite{mccallum2007topic}, and to find patterns between word use and role within the organization~\cite{keila2005structure}. A team of researchers at Berkeley created a suite of visualizations to help reveal insight into the social networks at Enron~\cite{heer2005exploring}. 
+
+We were not able to find prior attempts to use the Enron database as part of a visualization tool to help managers make decisions. 
 
 \section{Design}
 \label{sec:design}
@@ -236,9 +243,9 @@ The data model requires enrichment through the addition of value models.  One va
 The incremental refinements to our design in response to feedback obtained from the users in the groups mentioned in Section \ref{sec:methodology}. Our design went through three major versions:
 
 \begin{enumerate}
-	\item [\textbf{V1}] The initial design by the authors that focused on the organization and communication problem.
-	\item [\textbf{V2}] Overhauled layout and introduced grid layout. Added the process and redundancy views.
-	\item [\textbf{V3}] Refined the process and redundancy views to better align with the users' mental model and how they interact with the visualization.
+	\item [\textbf{V1}] Figure \ref{fig:version1}. Initial attempt at solving the problem. 
+	\item [\textbf{V2}] Figure \ref{fig:version2}. Overhauled layout, and introduced \emph{demand-supply $\times$ views} grid layout. Added the process and redundancy views.
+	\item [\textbf{V3}] Figure \ref{fig:version3}. Refined the process and redundancy views to better align with the users' mental model and how they interact with the visualization.
 \end{enumerate}
 
 Our greatest challenge was creating a functional and comprehensible layout that also conveyed the complex intricacies of organizational change.
@@ -264,8 +271,6 @@ We found that visualizing each view of the problem space separately had a simila
 \end{figure}
 
 \subsubsection{Navigation}
-
-
 
 Our goal was to provide the user with the freedom to explore the problem space however they choose.  This required the support of a brushing scatter plot concept where the interactions within an individual sub-view are reflected in the other sub-views. The visualizations are all driven by the \emph{selected} node: users view a single data point through a number of lenses. Users can select a node by clicking on nodes in either of the ``Organizational'' views. 
 
@@ -392,7 +397,7 @@ After Eric has a feel for the locations and the size of the gaps that have been 
 
 The process chart can be used to determine if Rob is even required in some processes.  This could result in system efficiencies by removing Rob from the process and simply having people on the left side connect directly with people on the right side.
 
-Lastly, Eric can try and find other employees in the organization who provide a similar role to Rob (i.e. they communicate with the same people with a similar frequency), and see if they have spare capacity to take on some of the workload.  Eric begins by hovering over the employee with the highest percentage overlap with Rob, and \lq roll\rq{} down the list, looking for the right pattern. Eric may find a few employees that appear to have a similar pattern. He can click on their names to make them appear in the redundancy demand view opposite Rob. This view allows a finer-grain look into who they are talking to, and how much.
+Lastly, Eric can try and find other employees in the organization who perform a similar role to Rob (i.e. they communicate with the same people with a similar frequency), and see if they have spare capacity to take on some of the workload.  Eric begins by hovering over the employee with the highest percentage overlap with Rob, and \lq roll\rq{} down the list, looking for the right pattern. Eric may find a few employees that appear to have a similar pattern. He can click on their names to make them appear in the redundancy demand view opposite Rob. This view allows a finer-grain look into who they are talking to, and how much.
 
 \subsubsection{Result}
 The result of this process is Eric having a better understanding of the gap created when Rob left the position and possible sources of workload redistribution to people (a) within the organizational group, (b) others in the process, or (c) other employees in the organization that provide a similar role.
@@ -412,11 +417,11 @@ The concept is further extended to employee remuneration, where it could be adap
 During the design and development of the visualization we discovered many areas that required further thought and research.  Some of these areas were identified by us and others came from the groups that supported our research.
 
 \subsection{Value Model}
-All groups were quick to understand the visualization we were demonstrating and wanted to focus their time and discussions around the value model aspect of the problem vice the visualization.
+Our value model was a frequent topic of discussion when showing DSOC to the three groups. The model we used was deliberately kept simple as our focus was on visualizing the model, and developing a useful value model is a complex project on its own. A fully mature DSOC would need to significantly enhance the value model we use here. We highlight a few possible future directions the value model could take here. 
 
-The weight of each edge in the value model needs to be adjusted.  For example this could include a new value based on whether the user is in the \texttt{from}, \texttt{to}, \texttt{bcc}, or \texttt{cc} field.  It could also explore the content within the email through natural language processing to reduce the weight of trivial emails that do not contribute value to the business.
+The weight of each edge in the current value model is 1. Emails vary widely in terms of the types of relations they signal, which is totally lost in the present model. Future work could, for example, assign weights based on whether the user is in the \texttt{from}, \texttt{to}, \texttt{bcc}, or \texttt{cc} fields.  It could also evaluate the body of messages using natural language processing. Semantic properties of the message body such as emotional content and topic say a great deal about th quality of the relationship between conversational partners. Emails expressing anger or disappointment should be treated differently than congratulatory emails, for example, and messages about setting up lunch dates are less important than messages about work-related matters. 
 
-The value model around redundancy could also be adjusted to account for volume or frequency of emails to help the user find another employee in the organization with appropriate overlap.
+The value model around redundancy could also be improved. For example, it could be adjusted to account for volume or frequency of emails, which would help the user find another employee in the organization with appropriate overlap.
 
 \subsection{Performance}
 
@@ -439,7 +444,7 @@ As the user explores the dataset it would be helpful for the application to capt
 
 In this paper we presented DSOC: Design Support for Organizational Change, a visualization dashboard to help managers fill gaps resulting from an employee leaving an organization.
 
-\textbf{{\color{Plum} Needs more here. This section is meant to be a big boring summary of the paper. It's nice to finish with an optimistic line, and the one already there fulfills that need pretty well I think.}}
+\textbf{{\color{Plum} TODO: Friday}}
 
 We found during our research there was a lot of excitement about this topic and there are a number of different pieces of follow on work that we can use in the future.
 
